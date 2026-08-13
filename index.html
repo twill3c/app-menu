@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Menu — twill3c</title>
+<meta name="description" content="Vercel で公開中のアプリ一覧メニュー">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1a1d21;
+    --muted: #5c6470;
+    --border: #e2e5ea;
+    --accent: #2563eb;
+    --accent-soft: #eff4ff;
+    --shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    --shadow-hover: 0 6px 20px rgba(15, 23, 42, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1216;
+      --card: #191e24;
+      --text: #e8eaed;
+      --muted: #9aa3af;
+      --border: #2a313a;
+      --accent: #7aa2ff;
+      --accent-soft: #1c2740;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+  header { padding: 56px 0 8px; }
+  h1 { font-size: 1.9rem; letter-spacing: 0.02em; }
+  .subtitle { color: var(--muted); margin-top: 6px; font-size: 0.95rem; }
+  .search-box { margin: 28px 0 8px; }
+  .search-box input {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  h2 {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin: 40px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+  }
+  .card .icon { font-size: 1.6rem; }
+  .card .name {
+    font-weight: 700;
+    font-size: 1.02rem;
+    margin-top: 8px;
+    color: var(--accent);
+  }
+  .card .desc {
+    font-size: 0.86rem;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .card .url {
+    font-size: 0.75rem;
+    color: var(--muted);
+    opacity: 0.75;
+    margin-top: 10px;
+    word-break: break-all;
+  }
+  .hidden { display: none; }
+  section.hidden { display: none; }
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .count-badge {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 1px 10px;
+    font-size: 0.8rem;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🗂️ App Menu</h1>
+    <p class="subtitle">Vercel で公開中のアプリ一覧 — <span id="total-count"></span> apps</p>
+  </header>
+
+  <div class="search-box">
+    <input type="search" id="filter" placeholder="アプリ名・説明で絞り込み…" aria-label="アプリを検索">
+  </div>
+
+  <section data-section>
+    <h2>🎮 ゲーム</h2>
+    <div class="grid">
+      <a class="card" href="https://meikyu-rogue.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏯</span>
+        <div class="name">meikyu-rogue — 迷宮ローグ</div>
+        <div class="desc">ターン制ローグライク。シードから決定的に生成される5階層の迷宮を探索し、最下層の秘宝「暁の勾玉」を持ち帰れば勝利。</div>
+        <div class="url">meikyu-rogue.vercel.app</div>
+      </a>
+      <a class="card" href="https://yagura-defense.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏹</span>
+        <div class="name">yagura-defense — やぐらディフェンス</div>
+        <div class="desc">矢倉を建てて、街道を進軍する敵勢から本丸を守る和風タワーディフェンス。マウス/タッチ操作だけで完結。</div>
+        <div class="url">yagura-defense.vercel.app</div>
+      </a>
+      <a class="card" href="https://soko-forge.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">📦</span>
+        <div class="name">soko-forge</div>
+        <div class="desc">倉庫番(Sokoban)を「遊ぶ・解く・作る」ブラウザアプリ。ソルバーとレベルエディタを搭載。</div>
+        <div class="url">soko-forge.vercel.app</div>
+      </a>
+      <a class="card" href="https://kaguya-lander.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🌙</span>
+        <div class="name">kaguya-lander</div>
+        <div class="desc">月面着陸ゲーム。推進剤を管理しながら着陸船をそっと月面に降ろす。</div>
+        <div class="url">kaguya-lander.vercel.app</div>
+      </a>
+    </div>
+  </section>
+
+  <section data-section>
+    <h2>⌨️ タイピング</h2>
+    <div class="grid">
+      <a class="card" href="https://command-type.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">💻</span>
+        <div class="name">command-type</div>
+        <div class="desc">Linux・SQL・Python・TypeScript・Docker など技術コマンドの「落ちものゲーム × タイピング練習」。</div>
+        <div class="url">command-type.vercel.app</div>
+      </a>
+      <a class="card" href="https://bungo-type.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">📖</span>
+        <div class="name">bungo-type — 文豪タイプ</div>
+        <div class="desc">青空文庫の名作と百人一首を打鍵素材にした日本語ローマ字タイピング練習アプリ。</div>
+        <div class="url">bungo-type.vercel.app</div>
+      </a>
+    </div>
+  </section>
+
+  <section data-section>
+    <h2>🗺️ 地図・データ可視化</h2>
+    <div class="grid">
+      <a class="card" href="https://tsukiji-atlas.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🐟</span>
+        <div class="name">tsukiji-atlas</div>
+        <div class="desc">築地・明石町の名所旧跡を時代別・分野別に可視化。Wikidata + 東京都オープンデータ + 手動キュレーション。</div>
+        <div class="url">tsukiji-atlas.vercel.app</div>
+      </a>
+      <a class="card" href="https://bunka-cluster-map.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏛️</span>
+        <div class="name">bunka-cluster-map</div>
+        <div class="desc">東京の文化施設を1kmメッシュ集計・Gi*統計で分析し、単一集積か複合文化ゾーンかまで可視化。</div>
+        <div class="url">bunka-cluster-map.vercel.app</div>
+      </a>
+      <a class="card" href="https://sakaba-density-map.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏮</span>
+        <div class="name">sakaba-density-map</div>
+        <div class="desc">食品営業許可データを250mメッシュ統計化し、中野区の「大衆酒場ホットスポット」を静的マップで可視化。</div>
+        <div class="url">sakaba-density-map.vercel.app</div>
+      </a>
+      <a class="card" href="https://yamato-gaze.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🪷</span>
+        <div class="name">yamato-gaze — 大和路の視線</div>
+        <div class="desc">和辻哲郎・亀井勝一郎・堀辰雄の奈良古寺巡礼記を整列比較し、視線の三型を計量する巡礼路地図の「三面鏡」。</div>
+        <div class="url">yamato-gaze.vercel.app</div>
+      </a>
+      <a class="card" href="https://solar-system-dusky-theta.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🪐</span>
+        <div class="name">solar-system — 太陽系シミュレーター</div>
+        <div class="desc">Three.js で太陽と8惑星を描画し、時間スライダーで公転を進める可視化モデル。</div>
+        <div class="url">solar-system-dusky-theta.vercel.app</div>
+      </a>
+    </div>
+  </section>
+
+  <section data-section>
+    <h2>📚 文学・翻訳</h2>
+    <div class="grid">
+      <a class="card" href="https://honyaku-atlas.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🌐</span>
+        <div class="name">honyaku-atlas — 日本文学翻訳アトラス</div>
+        <div class="desc">日本文学の翻訳書誌を著者×言語のカバレッジ行列で俯瞰。どの作家がどの言語に訳されているかが一目でわかる。</div>
+        <div class="url">honyaku-atlas.vercel.app</div>
+      </a>
+      <a class="card" href="https://honyaku-query.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🔍</span>
+        <div class="name">honyaku-query — 翻訳探索クエリビルダー</div>
+        <div class="desc">かな読みからヘボン式ローマ字化・表記バリアント展開(Sōseki/Soseki/Souseki…)を行い、海外語訳探しの検索クエリを組み立てる。</div>
+        <div class="url">honyaku-query.vercel.app</div>
+      </a>
+    </div>
+  </section>
+
+  <section data-section>
+    <h2>🧭 プランナー・シミュレータ</h2>
+    <div class="grid">
+      <a class="card" href="https://yama-tenki-finder.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">⛰️</span>
+        <div class="name">yama-tenki-finder</div>
+        <div class="desc">「今週末、日帰り圏でいちばん天気が良い山域はどこか」を一目で比較できる山天気ウィンドウ・ファインダー。</div>
+        <div class="url">yama-tenki-finder.vercel.app</div>
+      </a>
+      <a class="card" href="https://pack-weight-sim.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🎒</span>
+        <div class="name">pack-weight-sim</div>
+        <div class="desc">登山・キャンプ装備リストの総重量・ベースウェイト・カテゴリ別内訳を計算するパッキング重量シミュレータ。</div>
+        <div class="url">pack-weight-sim.vercel.app</div>
+      </a>
+      <a class="card" href="https://bunka-hashigo.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🖼️</span>
+        <div class="name">bunka-hashigo — 文化施設はしごプランナー</div>
+        <div class="desc">美術館・博物館・古書店・ギャラリーに劇場公演を組み合わせた「文化はしご」1日プランを生成。休館日・最終入場も考慮。</div>
+        <div class="url">bunka-hashigo.vercel.app</div>
+      </a>
+      <a class="card" href="https://hashigo-planner.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🍶</span>
+        <div class="name">hashigo-planner — 下町はしご酒プランナー</div>
+        <div class="desc">エリア・開始時刻・軒数・予算から、営業時間と徒歩距離を考慮したはしご酒ルートを提案。</div>
+        <div class="url">hashigo-planner.vercel.app</div>
+      </a>
+      <a class="card" href="https://senbero-sim.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🍺</span>
+        <div class="name">senbero-sim — せんべろ会計シミュレータ</div>
+        <div class="desc">はしご酒の注文をその場で記録し、店別小計・割り勘・せんべろ達成度・純アルコール量を表示。オフラインでも動作。</div>
+        <div class="url">senbero-sim.vercel.app</div>
+      </a>
+      <a class="card" href="https://grutto-sim.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🎫</span>
+        <div class="name">grutto-sim — ぐるっとパス元取りシミュレータ</div>
+        <div class="desc">行きたい施設リストから「ぐるっとパスを買うべきか・あと何館で元が取れるか」を計算する非公式シミュレータ。</div>
+        <div class="url">grutto-sim.vercel.app</div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>各カードをクリックするとアプリが新しいタブで開きます。すべて Vercel で静的配信。</p>
+  </footer>
+</div>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('.card'));
+  document.getElementById('total-count').textContent = cards.length;
+
+  const input = document.getElementById('filter');
+  const sections = Array.from(document.querySelectorAll('[data-section]'));
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    for (const card of cards) {
+      const text = card.textContent.toLowerCase();
+      card.classList.toggle('hidden', q !== '' && !text.includes(q));
+    }
+    for (const section of sections) {
+      const visible = section.querySelectorAll('.card:not(.hidden)').length;
+      section.classList.toggle('hidden', visible === 0);
+    }
+  });
+</script>
+</body>
+</html>
