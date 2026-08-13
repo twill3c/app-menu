@@ -136,6 +136,12 @@
     color: var(--muted);
     font-size: 0.82rem;
   }
+  footer a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  footer a:hover { color: var(--accent); }
   .count-badge {
     display: inline-block;
     background: var(--accent-soft);
@@ -332,6 +338,7 @@
   <footer>
     <p>各カードをクリックするとアプリが新しいタブで開きます。すべて Vercel で静的配信。</p>
     <p>初回デプロイ日・最終更新日は Vercel のプロジェクト作成日・最新デプロイ日時(JST)、ライセンス有無は GitHub リポジトリの検出結果に基づく。</p>
+    <p><a href="https://github.com/twill3c/app-menu/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a> © 2026 坂田哲朗 ・ <a href="https://github.com/twill3c/app-menu" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 </div>
 
