@@ -56,6 +56,16 @@
     transition: border-color 0.15s;
   }
   .search-box input:focus { border-color: var(--accent); }
+  .cats { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .chip {
+    background: var(--card); border: 1px solid var(--border); color: var(--muted);
+    border-radius: 999px; padding: 6px 13px; font-size: 0.86rem; cursor: pointer;
+    user-select: none; white-space: nowrap; transition: border-color .15s, color .15s;
+  }
+  .chip:hover { color: var(--text); border-color: var(--accent); }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .chip .n { opacity: .7; font-size: .8em; margin-left: 4px; }
+  .noresult { color: var(--muted); font-size: 0.95rem; padding: 24px 0; }
   h2 {
     font-size: 1.05rem;
     color: var(--muted);
@@ -145,6 +155,17 @@
     color: var(--muted);
     font-size: 0.82rem;
   }
+
+  /* fleet: fixed footer */
+  footer {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000;
+    margin: 0; padding: 8px 16px; text-align: center;
+    background: var(--card); border-top: 1px solid var(--border);
+    backdrop-filter: blur(6px);
+    max-height: 30vh; overflow-y: auto;
+  }
+  body { padding-bottom: 72px; }
+  @media (max-width: 640px) { body { padding-bottom: 96px; } }
   footer a {
     color: var(--muted);
     text-decoration: underline;
@@ -174,7 +195,19 @@
     <input type="search" id="filter" placeholder="アプリ名・説明で絞り込み…" aria-label="アプリを検索">
   </div>
 
-  <section data-section>
+  <div class="cats" id="cats" role="group" aria-label="カテゴリで絞り込み">
+    <span class="chip on" data-cat="ALL">すべて<span class="n"></span></span>
+    <span class="chip" data-cat="cat0">📰 ニュースヘッドライン<span class="n"></span></span>
+    <span class="chip" data-cat="cat1">⌨️ タイピング<span class="n"></span></span>
+    <span class="chip" data-cat="cat2">🎮 ゲーム<span class="n"></span></span>
+    <span class="chip" data-cat="cat3">🧠 機械学習<span class="n"></span></span>
+    <span class="chip" data-cat="cat4">🗺️ 地図・データ可視化<span class="n"></span></span>
+    <span class="chip" data-cat="cat5">📚 文学・翻訳<span class="n"></span></span>
+    <span class="chip" data-cat="cat6">🧭 プランナー・シミュレータ<span class="n"></span></span>
+  </div>
+  <p class="noresult hidden" id="noresult">該当するアプリがありません</p>
+
+  <section data-section data-cat="cat0">
     <h2>📰 ニュースヘッドライン</h2>
     <div class="grid">
       <a class="card" href="https://koho-lens.vercel.app" target="_blank" rel="noopener">
@@ -215,7 +248,7 @@
     </div>
   </section>
 
-  <section data-section>
+  <section data-section data-cat="cat1">
     <h2>⌨️ タイピング</h2>
     <div class="grid">
       <a class="card" href="https://command-type.vercel.app" target="_blank" rel="noopener">
@@ -235,7 +268,7 @@
     </div>
   </section>
 
-  <section data-section>
+  <section data-section data-cat="cat2">
     <h2>🎮 ゲーム</h2>
     <div class="grid">
       <a class="card" href="https://karakuri-hako.vercel.app" target="_blank" rel="noopener">
@@ -297,7 +330,7 @@
     </div>
   </section>
 
-  <section data-section>
+  <section data-section data-cat="cat3">
     <h2>🧠 機械学習</h2>
     <div class="grid">
       <a class="card" href="https://jocho-iro.vercel.app" target="_blank" rel="noopener">
@@ -366,7 +399,7 @@
     </div>
   </section>
 
-  <section data-section>
+  <section data-section data-cat="cat4">
     <h2>🗺️ 地図・データ可視化</h2>
     <div class="grid">
       <a class="card" href="https://toukei-atlas.vercel.app" target="_blank" rel="noopener">
@@ -414,7 +447,7 @@
     </div>
   </section>
 
-  <section data-section>
+  <section data-section data-cat="cat5">
     <h2>📚 文学・翻訳</h2>
     <div class="grid">
       <a class="card" href="https://honyaku-atlas.vercel.app" target="_blank" rel="noopener">
@@ -434,7 +467,7 @@
     </div>
   </section>
 
-  <section data-section>
+  <section data-section data-cat="cat6">
     <h2>🧭 プランナー・シミュレータ</h2>
     <div class="grid">
       <a class="card" href="https://diamond-fuji-finder.vercel.app" target="_blank" rel="noopener">
@@ -502,17 +535,46 @@
 
   const input = document.getElementById('filter');
   const sections = Array.from(document.querySelectorAll('[data-section]'));
-  input.addEventListener('input', () => {
+  const chips = Array.from(document.querySelectorAll('.chip[data-cat]'));
+  let curCat = 'ALL';
+
+  // チップに各カテゴリのアプリ数を表示
+  for (const chip of chips) {
+    const cat = chip.dataset.cat;
+    const n = cat === 'ALL' ? cards.length
+      : sections.filter(s => s.dataset.cat === cat)
+                .reduce((sum, s) => sum + s.querySelectorAll('.card').length, 0);
+    chip.querySelector('.n').textContent = n;
+  }
+
+  function render() {
     const q = input.value.trim().toLowerCase();
-    for (const card of cards) {
-      const text = card.textContent.toLowerCase();
-      card.classList.toggle('hidden', q !== '' && !text.includes(q));
-    }
+    let shown = 0;
     for (const section of sections) {
-      const visible = section.querySelectorAll('.card:not(.hidden)').length;
+      const inCat = curCat === 'ALL' || section.dataset.cat === curCat;
+      let visible = 0;
+      for (const card of section.querySelectorAll('.card')) {
+        const hit = q === '' || card.textContent.toLowerCase().includes(q);
+        const ok = inCat && hit;
+        card.classList.toggle('hidden', !ok);
+        if (ok) visible++;
+      }
       section.classList.toggle('hidden', visible === 0);
+      shown += visible;
     }
-  });
+    document.getElementById('noresult').classList.toggle('hidden', shown > 0);
+  }
+
+  input.addEventListener('input', render);
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      curCat = chip.dataset.cat;
+      render();
+    });
+  }
+  render();
 </script>
 </body>
 </html>
