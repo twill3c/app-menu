@@ -1,0 +1,37 @@
+name: update-dates
+
+on:
+  schedule:
+    - cron: '17 3 * * *'   # 毎日 JST 12:17 頃
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-dates
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh card dates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/update_dates.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "変更なし — コミットしない"
+          else
+            git commit -m "chore: カードの最終更新日を実測値に同期 $(date -u +%Y-%m-%d)"
+            git push
+          fi

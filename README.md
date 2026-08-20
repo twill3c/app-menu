@@ -12,3 +12,18 @@ Vercel で公開中のアプリ 19 本をカテゴリ別に並べた一覧メニ
 ## アプリを追加するには
 
 `index.html` の該当カテゴリ `<section>` に `.card` を 1 枚追加して push するだけ。
+
+## カードの最終更新日は自動同期
+
+`最終更新` は手書きではなく、各リポジトリの最終コミット日(JST)に日次で揃えている。
+
+```bash
+python tools/update_dates.py --check   # 差分の確認だけ(CI 用)
+python tools/update_dates.py           # index.html を実測値に更新
+```
+
+- `.github/workflows/update-dates.yml` が毎日 JST 12:17 頃に実行し、差分があればコミットする
+- リポジトリ名は URL のサブドメインから推定する。異なる場合はカードに `data-repo="..."` を付ける
+  (例: `kokorograph` → `kokoro-graph`)
+- `初回デプロイ` は作成日なので自動更新の対象外(手書きのまま)
+- GitHub API の取得に失敗した会社は既存の日付を維持する(劣化継続)
