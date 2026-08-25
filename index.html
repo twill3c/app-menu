@@ -461,35 +461,35 @@
       <a class="card" href="https://onomato-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔔</span>
         <div class="name">onomato-atlas — 音象アトラス</div>
-        <div class="desc">オノマトペは音そのものが意味を運ぶのか。それを確かめるため、<b>音の形と使われ方を別々の情報源から測る</b>。音側は表記から機械的に(語頭子音・母音・形態・濁音)、意味側は青空文庫 2,200 作品 4,669 万字の共起分布から。意味側を組むコードが音側を読み込んでいないことを AST で静的検査し、落ちたら他が全緑でも不合格にしてある——初版は座標を音韻素性から計算していて「形を変えると意味が動く」が<b>構成上の恒真式</b>だった。目玉は<b>対が動く図</b>で、ころころ→ころり のような形態対 136 本を軸上に矢印で重ねると 132 本が同じ向きに傾く(202 対で二項 p=3.9×10⁻³⁶、対の組み合わせだけ無作為化した対照も超える)。濁音対 32 組も通り(p=0.010)、軸は構成に使っていない 533 語へ一般化する(p=0.0001)。ブーバ/キキは結果を見る前に予測を封印してから検定し、<b>破裂音→衝撃は通り(Holm 後 0.0004)母音 i→鋭細は通らなかった(0.065)</b>——α=0.05 は動かさない。<b>作らなかったものが多い</b>: 当初の目玉だった「意味の近い語」は、作品を半分に分けて測り直すと最も近い語の一致が 100 回中 12 回しかなく、載せないことにした。二項 p=1.6×10⁻⁶ でも対照を超えない軸は却下し、スコアをデータごと落としてある。語ごとの軸スコアは点でなく<b>誤差の帯</b>で描く(SD 0.09 に対し標準誤差 0.05)。用例 3,561 件はすべて原文の部分文字列であることを検査済みで、底本・入力者・校正者を各引用に付す。</div>
+        <div class="desc">オノマトペの<b>音の形と使われ方を、別々の情報源から測る</b>。音側は表記から機械的に、意味側は青空文庫 2,200 作品の共起分布から。一致した範囲だけを地図にし、検定を通った 2 軸だけを採用。分割半で再現しなかった目玉機能は、測って捨てた。</div>
         <div class="url">onomato-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-25</span><span>最終更新 2026-08-25</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
       <a class="card" href="https://ango-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📗</span>
         <div class="name">ango-atlas — 安吾アトラス</div>
-        <div class="desc">青空文庫の坂口安吾 513 作品・603 万字を、文体・主題・時系列・言及の四軸で俯瞰する。目玉は<b>一節から探す</b>——ある段落を起点に他作品の近い一節へ渡り歩く機能で、15,430 の一節を前もってベクトル化してあるので<b>クエリ時のモデル推論がゼロ</b>(1 問 15.3ms)。検証の背骨は新字新仮名版と新字旧仮名版の 50 組で、「同じ文体・表記だけ違う」ラベル無しの正解対として使う——文体特徴量では 50/50 が互いに最近傍、埋め込みでは対応する一節 1,026 組が R@1 1.000。題名一致では 14 組を取りこぼす(「石の思ひ」⇔「石の思い」)。BERTopic は密度の谷が無く不適と実測して k-means に、仮名遣いの正規化は埋め込みの性能を上げないと実測して不採用に。文体の転換点は 1931・1937・1938・1946 ほか 6 件で、通説との一致は主張しない。</div>
+        <div class="desc">青空文庫の坂口安吾 513 作品・603 万字を、文体・主題・時系列・言及の四軸で俯瞰。目玉は<b>一節から探す</b>——15,430 の一節を事前ベクトル化してあり、クエリ時のモデル推論はゼロ(1 問 15.3ms)。新字新仮名/旧仮名の 50 組が正解対。</div>
         <div class="url">ango-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-25</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
       <a class="card" href="https://neko-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🐈</span>
         <div class="name">neko-atlas — 猫アトラス</div>
-        <div class="desc">『吾輩は猫である』一作 376,432 字を、話者ではなく<b>応酬の構造</b>で描く。本文の全文字を 5 区分の直和に分け、鉤括弧の境界だけを証拠に交替を取るので推定が要らない。会話率は第一章 18.7% → 第十一章 78.0%、塊長平均 1.4 → 3.7 と、単発の会話が切れ目のない座談へ変わる。話者が本文に明記されているのは 3,224 発話中 533(16.5%)だけなので、応酬ネットワークは<b>出荷していない</b>。章の文体距離は語数と r=−0.94 で交絡するため等サイズブロック＋置換検定に置き換え、地の文で有意に孤立するのは第一章 (p=0.015) と第十一章 (p=0.012)。</div>
+        <div class="desc">『吾輩は猫である』一作 376,432 字を、話者ではなく<b>応酬の構造</b>で描く。鉤括弧の境界だけを証拠に交替を取る。会話率は第一章 18.7% → 第十一章 78.0%。話者が明記された発話は 16.5% だけなので、話者ネットワークは出していない。</div>
         <div class="url">neko-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-25</span><span>最終更新 2026-08-25</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
       <a class="card" href="https://jikenbo-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔍</span>
         <div class="name">jikenbo-atlas — 事件簿アトラス</div>
-        <div class="desc">シャーロック・ホームズ正典 60 事件を属性表(種別・動機・死者・座標)にし、青空文庫で読める 29 編(大久保ゆう訳ほか)をルビ付きリーダーで。死者の出ない短編は 21/56。現場 60 ヶ所の地図(架空地名は推定と明示)、再登場人物 10 名×25 事件の本文実測ネットワーク、同一原作の新旧訳 7 組の台詞比率比較——グロリア・スコット号は 30.0% 対 10.7% で訳風が割れる。</div>
+        <div class="desc">ホームズ正典 60 事件を属性表(種別・動機・死者・座標)にし、青空文庫で読める 29 編をルビ付きリーダーで。現場 60 ヶ所の地図、再登場人物 10 名×25 事件の本文実測ネットワーク、同一原作の新旧訳 7 組の台詞比率比較。</div>
         <div class="url">jikenbo-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT / 本文 CC BY 2.1 JP・PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
       <a class="card" href="https://kiko-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🗾</span>
         <div class="name">kiko-atlas — 紀行アトラス</div>
-        <div class="desc">明治以降の紀行文 14 作(子規の木曽 1892 〜安吾の伊勢 1951)が踏んだ 220 の土地・2,252 回の言及を、一枚の地図と旅の年の年表に重ねる。点を押せば本文の抜粋、作品を選べば旅程が叙述順に結ばれる。言及はすべて青空文庫本文の文字位置に照合済みで、座標の出所と訪問地/言及のみの別をデータに明記。海岸線は Natural Earth を 87KB に焼き込み、外部タイル不使用。</div>
+        <div class="desc">明治以降の紀行文 14 作(子規の木曽 1892 〜安吾の伊勢 1951)が踏んだ 220 の土地・2,252 回の言及を、一枚の地図と旅の年の年表に重ねる。点を押せば本文の抜粋、作品を選べば旅程が叙述順に結ばれる。海岸線は焼き込みで外部タイル不使用。</div>
         <div class="url">kiko-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
@@ -510,7 +510,7 @@
       <a class="card" href="https://makura-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🪭</span>
         <div class="name">makura-atlas — 枕草子アトラス</div>
-        <div class="desc">『枕草子』44 章段を快‐不快×心の動きの二軸に散布し、類聚 10 章段は 63 項目に解体、日記 12 章段は中関白家の史実年表に重ねる——没落後も点は快側に張り付いたまま動かない(沈黙の可視化)。季節×時刻の升目は 30 のうち埋まるのは 11。座標は編者の解釈値で、JSON を書き換えれば全図が追随。原文は縦書き明朝。</div>
+        <div class="desc">『枕草子』44 章段を快‐不快×心の動きの二軸に散布し、類聚 10 章段は 63 項目に解体、日記 12 章段は中関白家の史実年表に重ねる——没落後も点は快側に張り付いたまま動かない。季節×時刻の升目は 30 のうち 11 が埋まる。</div>
         <div class="url">makura-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
