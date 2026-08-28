@@ -182,6 +182,22 @@
     margin-left: 8px;
     vertical-align: middle;
   }
+  .tags {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 8px; margin: 10px 0 4px;
+  }
+  .tags .lead {
+    color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em;
+    padding-right: 2px;
+  }
+  .tags .tagchip { font-size: 0.82rem; padding: 5px 11px; }
+  .card .meta .tag {
+    border-radius: 999px;
+    padding: 0 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
@@ -195,59 +211,74 @@
     <input type="search" id="filter" placeholder="アプリ名・説明で絞り込み…" aria-label="アプリを検索">
   </div>
 
-  <div class="cats" id="cats" role="group" aria-label="カテゴリで絞り込み">
+  <div class="cats" id="cats" role="group" aria-label="主題で絞り込み">
     <span class="chip on" data-cat="ALL">すべて<span class="n"></span></span>
-    <span class="chip" data-cat="cat0">📰 ニュースヘッドライン<span class="n"></span></span>
-    <span class="chip" data-cat="cat1">⌨️ タイピング<span class="n"></span></span>
-    <span class="chip" data-cat="cat2">🎮 ゲーム<span class="n"></span></span>
+    <span class="chip" data-cat="cat0">📰 情報収集<span class="n"></span></span>
+    <span class="chip" data-cat="cat2">🎮 ゲーム・タイピング<span class="n"></span></span>
     <span class="chip" data-cat="cat3">🧠 機械学習<span class="n"></span></span>
-    <span class="chip" data-cat="cat4">🗺️ 地図・データ可視化<span class="n"></span></span>
+    <span class="chip" data-cat="cat4">🗺️ 地図<span class="n"></span></span>
     <span class="chip" data-cat="cat5">📚 文学・翻訳<span class="n"></span></span>
     <span class="chip" data-cat="cat6">🧭 プランナー・シミュレータ<span class="n"></span></span>
-    <span class="chip" data-cat="cat7">🧮 量子・計算科学<span class="n"></span></span>
+    <span class="chip" data-cat="cat7">🧮 量子・計算・天体<span class="n"></span></span>
     <span class="chip" data-cat="cat8">🏮 ブランドサイト<span class="n"></span></span>
+  </div>
+
+  <div class="tags" id="tags" role="group" aria-label="技術で絞り込み">
+    <span class="lead">技術</span>
+    <span class="chip tagchip on" data-tag="ALL">指定なし<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="機械学習">機械学習<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="統計">統計<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="自然言語処理">自然言語処理<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="地図">地図<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="探索">探索<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="物理">物理<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="量子・計算理論">量子・計算理論<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="音">音<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="Rust/WASM">Rust/WASM<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="R">R<span class="n"></span></span>
+    <span class="chip tagchip" data-tag="自動更新">自動更新<span class="n"></span></span>
   </div>
   <p class="noresult hidden" id="noresult">該当するアプリがありません</p>
 
   <section data-section data-cat="cat0">
-    <h2>📰 ニュースヘッドライン</h2>
+    <h2>📰 情報収集</h2>
     <div class="grid">
-      <a class="card" href="https://midashi-sanmenkyo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計,R,自動更新" href="https://midashi-sanmenkyo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🪞</span>
         <div class="name">midashi-sanmenkyo — 見出しの三面鏡</div>
         <div class="desc">同じ出来事を NHK・朝日新聞・毎日新聞がどう見出しにしたかを並べて対照。文字バイグラム類似度で同一事象を判定(手ラベル較正済み)し、体言止め率やかぎ括弧率などの社別の癖も統計化。毎時自動更新。</div>
         <div class="url">midashi-sanmenkyo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-22</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://koho-lens.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自動更新" href="https://koho-lens.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📰</span>
         <div class="name">koho-lens — 広報レンズ</div>
         <div class="desc">富士通・NEC・日立・NTTデータなど主要 ITサービス企業 11 社の最新プレスリリースを各 5 件ずつ一望。GitHub Actions が 6 時間ごとに自動更新。</div>
         <div class="url">koho-lens.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-20</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://kiban-lens.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自動更新" href="https://kiban-lens.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🌐</span>
         <div class="name">kiban-lens — 基盤レンズ</div>
         <div class="desc">OpenAI・Anthropic・DeepSeek・Sakana AI など AI 基盤モデル企業 23 社(米6・中7・日10)の公式ブログ最新 5 件を Claude の和訳付きで一望。原文併記。GitHub Actions が 6 時間ごとに自動更新。</div>
         <div class="url">kiban-lens.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-21</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://kasumigaseki-lens.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自動更新" href="https://kasumigaseki-lens.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🏛️</span>
         <div class="name">kasumigaseki-lens — 霞が関レンズ</div>
         <div class="desc">首相官邸・デジタル庁・金融庁+11省など中央省庁等 15 機関の最新報道発表を各 5 件ずつ一望。koho-lens の官公庁版。GitHub Actions が 6 時間ごとに自動更新。</div>
         <div class="url">kasumigaseki-lens.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-20</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://hyakunin-lens.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自動更新" href="https://hyakunin-lens.vercel.app" target="_blank" rel="noopener">
         <span class="icon">👥</span>
         <div class="name">hyakunin-lens — 百人レンズ</div>
         <div class="desc">AI研究者・エージェント実装者 100 名の発信ダッシュボード。本人の発信・インタビュー・YouTube対談を各 3 件ずつ、11 分類と検索で一望。ブログ系フィードは 6 時間ごと、YouTube対談は毎日、X・インタビュー・紹介文は月次エージェントが三層で自動更新。</div>
         <div class="url">hyakunin-lens.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-20</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://hodo-hangenki.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="統計,R,自動更新" href="https://hodo-hangenki.vercel.app" target="_blank" rel="noopener">
         <span class="icon">⏳</span>
         <div class="name">hodo-hangenki — 報道半減期</div>
         <div class="desc">ニュースは何時間で見出しから消えるのか。NHK ニュース RSS を毎時観測し、カプラン・マイヤー推定でカテゴリ別の半減期を測る寿命観測所。GitHub Actions が毎時自動更新。</div>
@@ -257,17 +288,87 @@
     </div>
   </section>
 
-  <section data-section data-cat="cat1">
-    <h2>⌨️ タイピング</h2>
+  <section data-section data-cat="cat2">
+    <h2>🎮 ゲーム・タイピング</h2>
     <div class="grid">
-      <a class="card" href="https://command-type.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="物理,音" href="https://onkan-dojo.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🎧</span>
+        <div class="name">onkan-dojo — 音感道場</div>
+        <div class="desc">音程・和音・音律・倍音の四科を耳で当てるイヤートレーニング。音声ファイルを持たず全音をその場で合成する。うなりの回数でセントのずれを測る音律科が目玉。四科×五段、免状と段位つき。</div>
+        <div class="url">onkan-dojo.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="探索,Rust/WASM" href="https://yomikiri-ban.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">⚫️</span>
+        <div class="name">yomikiri-ban — 読み切り盤</div>
+        <div class="desc">Rust + WebAssembly のオセロ。終盤で空きマスが減ると評価をやめて終局まで読み切り、そこから先の最善手と最終得点が確定する。盤は 8×8 / 6×6 / 4×4、探索ノード数と NPS を表示。</div>
+        <div class="url">yomikiri-ban.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="" href="https://karakuri-hako.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">⚙️</span>
+        <div class="name">karakuri-hako — からくり箱</div>
+        <div class="desc">JavaScript を 1 行も使わない HTML + CSS だけのからくり玩具箱。歯車・茶運び人形・ししおどしを動かして印を集め、家紋錠を開ける。</div>
+        <div class="url">karakuri-hako.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="探索,Rust/WASM" href="https://nanpure-forge.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">9️⃣</span>
+        <div class="name">nanpure-forge — ナンプレ工房</div>
+        <div class="desc">Rust + WebAssembly のナンプレ。全問題が一意解であることを生成時に機械検証。重複の赤ハイライト・答え合わせ・ヒント・難易度 3 種。</div>
+        <div class="url">nanpure-forge.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="物理" href="https://kawara-kuzushi.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏮</span>
+        <div class="name">kawara-kuzushi — 瓦崩し</div>
+        <div class="desc">瓦屋根を玉で崩す和風ブロック崩し。パドルのどこで受けるかで反射角を操る。固定 tick の決定論物理・ポインタ/タッチ専用。</div>
+        <div class="url">kawara-kuzushi.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="探索" href="https://jirai-sweep.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🚩</span>
+        <div class="name">jirai-sweep — ノーゲス・マインスイーパ</div>
+        <div class="desc">推測不要のマインスイーパ。全盤面を内蔵の論理ソルバーが検証済みで、運まかせの二択なしに必ず解ける。マウス専用。</div>
+        <div class="url">jirai-sweep.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-14</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span></div>
+      </a>
+      <a class="card" data-tags="音" href="https://meikyu-rogue.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏯</span>
+        <div class="name">meikyu-rogue — 迷宮ローグ</div>
+        <div class="desc">ターン制ローグライク。シードから決定的に生成される5階層の迷宮を探索し、最下層の秘宝「暁の勾玉」を持ち帰れば勝利。</div>
+        <div class="url">meikyu-rogue.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span></div>
+      </a>
+      <a class="card" data-tags="音" href="https://yagura-defense.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏹</span>
+        <div class="name">yagura-defense — やぐらディフェンス</div>
+        <div class="desc">矢倉を建てて、街道を進軍する敵勢から本丸を守る和風タワーディフェンス。マウス/タッチ操作だけで完結。</div>
+        <div class="url">yagura-defense.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="探索" href="https://soko-forge.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">📦</span>
+        <div class="name">soko-forge</div>
+        <div class="desc">倉庫番(Sokoban)を「遊ぶ・解く・作る」ブラウザアプリ。ソルバーとレベルエディタを搭載。</div>
+        <div class="url">soko-forge.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span></div>
+      </a>
+      <a class="card" data-tags="物理" href="https://kaguya-lander.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🌙</span>
+        <div class="name">kaguya-lander</div>
+        <div class="desc">月面着陸ゲーム。推進剤を管理しながら着陸船をそっと月面に降ろす。</div>
+        <div class="url">kaguya-lander.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-12</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="音" href="https://command-type.vercel.app" target="_blank" rel="noopener">
         <span class="icon">💻</span>
         <div class="name">command-type</div>
         <div class="desc">Linux・SQL・Python・TypeScript・Docker など技術コマンドの「落ちものゲーム × タイピング練習」。</div>
         <div class="url">command-type.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-06</span><span>最終更新 2026-08-14</span><span class="lic">MIT</span></div>
       </a>
-      <a class="card" href="https://bungo-type.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" href="https://bungo-type.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📖</span>
         <div class="name">bungo-type — 文豪タイプ</div>
         <div class="desc">青空文庫の名作と百人一首を打鍵素材にした日本語ローマ字タイピング練習アプリ。</div>
@@ -277,163 +378,80 @@
     </div>
   </section>
 
-  <section data-section data-cat="cat2">
-    <h2>🎮 ゲーム</h2>
-    <div class="grid">
-      <a class="card" href="https://onkan-dojo.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🎧</span>
-        <div class="name">onkan-dojo — 音感道場</div>
-        <div class="desc">音程・和音・音律・倍音の四科を耳で当てるイヤートレーニング。音声ファイルを持たず全音をその場で合成する。うなりの回数でセントのずれを測る音律科が目玉。四科×五段、免状と段位つき。</div>
-        <div class="url">onkan-dojo.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" href="https://yomikiri-ban.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">⚫️</span>
-        <div class="name">yomikiri-ban — 読み切り盤</div>
-        <div class="desc">Rust + WebAssembly のオセロ。終盤で空きマスが減ると評価をやめて終局まで読み切り、そこから先の最善手と最終得点が確定する。盤は 8×8 / 6×6 / 4×4、探索ノード数と NPS を表示。</div>
-        <div class="url">yomikiri-ban.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" href="https://karakuri-hako.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">⚙️</span>
-        <div class="name">karakuri-hako — からくり箱</div>
-        <div class="desc">JavaScript を 1 行も使わない HTML + CSS だけのからくり玩具箱。歯車・茶運び人形・ししおどしを動かして印を集め、家紋錠を開ける。</div>
-        <div class="url">karakuri-hako.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" href="https://nanpure-forge.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">9️⃣</span>
-        <div class="name">nanpure-forge — ナンプレ工房</div>
-        <div class="desc">Rust + WebAssembly のナンプレ。全問題が一意解であることを生成時に機械検証。重複の赤ハイライト・答え合わせ・ヒント・難易度 3 種。</div>
-        <div class="url">nanpure-forge.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" href="https://kawara-kuzushi.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🏮</span>
-        <div class="name">kawara-kuzushi — 瓦崩し</div>
-        <div class="desc">瓦屋根を玉で崩す和風ブロック崩し。パドルのどこで受けるかで反射角を操る。固定 tick の決定論物理・ポインタ/タッチ専用。</div>
-        <div class="url">kawara-kuzushi.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" href="https://jirai-sweep.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🚩</span>
-        <div class="name">jirai-sweep — ノーゲス・マインスイーパ</div>
-        <div class="desc">推測不要のマインスイーパ。全盤面を内蔵の論理ソルバーが検証済みで、運まかせの二択なしに必ず解ける。マウス専用。</div>
-        <div class="url">jirai-sweep.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-14</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span></div>
-      </a>
-      <a class="card" href="https://meikyu-rogue.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🏯</span>
-        <div class="name">meikyu-rogue — 迷宮ローグ</div>
-        <div class="desc">ターン制ローグライク。シードから決定的に生成される5階層の迷宮を探索し、最下層の秘宝「暁の勾玉」を持ち帰れば勝利。</div>
-        <div class="url">meikyu-rogue.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span></div>
-      </a>
-      <a class="card" href="https://yagura-defense.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🏹</span>
-        <div class="name">yagura-defense — やぐらディフェンス</div>
-        <div class="desc">矢倉を建てて、街道を進軍する敵勢から本丸を守る和風タワーディフェンス。マウス/タッチ操作だけで完結。</div>
-        <div class="url">yagura-defense.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" href="https://soko-forge.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">📦</span>
-        <div class="name">soko-forge</div>
-        <div class="desc">倉庫番(Sokoban)を「遊ぶ・解く・作る」ブラウザアプリ。ソルバーとレベルエディタを搭載。</div>
-        <div class="url">soko-forge.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span></div>
-      </a>
-      <a class="card" href="https://kaguya-lander.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🌙</span>
-        <div class="name">kaguya-lander</div>
-        <div class="desc">月面着陸ゲーム。推進剤を管理しながら着陸船をそっと月面に降ろす。</div>
-        <div class="url">kaguya-lander.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-12</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-    </div>
-  </section>
-
   <section data-section data-cat="cat3">
     <h2>🧠 機械学習</h2>
     <div class="grid">
-      <a class="card" href="https://chikuma-seiki.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🏭</span>
-        <div class="name">chikuma-seiki — 千曲精機</div>
-        <div class="desc">長野県佐久市の架空 EMS 企業のコーポレートサイト。AI による外観検査(ROC を動かせる)・段取り替えつき生産計画・安全在庫の三つのデモが実際に動く。写真素材ゼロ・全図版 SVG。三デモとも実装とは別経路のオラクルで検算。</div>
-        <div class="url">chikuma-seiki.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" href="https://jocho-iro.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" href="https://jocho-iro.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎨</span>
         <div class="name">jocho-iro — 情緒の色</div>
         <div class="desc">青空文庫 300 作品を八情緒(喜怒哀怖好驚厭安)の色で染めた色見本帖。情緒リボンの壁・レーダー・情緒の川。kokoro-graph の姉妹アプリで、300 作はデータ駆動で再選出。</div>
         <div class="url">jocho-iro.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-repo="kokoro-graph" href="https://kokorograph.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-repo="kokoro-graph" href="https://kokorograph.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📈</span>
         <div class="name">kokoro-graph — こころグラフ</div>
         <div class="desc">青空文庫 300 作品の行単位感情分析。感情バーコードの壁と起伏マップから作品を選び、感情曲線と本文を並べて読む。自前感情辞書 419 語・全指標に数理オラクル。</div>
         <div class="url">kokorograph.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://shinka-lander.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習,物理" href="https://shinka-lander.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🧬</span>
         <div class="name">shinka-lander — 進化する着陸船</div>
         <div class="desc">着陸船 40 機の推力遺伝子を遺伝的アルゴリズムで進化させる。墜落の群れが世代を重ねて軟着陸を覚えていく様子を全機の飛行アニメーションで観戦できる。</div>
         <div class="url">shinka-lander.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://satei-kobo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習,統計" href="https://satei-kobo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🏠</span>
         <div class="name">satei-kobo — 査定工房</div>
         <div class="desc">Kaggle の House Prices（エイムズ住宅 2,930 件）で重回帰を自分で組む。部屋数の係数が単独では +0.49 なのに面積と一緒に入れると負になる——符号が反転する瞬間をチェックボックスで往復できる。</div>
         <div class="url">satei-kobo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://wakachi-ki.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習,統計" href="https://wakachi-ki.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🌲</span>
         <div class="name">wakachi-ki — 分ち木</div>
         <div class="desc">タイタニック号の乗客 1,309 名で決定木を育て、どこで何人がどちらへ分かれたかを根から葉までたどる。深く育てるほど学習は 93% まで上がるのに検証は 77% まで落ちる——過学習をその場で反証できる。救命艇番号という「答えを覗く列」もあえて押せる。</div>
         <div class="url">wakachi-ki.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://tegaki-yomi.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" href="https://tegaki-yomi.vercel.app" target="_blank" rel="noopener">
         <span class="icon">✍️</span>
         <div class="name">tegaki-yomi — 手書き数字認識</div>
         <div class="desc">描いた数字を MNIST 学習済みニューラルネット(精度 98%)がその場で読む。前処理・確率・隠れ層の重みテンプレートまで中身を全部見せる。</div>
         <div class="url">tegaki-yomi.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://toba-bandit.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習,統計" href="https://toba-bandit.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎰</span>
         <div class="name">toba-bandit — バンディット賭場</div>
         <div class="desc">当たり確率が伏せられた 5 台のスロットを ε-greedy・UCB1・Thompson が同時に打ち続け、累積後悔のレースで探索と活用のトレードオフを見せる。</div>
         <div class="url">toba-bandit.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://murewake-lab.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習,探索" href="https://murewake-lab.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🐑</span>
         <div class="name">murewake-lab — k-means 群れ分け工房</div>
         <div class="desc">k-means(Lloyd 法)を「割り当て → 重心移動」の半歩単位でアニメーション可視化。ボロノイ領域・慣性の単調減少・エルボー法による k の選び方まで 1 画面で。</div>
         <div class="url">murewake-lab.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://kobai-walk.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" href="https://kobai-walk.vercel.app" target="_blank" rel="noopener">
         <span class="icon">⛰️</span>
         <div class="name">kobai-walk — 勾配降下の地形歩き</div>
         <div class="desc">損失地形の等高線の上を GD・Momentum・AdaGrad の 3 走者が谷底へ降りていくレースを可視化。臨界学習率を跨ぐと発散する様子まで理論値どおりに見える。</div>
         <div class="url">kobai-walk.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://kyokai-lab.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" href="https://kyokai-lab.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🧪</span>
         <div class="name">kyokai-lab — ニューラルネット境界ラボ</div>
         <div class="desc">2 次元データに多層パーセプトロンをその場で学習させ、決定境界が変形していく過程をリアルタイム可視化。層・ニューロン数・活性化・学習率を GUI で組み替えられる。</div>
         <div class="url">kyokai-lab.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://kyoka-grid.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" href="https://kyoka-grid.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🤖</span>
         <div class="name">kyoka-grid — 強化学習グリッドワールド可視化</div>
         <div class="desc">Q学習エージェントが迷路・崖歩き・風の格子を学ぶ過程を、価値ヒートマップ・方策矢印・軌跡でリアルタイム可視化。価値反復の最適解との一致率で答え合わせできる。</div>
@@ -444,49 +462,42 @@
   </section>
 
   <section data-section data-cat="cat4">
-    <h2>🗺️ 地図・データ可視化</h2>
+    <h2>🗺️ 地図</h2>
     <div class="grid">
-      <a class="card" href="https://toukei-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,統計,R" href="https://toukei-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🗾</span>
         <div class="name">toukei-atlas — 日本統計地図帳</div>
         <div class="desc">高齢化率・人口密度・人口増減率などを市区町村単位の主題図で見る統計アトラス。R(sf + ggplot2)による印刷物品質の静的地図。全数値は政府公表値との照合検証済み。</div>
         <div class="url">toukei-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-19</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://tsukiji-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,自動更新" href="https://tsukiji-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🐟</span>
         <div class="name">tsukiji-atlas</div>
         <div class="desc">築地・明石町の名所旧跡を時代別・分野別に可視化。Wikidata + 東京都オープンデータ + 手動キュレーション。</div>
         <div class="url">tsukiji-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-22</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://bunka-cluster-map.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,統計,自動更新" href="https://bunka-cluster-map.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🏛️</span>
         <div class="name">bunka-cluster-map</div>
         <div class="desc">東京の文化施設を1kmメッシュ集計・Gi*統計で分析し、単一集積か複合文化ゾーンかまで可視化。</div>
         <div class="url">bunka-cluster-map.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-13</span><span>最終更新 2026-08-21</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://sakaba-density-map.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,統計,自動更新" href="https://sakaba-density-map.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🏮</span>
         <div class="name">sakaba-density-map</div>
         <div class="desc">食品営業許可データを250mメッシュ統計化し、中野区の「大衆酒場ホットスポット」を静的マップで可視化。</div>
         <div class="url">sakaba-density-map.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-12</span><span>最終更新 2026-07-12</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://yamato-gaze.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,自然言語処理,統計" href="https://yamato-gaze.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🪷</span>
         <div class="name">yamato-gaze — 大和路の視線</div>
         <div class="desc">和辻哲郎・亀井勝一郎・堀辰雄の奈良古寺巡礼記を整列比較し、視線の三型を計量する巡礼路地図の「三面鏡」。</div>
         <div class="url">yamato-gaze.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-28</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-repo="solar-system" href="https://solar-system-dusky-theta.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🪐</span>
-        <div class="name">solar-system — 太陽系シミュレーター</div>
-        <div class="desc">Three.js で太陽と8惑星を描画し、時間スライダーで公転を進める可視化モデル。</div>
-        <div class="url">solar-system-dusky-theta.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-06-27</span><span>最終更新 2026-08-26</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
     </div>
   </section>
@@ -494,105 +505,105 @@
   <section data-section data-cat="cat5">
     <h2>📚 文学・翻訳</h2>
     <div class="grid">
-      <a class="card" href="https://furigana-keiryo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" href="https://furigana-keiryo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📖</span>
         <div class="name">furigana-keiryo — 振仮名計量</div>
-        <div class="desc">青空文庫 4,916 作・217 作家の<b>振り仮名</b>を三軸で計量。狙った「優しさ×信用」の二軸は<b>実測で二度潰れた</b>(信用は総ルビ傾向の言い換えで r=−0.994)。支配因子を名指しして残差にし直し、半分割再現性と置換検定を通した。総ルビ組版は<b>作家ではなく版元の方針</b>と実証して分離(同じ話の別訳で 0.987 vs 0.010)。</div>
+        <div class="desc">青空文庫 4,916 作・217 作家の<b>振り仮名</b>を三軸で計量。狙った「優しさ×信用」の二軸は<b>実測で二度潰れた</b>(信用は総ルビ傾向の言い換えで r=−0.994)。支配因子を名指しして残差にし直し、半分割再現性と置換検定を通した。総ルビ組版は<b>作家ではなく版元の方針</b>と実証して分離(別訳で 0.987 vs 0.010)。</div>
         <div class="url">furigana-keiryo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://fukuo-keiryo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計,R" href="https://fukuo-keiryo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎙️</span>
         <div class="name">fukuo-keiryo — 福翁計量</div>
         <div class="desc">福澤諭吉『福翁自伝』を<b>口述筆記である一点</b>で計量。敬体率は本の中で二度折れ(18.1→6.2→25.7%)、三区間の信頼区間は重ならない。同じ人が<b>書いた</b>30 篇では文語 86.8%、敬体は 5,017 文中わずか 1 文だった。</div>
         <div class="url">fukuo-keiryo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-26</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://onomato-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" href="https://onomato-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔔</span>
         <div class="name">onomato-atlas — 音象アトラス</div>
         <div class="desc">オノマトペの<b>音の形と使われ方を、別々の情報源から測る</b>。音側は表記から機械的に、意味側は青空文庫 2,200 作品の共起分布から。一致した範囲だけを地図にし、検定を通った 2 軸だけを採用。分割半で再現しなかった目玉機能は、測って捨てた。</div>
         <div class="url">onomato-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-25</span><span>最終更新 2026-08-26</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://ango-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" href="https://ango-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📗</span>
         <div class="name">ango-atlas — 安吾アトラス</div>
         <div class="desc">青空文庫の坂口安吾 513 作品・603 万字を、文体・主題・時系列・言及の四軸で俯瞰。目玉は<b>一節から探す</b>——15,430 の一節を事前ベクトル化してあり、クエリ時のモデル推論はゼロ(1 問 15.3ms)。新字新仮名/旧仮名の 50 組が正解対。</div>
         <div class="url">ango-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-26</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://neko-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" href="https://neko-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🐈</span>
         <div class="name">neko-atlas — 猫アトラス</div>
         <div class="desc">『吾輩は猫である』一作 376,432 字を、話者ではなく<b>応酬の構造</b>で描く。鉤括弧の境界だけを証拠に交替を取る。会話率は第一章 18.7% → 第十一章 78.0%。話者が明記された発話は 16.5% だけなので、話者ネットワークは出していない。</div>
         <div class="url">neko-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-25</span><span>最終更新 2026-08-26</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://jikenbo-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,自然言語処理" href="https://jikenbo-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔍</span>
         <div class="name">jikenbo-atlas — 事件簿アトラス</div>
         <div class="desc">ホームズ正典 60 事件を属性表(種別・動機・死者・座標)にし、青空文庫で読める 29 編をルビ付きリーダーで。現場 60 ヶ所の地図、再登場人物 10 名×25 事件の本文実測ネットワーク、同一原作の新旧訳 7 組の台詞比率比較。</div>
         <div class="url">jikenbo-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-26</span><span class="lic">MIT / 本文 CC BY 2.1 JP・PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://kiko-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,自然言語処理" href="https://kiko-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🗾</span>
         <div class="name">kiko-atlas — 紀行アトラス</div>
         <div class="desc">明治以降の紀行文 14 作(子規の木曽 1892 〜安吾の伊勢 1951)が踏んだ 220 の土地・2,252 回の言及を、一枚の地図と旅の年の年表に重ねる。点を押せば本文の抜粋、作品を選べば旅程が叙述順に結ばれる。海岸線は焼き込みで外部タイル不使用。</div>
         <div class="url">kiko-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://tsurezure-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理" href="https://tsurezure-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🖌️</span>
         <div class="name">tsurezure-atlas — 徒然草アトラス</div>
         <div class="desc">『徒然草』50 段を快‐不快×心の動きに散布し、兼好の複眼を「矛盾」ビュー(女・友・死生・酒など逆に引き合う 6 対の鉄アレイ)で描く。金言 12 の縦書き短冊、段番号順の軌跡は弧にならず毛玉に。枕草子 44・方丈記 40 を重ねる三部作ビューで随筆三部作が完成——書かない清少納言、書く長明、矛盾する兼好。</div>
         <div class="url">tsurezure-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://hojoki-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理" href="https://hojoki-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">⛺</span>
         <div class="name">hojoki-atlas — 方丈記アトラス</div>
         <div class="desc">『方丈記』全 40 文段を快‐不快×心の動きに散布し、読み順の軌跡と枕草子 44 章段の重ね描きで「書かなかった清少納言/書いた長明」を一枚に。五大災厄の証言年表、住まいの縮小(1 → 1/10 → 1/100、方丈 ≒ 9.18 ㎡)の鋏形チャート、一丈四方の間取り図。枕草子アトラスの姉妹。</div>
         <div class="url">hojoki-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://makura-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理" href="https://makura-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🪭</span>
         <div class="name">makura-atlas — 枕草子アトラス</div>
         <div class="desc">『枕草子』44 章段を快‐不快×心の動きの二軸に散布し、類聚 10 章段は 63 項目に解体、日記 12 章段は中関白家の史実年表に重ねる——没落後も点は快側に張り付いたまま動かない。季節×時刻の升目は 30 のうち 11 が埋まる。</div>
         <div class="url">makura-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://saijiki-lens.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理" href="https://saijiki-lens.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🌾</span>
         <div class="name">saijiki-lens — 歳時記レンズ</div>
         <div class="desc">二十四節気・七十二候の暦を円環で描き、その区分を詠んだ俳句を併記する。候名の漢語(玄鳥・鴻雁・乃東)は 6,633 句に一つも無いのに、候が名指す事物(露・菊・蝶)は 1,093 句。72 候のうち句が置けたのは 50 で、空欄 22 候は埋めずに出す。節気は国立天文台『暦要項』の告示値。</div>
         <div class="url">saijiki-lens.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-23</span><span>最終更新 2026-08-24</span><span class="lic">MIT / データ CC BY-SA</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://iro-koyomi.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" href="https://iro-koyomi.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎴</span>
         <div class="name">iro-koyomi — 色暦</div>
         <div class="desc">日本の伝統色 369 色を歳時記順に並べ、青空文庫の俳句 6,633 句と結ぶ。同じ色名でも出典で HEX が食い違い(完全一致は 96 件中 2 件)、句に色語が現れるのは 19 色だけ。空欄の 270 色を埋めずに出す。</div>
         <div class="url">iro-koyomi.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-22</span><span>最終更新 2026-08-26</span><span class="lic">MIT / データ CC BY-SA</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://honyaku-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" href="https://honyaku-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🌐</span>
         <div class="name">honyaku-atlas — 日本文学翻訳アトラス</div>
         <div class="desc">日本文学の翻訳書誌を著者×言語のカバレッジ行列で俯瞰。どの作家がどの言語に訳されているかが一目でわかる。</div>
         <div class="url">honyaku-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-16</span><span>最終更新 2026-08-21</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://honyaku-query.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理" href="https://honyaku-query.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔍</span>
         <div class="name">honyaku-query — 翻訳探索クエリビルダー</div>
         <div class="desc">かな読みからヘボン式ローマ字化・表記バリアント展開(Sōseki/Soseki/Souseki…)を行い、海外語訳探しの検索クエリを組み立てる。</div>
         <div class="url">honyaku-query.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-15</span><span>最終更新 2026-08-27</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://aozora-sakuin.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,Rust/WASM" href="https://aozora-sakuin.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔎</span>
         <div class="name">aozora-sakuin — 青空索引</div>
         <div class="desc">青空文庫 5,000 作品の全文索引。語がどの作品でどう使われているかを前後文脈つきの用例集(KWIC)で読み比べる。旧仮名の表記ゆれを吸収。本文も索引も丸ごとは配信せず、必要なバイトだけ読む。</div>
@@ -605,49 +616,49 @@
   <section data-section data-cat="cat6">
     <h2>🧭 プランナー・シミュレータ</h2>
     <div class="grid">
-      <a class="card" href="https://diamond-fuji-finder.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="物理" href="https://diamond-fuji-finder.vercel.app" target="_blank" rel="noopener">
         <span class="icon">💎</span>
         <div class="name">diamond-fuji-finder — ダイヤモンド富士ファインダー</div>
         <div class="desc">太陽が富士山頂に重なる「ダイヤモンド富士」がいつ・どこで見られるかを、定番13地点について天文計算で導出。</div>
         <div class="url">diamond-fuji-finder.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://yama-tenki-finder.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" href="https://yama-tenki-finder.vercel.app" target="_blank" rel="noopener">
         <span class="icon">⛰️</span>
         <div class="name">yama-tenki-finder</div>
         <div class="desc">「今週末、日帰り圏でいちばん天気が良い山域はどこか」を一目で比較できる山天気ウィンドウ・ファインダー。</div>
         <div class="url">yama-tenki-finder.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-06</span><span>最終更新 2026-08-21</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://pack-weight-sim.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" href="https://pack-weight-sim.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎒</span>
         <div class="name">pack-weight-sim</div>
         <div class="desc">登山・キャンプ装備リストの総重量・ベースウェイト・カテゴリ別内訳を計算するパッキング重量シミュレータ。</div>
         <div class="url">pack-weight-sim.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-06</span><span>最終更新 2026-08-21</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://bunka-hashigo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="探索" href="https://bunka-hashigo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🖼️</span>
         <div class="name">bunka-hashigo — 文化施設はしごプランナー</div>
         <div class="desc">美術館・博物館・古書店・ギャラリーに劇場公演を組み合わせた「文化はしご」1日プランを生成。休館日・最終入場も考慮。</div>
         <div class="url">bunka-hashigo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-13</span><span>最終更新 2026-08-21</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://hashigo-planner.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="探索" href="https://hashigo-planner.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🍶</span>
         <div class="name">hashigo-planner — 下町はしご酒プランナー</div>
         <div class="desc">エリア・開始時刻・軒数・予算から、営業時間と徒歩距離を考慮したはしご酒ルートを提案。</div>
         <div class="url">hashigo-planner.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-08</span><span>最終更新 2026-08-21</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://senbero-sim.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" href="https://senbero-sim.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🍺</span>
         <div class="name">senbero-sim — せんべろ会計シミュレータ</div>
         <div class="desc">はしご酒の注文をその場で記録し、店別小計・割り勘・せんべろ達成度・純アルコール量を表示。オフラインでも動作。</div>
         <div class="url">senbero-sim.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-08</span><span>最終更新 2026-08-21</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://grutto-sim.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="探索" href="https://grutto-sim.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎫</span>
         <div class="name">grutto-sim — ぐるっとパス元取りシミュレータ</div>
         <div class="desc">行きたい施設リストから「ぐるっとパスを買うべきか・あと何館で元が取れるか」を計算する非公式シミュレータ。</div>
@@ -658,28 +669,35 @@
   </section>
 
   <section data-section data-cat="cat7">
-    <h2>🧮 量子・計算科学</h2>
+    <h2>🧮 量子・計算・天体</h2>
     <div class="grid">
-      <a class="card" href="https://mugen-tape.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="量子・計算理論" href="https://mugen-tape.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📼</span>
         <div class="name">mugen-tape — 無限テープ</div>
         <div class="desc">チューリングマシンが 1 ステップずつ動く様子を観察できる可視化工房。内蔵 9 台(ビジービーバー BB(1)〜BB(5) 含む)+状態遷移図+自作マシン工房(静的検査・URL 共有)。BB(5) の 47,176,870 歩は早送りで完走。エンジンは証明済み確定値との厳密一致で検証。</div>
         <div class="url">mugen-tape.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://shinpuku-gekijo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="量子・計算理論" href="https://shinpuku-gekijo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔦</span>
         <div class="name">shinpuku-gekijo — 振幅劇場</div>
         <div class="desc">グローバー探索(量子探索アルゴリズム)の振幅増幅を、オラクル(符号反転)と拡散(平均まわりの反転)の半歩ずつ観察できる劇場。棒クリックで目印を付け替え、最適 t* と「回りすぎ」を成功確率曲線で体感。エンジンは閉形式 sin²((2t+1)θ) との厳密一致・二実装照合で検証。</div>
         <div class="url">shinpuku-gekijo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://kasane-kairo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="量子・計算理論" href="https://kasane-kairo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎛️</span>
         <div class="name">kasane-kairo — 重ね回路</div>
         <div class="desc">量子回路を自分で組んで動かせるプレイグラウンド。16 種のゲートを升目に並べ、複素振幅(色=位相)・測定確率・ブロッホ球を 1 段ずつ観察。内蔵 8 本(ベル/GHZ/W/テレポート/ドイチュ–ジョザ/干渉/QFT/位相キックバック)。測定は乱数を使わず結果を選ぶ射影。</div>
         <div class="url">kasane-kairo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="物理" data-repo="solar-system" href="https://solar-system-dusky-theta.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🪐</span>
+        <div class="name">solar-system — 太陽系シミュレーター</div>
+        <div class="desc">Three.js で太陽と8惑星を描画し、時間スライダーで公転を進める可視化モデル。</div>
+        <div class="url">solar-system-dusky-theta.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-06-27</span><span>最終更新 2026-08-26</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
     </div>
   </section>
@@ -687,25 +705,32 @@
   <section data-section data-cat="cat8">
     <h2>🏮 ブランドサイト</h2>
     <div class="grid">
-      <a class="card" href="https://senoto-mori.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" href="https://senoto-mori.vercel.app" target="_blank" rel="noopener">
         <span class="icon">⛺</span>
         <div class="name">senoto-mori — 瀬音の杜</div>
         <div class="desc">架空のキャンプ場サイト(ポートフォリオ)。八ヶ岳南麓・渓流沿い 40 区画。場内図は画像でなく DOM で、絞り込みと日付が図の色に直結する。予約は zod 検証つきで確認画面まで進むが、実際には成立しない。</div>
         <div class="url">senoto-mori.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-28</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://hoshihata.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,統計" href="https://hoshihata.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🥬</span>
         <div class="name">hoshihata — 道の駅 星畑</div>
         <div class="desc">長野県野辺山高原の架空の道の駅。写真を一枚も使わず、絵はすべて公開データから計算している。稜線は国土地理院の標高タイルから射線を飛ばして描き、見える 5 座と隠れる 8 座を分ける。高原野菜が棚に並ぶ日は気象庁の日別平年値と栽培生理から出した収穫日で、品書きはその棚から組み立てる。</div>
         <div class="url">hoshihata.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-28</span><span>最終更新 2026-08-28</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" href="https://sugi-nami.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" href="https://sugi-nami.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🍡</span>
         <div class="name">sugi-nami — そば菓子 杉なみ</div>
         <div class="desc">長野県戸隠の古民家で、そば粉の菓子だけを出す架空の店のサイト。日英二言語・全 24 URL。写真を一枚も使わず図版はすべて SVG。四つの粉・営業日・お品書きを一つのデータから組み立てている。</div>
         <div class="url">sugi-nami.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="機械学習,統計,探索" href="https://chikuma-seiki.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏭</span>
+        <div class="name">chikuma-seiki — 千曲精機</div>
+        <div class="desc">長野県佐久市の架空 EMS 企業のコーポレートサイト。AI による外観検査(ROC を動かせる)・段取り替えつき生産計画・安全在庫の三つのデモが実際に動く。写真素材ゼロ・全図版 SVG。三デモとも実装とは別経路のオラクルで検算。</div>
+        <div class="url">chikuma-seiki.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
     </div>
@@ -713,6 +738,7 @@
 
   <footer>
     <p>各カードをクリックするとアプリが新しいタブで開きます。すべて Vercel で静的配信。</p>
+    <p>見出しと 1 行目のチップは<b>主題</b>、カード下部の丸いタグと 2 行目のチップは<b>実装技術</b>。二つは掛け合わせて絞り込める(例: 文学・翻訳 × 統計)。</p>
     <p>初回デプロイ日・最終更新日は Vercel のプロジェクト作成日・最新デプロイ日時(JST)、ライセンス有無は GitHub リポジトリの検出結果に基づく。</p>
     <p><a href="https://github.com/twill3c/app-menu/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a> © 2026 坂田哲朗 ・ <a href="https://github.com/twill3c/app-menu" target="_blank" rel="noopener">GitHub</a> ・ <a href="https://claude.ai/code/artifact/5828914a-e133-4dab-ba99-988b79b82bb2" target="_blank" rel="noopener">app-menu の歩き方</a> ・ <a href="https://claude.ai/code/artifact/03996522-5e4d-4194-a755-eef0540cd9ff" target="_blank" rel="noopener">app-menu 設計図</a></p>
   </footer>
@@ -725,7 +751,22 @@
   const input = document.getElementById('filter');
   const sections = Array.from(document.querySelectorAll('[data-section]'));
   const chips = Array.from(document.querySelectorAll('.chip[data-cat]'));
+  const tagChips = Array.from(document.querySelectorAll('.chip[data-tag]'));
   let curCat = 'ALL';
+  let curTag = 'ALL';
+
+  // カテゴリは主題・タグは技術。カードの data-tags が唯一の出どころで、
+  // 見えているタグの丸は毎回そこから描き直す(二重管理をしない)。
+  const tagsOf = card => (card.dataset.tags || '').split(',').filter(Boolean);
+  for (const card of cards) {
+    const meta = card.querySelector('.meta');
+    for (const t of tagsOf(card)) {
+      const span = document.createElement('span');
+      span.className = 'tag';
+      span.textContent = t;
+      meta.appendChild(span);
+    }
+  }
 
   // チップに各カテゴリのアプリ数を表示
   for (const chip of chips) {
@@ -733,6 +774,14 @@
     const n = cat === 'ALL' ? cards.length
       : sections.filter(s => s.dataset.cat === cat)
                 .reduce((sum, s) => sum + s.querySelectorAll('.card').length, 0);
+    chip.querySelector('.n').textContent = n;
+  }
+
+  // 技術チップにも該当数を表示
+  for (const chip of tagChips) {
+    const tag = chip.dataset.tag;
+    const n = tag === 'ALL' ? cards.length
+      : cards.filter(c => tagsOf(c).includes(tag)).length;
     chip.querySelector('.n').textContent = n;
   }
 
@@ -744,7 +793,8 @@
       let visible = 0;
       for (const card of section.querySelectorAll('.card')) {
         const hit = q === '' || card.textContent.toLowerCase().includes(q);
-        const ok = inCat && hit;
+        const inTag = curTag === 'ALL' || tagsOf(card).includes(curTag);
+        const ok = inCat && inTag && hit;
         card.classList.toggle('hidden', !ok);
         if (ok) visible++;
       }
@@ -760,6 +810,14 @@
       chips.forEach(c => c.classList.remove('on'));
       chip.classList.add('on');
       curCat = chip.dataset.cat;
+      render();
+    });
+  }
+  for (const chip of tagChips) {
+    chip.addEventListener('click', () => {
+      tagChips.forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      curTag = chip.dataset.tag;
       render();
     });
   }
