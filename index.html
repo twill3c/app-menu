@@ -214,12 +214,15 @@
   <div class="cats" id="cats" role="group" aria-label="主題で絞り込み">
     <span class="chip on" data-cat="ALL">すべて<span class="n"></span></span>
     <span class="chip" data-cat="cat0">📰 情報収集<span class="n"></span></span>
-    <span class="chip" data-cat="cat2">🎮 ゲーム<span class="n"></span></span>
+    <span class="chip" data-cat="cat2">🧩 パズル・思考<span class="n"></span></span>
+    <span class="chip" data-cat="cat13">🕹️ アクション・リアルタイム<span class="n"></span></span>
     <span class="chip" data-cat="cat9">⌨️ タイピング<span class="n"></span></span>
     <span class="chip" data-cat="cat10">🤖 AI・言語モデル<span class="n"></span></span>
-    <span class="chip" data-cat="cat3">🧠 機械学習<span class="n"></span></span>
+    <span class="chip" data-cat="cat3">🧠 学習アルゴリズム<span class="n"></span></span>
+    <span class="chip" data-cat="cat12">📊 実データ分析<span class="n"></span></span>
     <span class="chip" data-cat="cat4">🗺️ 地図<span class="n"></span></span>
-    <span class="chip" data-cat="cat5">📚 文学・翻訳<span class="n"></span></span>
+    <span class="chip" data-cat="cat5">📚 近代文学・翻訳<span class="n"></span></span>
+    <span class="chip" data-cat="cat11">📜 古典・歳時<span class="n"></span></span>
     <span class="chip" data-cat="cat6">🧭 プランナー・シミュレータ<span class="n"></span></span>
     <span class="chip" data-cat="cat7">🧮 量子・計算・天体<span class="n"></span></span>
     <span class="chip" data-cat="cat8">🏮 ブランドサイト<span class="n"></span></span>
@@ -291,7 +294,7 @@
   </section>
 
   <section data-section data-cat="cat2">
-    <h2>🎮 ゲーム</h2>
+    <h2>🧩 パズル・思考</h2>
     <div class="grid">
       <a class="card" data-tags="物理,音" href="https://onkan-dojo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎧</span>
@@ -321,13 +324,6 @@
         <div class="url">nanpure-forge.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="物理" href="https://kawara-kuzushi.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🏮</span>
-        <div class="name">kawara-kuzushi — 瓦崩し</div>
-        <div class="desc">瓦屋根を玉で崩す和風ブロック崩し。パドルのどこで受けるかで反射角を操る。固定 tick の決定論物理・ポインタ/タッチ専用。</div>
-        <div class="url">kawara-kuzushi.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
       <a class="card" data-tags="探索" href="https://jirai-sweep.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🚩</span>
         <div class="name">jirai-sweep — ノーゲス・マインスイーパ</div>
@@ -342,19 +338,32 @@
         <div class="url">meikyu-rogue.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span></div>
       </a>
-      <a class="card" data-tags="音" href="https://yagura-defense.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🏹</span>
-        <div class="name">yagura-defense — やぐらディフェンス</div>
-        <div class="desc">矢倉を建てて、街道を進軍する敵勢から本丸を守る和風タワーディフェンス。マウス/タッチ操作だけで完結。</div>
-        <div class="url">yagura-defense.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
       <a class="card" data-tags="探索" href="https://soko-forge.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📦</span>
         <div class="name">soko-forge</div>
         <div class="desc">倉庫番(Sokoban)を「遊ぶ・解く・作る」ブラウザアプリ。ソルバーとレベルエディタを搭載。</div>
         <div class="url">soko-forge.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section data-section data-cat="cat13">
+    <h2>🕹️ アクション・リアルタイム</h2>
+    <div class="grid">
+      <a class="card" data-tags="物理" href="https://kawara-kuzushi.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏮</span>
+        <div class="name">kawara-kuzushi — 瓦崩し</div>
+        <div class="desc">瓦屋根を玉で崩す和風ブロック崩し。パドルのどこで受けるかで反射角を操る。固定 tick の決定論物理・ポインタ/タッチ専用。</div>
+        <div class="url">kawara-kuzushi.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="音" href="https://yagura-defense.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏹</span>
+        <div class="name">yagura-defense — やぐらディフェンス</div>
+        <div class="desc">矢倉を建てて、街道を進軍する敵勢から本丸を守る和風タワーディフェンス。マウス/タッチ操作だけで完結。</div>
+        <div class="url">yagura-defense.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-13</span><span>最終更新 2026-08-22</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
       <a class="card" data-tags="物理" href="https://kaguya-lander.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🌙</span>
@@ -421,55 +430,13 @@
   </section>
 
   <section data-section data-cat="cat3">
-    <h2>🧠 機械学習</h2>
+    <h2>🧠 学習アルゴリズム</h2>
     <div class="grid">
-      <a class="card" data-tags="機械学習" href="https://manazashi-lab.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">👁</span>
-        <div class="name">manazashi-lab — まなざしラボ</div>
-        <div class="desc">画像認識モデルを使うのではなく被験体として解剖する。見立て・まなざし(遮蔽感度マップ)・崩し(頑健性曲線)・前処理の罪の四科。推論は全て閲覧者の端末で行われ、画像はどこへも送られない。</div>
-        <div class="url">manazashi-lab.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-29</span><span>最終更新 2026-08-29</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="自然言語処理,統計" href="https://jocho-iro.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🎨</span>
-        <div class="name">jocho-iro — 情緒の色</div>
-        <div class="desc">青空文庫 300 作品を八情緒(喜怒哀怖好驚厭安)の色で染めた色見本帖。情緒リボンの壁・レーダー・情緒の川。kokoro-graph の姉妹アプリで、300 作はデータ駆動で再選出。</div>
-        <div class="url">jocho-iro.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="自然言語処理,統計" data-repo="kokoro-graph" href="https://kokorograph.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">📈</span>
-        <div class="name">kokoro-graph — こころグラフ</div>
-        <div class="desc">青空文庫 300 作品の行単位感情分析。感情バーコードの壁と起伏マップから作品を選び、感情曲線と本文を並べて読む。自前感情辞書 419 語・全指標に数理オラクル。</div>
-        <div class="url">kokorograph.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
       <a class="card" data-tags="機械学習,物理" href="https://shinka-lander.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🧬</span>
         <div class="name">shinka-lander — 進化する着陸船</div>
         <div class="desc">着陸船 40 機の推力遺伝子を遺伝的アルゴリズムで進化させる。墜落の群れが世代を重ねて軟着陸を覚えていく様子を全機の飛行アニメーションで観戦できる。</div>
         <div class="url">shinka-lander.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="機械学習,統計" href="https://satei-kobo.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🏠</span>
-        <div class="name">satei-kobo — 査定工房</div>
-        <div class="desc">Kaggle の House Prices（エイムズ住宅 2,930 件）で重回帰を自分で組む。部屋数の係数が単独では +0.49 なのに面積と一緒に入れると負になる——符号が反転する瞬間をチェックボックスで往復できる。</div>
-        <div class="url">satei-kobo.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="機械学習,統計" href="https://wakachi-ki.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🌲</span>
-        <div class="name">wakachi-ki — 分ち木</div>
-        <div class="desc">タイタニック号の乗客 1,309 名で決定木を育て、どこで何人がどちらへ分かれたかを根から葉までたどる。深く育てるほど学習は 93% まで上がるのに検証は 77% まで落ちる——過学習をその場で反証できる。救命艇番号という「答えを覗く列」もあえて押せる。</div>
-        <div class="url">wakachi-ki.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="機械学習" href="https://tegaki-yomi.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">✍️</span>
-        <div class="name">tegaki-yomi — 手書き数字認識</div>
-        <div class="desc">描いた数字を MNIST 学習済みニューラルネット(精度 98%)がその場で読む。前処理・確率・隠れ層の重みテンプレートまで中身を全部見せる。</div>
-        <div class="url">tegaki-yomi.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
       <a class="card" data-tags="機械学習,統計" href="https://toba-bandit.vercel.app" target="_blank" rel="noopener">
@@ -506,6 +473,54 @@
         <div class="desc">Q学習エージェントが迷路・崖歩き・風の格子を学ぶ過程を、価値ヒートマップ・方策矢印・軌跡でリアルタイム可視化。価値反復の最適解との一致率で答え合わせできる。</div>
         <div class="url">kyoka-grid.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-15</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section data-section data-cat="cat12">
+    <h2>📊 実データ分析</h2>
+    <div class="grid">
+      <a class="card" data-tags="機械学習" href="https://manazashi-lab.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">👁</span>
+        <div class="name">manazashi-lab — まなざしラボ</div>
+        <div class="desc">画像認識モデルを使うのではなく被験体として解剖する。見立て・まなざし(遮蔽感度マップ)・崩し(頑健性曲線)・前処理の罪の四科。推論は全て閲覧者の端末で行われ、画像はどこへも送られない。</div>
+        <div class="url">manazashi-lab.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-29</span><span>最終更新 2026-08-29</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="自然言語処理,統計" href="https://jocho-iro.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🎨</span>
+        <div class="name">jocho-iro — 情緒の色</div>
+        <div class="desc">青空文庫 300 作品を八情緒(喜怒哀怖好驚厭安)の色で染めた色見本帖。情緒リボンの壁・レーダー・情緒の川。kokoro-graph の姉妹アプリで、300 作はデータ駆動で再選出。</div>
+        <div class="url">jocho-iro.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="自然言語処理,統計" data-repo="kokoro-graph" href="https://kokorograph.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">📈</span>
+        <div class="name">kokoro-graph — こころグラフ</div>
+        <div class="desc">青空文庫 300 作品の行単位感情分析。感情バーコードの壁と起伏マップから作品を選び、感情曲線と本文を並べて読む。自前感情辞書 419 語・全指標に数理オラクル。</div>
+        <div class="url">kokorograph.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="機械学習,統計" href="https://satei-kobo.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏠</span>
+        <div class="name">satei-kobo — 査定工房</div>
+        <div class="desc">Kaggle の House Prices（エイムズ住宅 2,930 件）で重回帰を自分で組む。部屋数の係数が単独では +0.49 なのに面積と一緒に入れると負になる——符号が反転する瞬間をチェックボックスで往復できる。</div>
+        <div class="url">satei-kobo.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="機械学習,統計" href="https://wakachi-ki.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🌲</span>
+        <div class="name">wakachi-ki — 分ち木</div>
+        <div class="desc">タイタニック号の乗客 1,309 名で決定木を育て、どこで何人がどちらへ分かれたかを根から葉までたどる。深く育てるほど学習は 93% まで上がるのに検証は 77% まで落ちる——過学習をその場で反証できる。救命艇番号という「答えを覗く列」もあえて押せる。</div>
+        <div class="url">wakachi-ki.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="機械学習" href="https://tegaki-yomi.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">✍️</span>
+        <div class="name">tegaki-yomi — 手書き数字認識</div>
+        <div class="desc">描いた数字を MNIST 学習済みニューラルネット(精度 98%)がその場で読む。前処理・確率・隠れ層の重みテンプレートまで中身を全部見せる。</div>
+        <div class="url">tegaki-yomi.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
     </div>
   </section>
@@ -552,7 +567,7 @@
   </section>
 
   <section data-section data-cat="cat5">
-    <h2>📚 文学・翻訳</h2>
+    <h2>📚 近代文学・翻訳</h2>
     <div class="grid">
       <a class="card" data-tags="自然言語処理,統計" href="https://furigana-keiryo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📖</span>
@@ -603,41 +618,6 @@
         <div class="url">kiko-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理" href="https://tsurezure-atlas.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🖌️</span>
-        <div class="name">tsurezure-atlas — 徒然草アトラス</div>
-        <div class="desc">『徒然草』50 段を快‐不快×心の動きに散布し、兼好の複眼を「矛盾」ビュー(女・友・死生・酒など逆に引き合う 6 対の鉄アレイ)で描く。金言 12 の縦書き短冊、段番号順の軌跡は弧にならず毛玉に。枕草子 44・方丈記 40 を重ねる三部作ビューで随筆三部作が完成——書かない清少納言、書く長明、矛盾する兼好。</div>
-        <div class="url">tsurezure-atlas.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="自然言語処理" href="https://hojoki-atlas.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">⛺</span>
-        <div class="name">hojoki-atlas — 方丈記アトラス</div>
-        <div class="desc">『方丈記』全 40 文段を快‐不快×心の動きに散布し、読み順の軌跡と枕草子 44 章段の重ね描きで「書かなかった清少納言/書いた長明」を一枚に。五大災厄の証言年表、住まいの縮小(1 → 1/10 → 1/100、方丈 ≒ 9.18 ㎡)の鋏形チャート、一丈四方の間取り図。枕草子アトラスの姉妹。</div>
-        <div class="url">hojoki-atlas.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="自然言語処理" href="https://makura-atlas.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🪭</span>
-        <div class="name">makura-atlas — 枕草子アトラス</div>
-        <div class="desc">『枕草子』44 章段を快‐不快×心の動きの二軸に散布し、類聚 10 章段は 63 項目に解体、日記 12 章段は中関白家の史実年表に重ねる——没落後も点は快側に張り付いたまま動かない。季節×時刻の升目は 30 のうち 11 が埋まる。</div>
-        <div class="url">makura-atlas.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="自然言語処理" href="https://saijiki-lens.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🌾</span>
-        <div class="name">saijiki-lens — 歳時記レンズ</div>
-        <div class="desc">二十四節気・七十二候の暦を円環で描き、その区分を詠んだ俳句を併記する。候名の漢語(玄鳥・鴻雁・乃東)は 6,633 句に一つも無いのに、候が名指す事物(露・菊・蝶)は 1,093 句。72 候のうち句が置けたのは 50 で、空欄 22 候は埋めずに出す。節気は国立天文台『暦要項』の告示値。</div>
-        <div class="url">saijiki-lens.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-23</span><span>最終更新 2026-08-24</span><span class="lic">MIT / データ CC BY-SA</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
-      <a class="card" data-tags="自然言語処理,統計" href="https://iro-koyomi.vercel.app" target="_blank" rel="noopener">
-        <span class="icon">🎴</span>
-        <div class="name">iro-koyomi — 色暦</div>
-        <div class="desc">日本の伝統色 369 色を歳時記順に並べ、青空文庫の俳句 6,633 句と結ぶ。同じ色名でも出典で HEX が食い違い(完全一致は 96 件中 2 件)、句に色語が現れるのは 19 色だけ。空欄の 270 色を埋めずに出す。</div>
-        <div class="url">iro-koyomi.vercel.app</div>
-        <div class="meta"><span>初回デプロイ 2026-08-22</span><span>最終更新 2026-08-26</span><span class="lic">MIT / データ CC BY-SA</span><span class="mob">📱 スマホ対応</span></div>
-      </a>
       <a class="card" data-tags="" href="https://honyaku-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🌐</span>
         <div class="name">honyaku-atlas — 日本文学翻訳アトラス</div>
@@ -658,6 +638,47 @@
         <div class="desc">青空文庫 5,000 作品の全文索引。語がどの作品でどう使われているかを前後文脈つきの用例集(KWIC)で読み比べる。旧仮名の表記ゆれを吸収。本文も索引も丸ごとは配信せず、必要なバイトだけ読む。</div>
         <div class="url">aozora-sakuin.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-28</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section data-section data-cat="cat11">
+    <h2>📜 古典・歳時</h2>
+    <div class="grid">
+      <a class="card" data-tags="自然言語処理" href="https://makura-atlas.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🪭</span>
+        <div class="name">makura-atlas — 枕草子アトラス</div>
+        <div class="desc">『枕草子』44 章段を快‐不快×心の動きの二軸に散布し、類聚 10 章段は 63 項目に解体、日記 12 章段は中関白家の史実年表に重ねる——没落後も点は快側に張り付いたまま動かない。季節×時刻の升目は 30 のうち 11 が埋まる。</div>
+        <div class="url">makura-atlas.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="自然言語処理" href="https://hojoki-atlas.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">⛺</span>
+        <div class="name">hojoki-atlas — 方丈記アトラス</div>
+        <div class="desc">『方丈記』全 40 文段を快‐不快×心の動きに散布し、読み順の軌跡と枕草子 44 章段の重ね描きで「書かなかった清少納言/書いた長明」を一枚に。五大災厄の証言年表、住まいの縮小(1 → 1/10 → 1/100、方丈 ≒ 9.18 ㎡)の鋏形チャート、一丈四方の間取り図。枕草子アトラスの姉妹。</div>
+        <div class="url">hojoki-atlas.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="自然言語処理" href="https://tsurezure-atlas.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🖌️</span>
+        <div class="name">tsurezure-atlas — 徒然草アトラス</div>
+        <div class="desc">『徒然草』50 段を快‐不快×心の動きに散布し、兼好の複眼を「矛盾」ビュー(女・友・死生・酒など逆に引き合う 6 対の鉄アレイ)で描く。金言 12 の縦書き短冊、段番号順の軌跡は弧にならず毛玉に。枕草子 44・方丈記 40 を重ねる三部作ビューで随筆三部作が完成——書かない清少納言、書く長明、矛盾する兼好。</div>
+        <div class="url">tsurezure-atlas.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="自然言語処理" href="https://saijiki-lens.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🌾</span>
+        <div class="name">saijiki-lens — 歳時記レンズ</div>
+        <div class="desc">二十四節気・七十二候の暦を円環で描き、その区分を詠んだ俳句を併記する。候名の漢語(玄鳥・鴻雁・乃東)は 6,633 句に一つも無いのに、候が名指す事物(露・菊・蝶)は 1,093 句。72 候のうち句が置けたのは 50 で、空欄 22 候は埋めずに出す。節気は国立天文台『暦要項』の告示値。</div>
+        <div class="url">saijiki-lens.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-23</span><span>最終更新 2026-08-24</span><span class="lic">MIT / データ CC BY-SA</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="自然言語処理,統計" href="https://iro-koyomi.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🎴</span>
+        <div class="name">iro-koyomi — 色暦</div>
+        <div class="desc">日本の伝統色 369 色を歳時記順に並べ、青空文庫の俳句 6,633 句と結ぶ。同じ色名でも出典で HEX が食い違い(完全一致は 96 件中 2 件)、句に色語が現れるのは 19 色だけ。空欄の 270 色を埋めずに出す。</div>
+        <div class="url">iro-koyomi.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-08-22</span><span>最終更新 2026-08-26</span><span class="lic">MIT / データ CC BY-SA</span><span class="mob">📱 スマホ対応</span></div>
       </a>
     </div>
   </section>
