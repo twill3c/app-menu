@@ -37,3 +37,7 @@ jobs:
       - name: 技術タグの整合
         if: always()
         run: python tools/check_tags.py
+      # 語彙外の出典・data-src の欠落・誰も使っていないチップ
+      - name: 出典タグの整合
+        if: always()
+        run: python tools/check_src.py
