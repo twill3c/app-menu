@@ -1,0 +1,39 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'tools/**'
+      - '.github/workflows/check.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'tools/**'
+      - '.github/workflows/check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # 説明文 160 字以内。超過が 1 件でもあれば exit 1
+      - name: 説明文の長さ
+        run: python tools/check_desc.py
+      # 語彙外のタグ・data-tags の欠落・誰も使っていないチップ
+      # 前段が落ちても両方の結果を一度に見たいので always()
+      - name: 技術タグの整合
+        if: always()
+        run: python tools/check_tags.py
