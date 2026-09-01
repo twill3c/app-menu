@@ -41,3 +41,8 @@ jobs:
       - name: 出典タグの整合
         if: always()
         run: python tools/check_src.py
+      # カテゴリ軸の構造。cat の重複・チップと棚の食い違い・同名カテゴリ・空の棚
+      # 2026-09-01 に cat15 が 🎨 と 🖼️ で二重定義されたまま通った穴を塞ぐもの
+      - name: カテゴリ軸の構造
+        if: always()
+        run: python tools/check_cats.py
