@@ -46,3 +46,9 @@ jobs:
       - name: カテゴリ軸の構造
         if: always()
         run: python tools/check_cats.py
+      # 実装ライブラリ(data-lib)の役割と語彙。--measure は付けない ——
+      # 兄弟リポジトリの実測との突き合わせは、別リポジトリ(9 件は private)を
+      # 読む必要があり CI からは見えない。手元で走らせる検査。
+      - name: 実装ライブラリの整合
+        if: always()
+        run: python tools/check_lib.py
