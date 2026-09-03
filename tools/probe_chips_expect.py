@@ -103,7 +103,13 @@ def main(out: Path) -> int:
         sentinel=dict(v=SENTINEL, n=len(sel(src=SENTINEL)), label="自作・合成",
                       liveGroups=[[g, len(sel(group=g, src=SENTINEL))] for g in group_order
                                   if sel(group=g, src=SENTINEL)]),
-        firstGroup=dict(id=group_order[0], n=len(sel(group=group_order[0]))),
+        # URL の検品用。その分野の中で生きている技術を 1 つ選ぶ —— 0 件のチップは
+        # 押せないので、分野と組み合わせられる語でなければ検品にならない。
+        firstGroup=dict(
+            id=group_order[0], n=len(sel(group=group_order[0])),
+            tag=next(t for t in tag_order if sel(group=group_order[0], tag=t)),
+            tagN=next(len(sel(group=group_order[0], tag=t))
+                      for t in tag_order if sel(group=group_order[0], tag=t))),
         autoUpdate=len(sel(tag="自動更新")),
         query=dict(q=QUERY, n=len(sel(q=QUERY)),
                    liveCats=[[c, len(sel(cat=c, q=QUERY))] for c in cat_order

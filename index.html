@@ -1164,6 +1164,7 @@
   const shownNote = document.getElementById('shown-note');
   const shownCount = document.getElementById('shown-count');
   const catsRow = document.getElementById('cats');
+  const more = document.getElementById('more');
   const moreNote = document.getElementById('more-note');
   const sections = Array.from(document.querySelectorAll('[data-section]'));
   // 棚チップも data-group を持つので、分野チップは #groups の中だけを採る。
@@ -1310,7 +1311,42 @@
     shownCount.textContent = shown;
   }
 
-  input.addEventListener('input', render);
+  // 絞り込みの状態を URL の # に載せる。フリート全アプリのフッタからここへ
+  // 導線が出ているので、「この棚だけ」を直接指せることに値打ちがある。
+  // 戻るキーでも 1 手ずつ戻れる(チップは pushState、自由入力は replaceState)。
+  function writeHash(push) {
+    const p = new URLSearchParams();
+    if (curGroup !== 'ALL') p.set('g', curGroup);
+    if (curCat !== 'ALL') p.set('cat', curCat);
+    if (curTag !== 'ALL') p.set('tag', curTag);
+    if (curSrc !== 'ALL') p.set('src', curSrc);
+    const q = input.value.trim();
+    if (q) p.set('q', q);
+    const s = p.toString();
+    const url = location.pathname + location.search + (s ? '#' + s : '');
+    if (push) history.pushState(null, '', url);
+    else history.replaceState(null, '', url);
+  }
+
+  function readHash() {
+    const p = new URLSearchParams(location.hash.slice(1));
+    // 語彙に無い値は黙って捨てる(古いリンクや打ち間違いで空振りにしない)。
+    const pick = (key, list, axis) => {
+      const v = p.get(key);
+      return v && list.some(c => c.dataset[axis] === v) ? v : 'ALL';
+    };
+    curGroup = pick('g', groupChips, 'group');
+    curCat = pick('cat', chips, 'cat');
+    curTag = pick('tag', tagChips, 'tag');
+    curSrc = pick('src', srcChips, 'src');
+    input.value = p.get('q') || '';
+    // 棚だけを渡されたら、その棚の分野を開く(#cat=cat12 が単体で通るように)。
+    if (curCat !== 'ALL') curGroup = groupOf[curCat];
+    // 畳んだ中が効いた状態で開くと理由が見えないので、そのときだけ開けておく。
+    if (curTag !== 'ALL' || curSrc !== 'ALL') more.open = true;
+  }
+
+  input.addEventListener('input', () => { render(); writeHash(false); });
   // 選択中のチップをもう一度押すと解除(= その軸を ALL に戻す)。
   const bind = (list, axis, get, set) => {
     for (const chip of list) {
@@ -1318,6 +1354,7 @@
         const v = chip.dataset[axis];
         set(v === get() ? 'ALL' : v);
         render();
+        writeHash(true);
       });
     }
   };
@@ -1326,6 +1363,13 @@
   bind(chips, 'cat', () => curCat, v => { curCat = v; });
   bind(tagChips, 'tag', () => curTag, v => { curTag = v; });
   bind(srcChips, 'src', () => curSrc, v => { curSrc = v; });
+
+  // 戻る / 進む と、# を直接書き換えられた場合。どちらも読み直して描き直すだけ。
+  const reread = () => { readHash(); render(); };
+  addEventListener('popstate', reread);
+  addEventListener('hashchange', reread);
+
+  readHash();
   render();
 </script>
 </body>

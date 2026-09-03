@@ -178,11 +178,50 @@ check(`自由入力「${expect.query.q}」: 分野チップの件数も数え直
       (await readRow(GROUPS)).filter(c => !c.dead && c.v !== 'ALL').every(c => c.n > 0), true);
 await page.fill('#filter', '');
 
+// --- 絞り込みが URL に載る ---
+{
+  const hash = () => page.evaluate(() => decodeURIComponent(location.hash));
+  const g = expect.firstGroup.id;
+  const probe = expect.probes[0];
+
+  const tag = expect.firstGroup.tag;
+  await page.click(`${GROUPS.split(',')[0]}[data-group="${g}"]`);
+  check('分野を選ぶと # に載る', await hash(), `#g=${g}`);
+  await page.click(`.chip[data-tag="${tag}"]`);
+  check('技術も # に載る', await hash(), `#g=${g}&tag=${tag}`);
+  check('この組み合わせの表示枚数', await shown(), expect.firstGroup.tagN);
+  await page.goBack();
+  check('戻ると 1 手前に戻る', await hash(), `#g=${g}`);
+  check('戻ったあとの表示枚数', await shown(), expect.firstGroup.n);
+  await page.goBack();
+  check('もう一度戻ると絞り込みなし', { hash: await hash(), cards: await shown() },
+        { hash: '', cards: expect.total });
+
+  // 棚だけを渡したリンクでも、その分野が開く
+  await page.goto(INDEX + `#cat=${probe.cat}`);
+  check(`#cat=${probe.cat} を直接開く: 表示枚数`, await shown(), probe.n);
+  check(`#cat=${probe.cat} を直接開く: 分野の行が開く`, await hidden('#cats'), false);
+  check(`#cat=${probe.cat} を直接開く: 分野も押された状態`,
+        (await readRow(`${GROUPS.split(',')[0]}[data-group="${probe.group}"]`))[0].on, true);
+
+  // 畳んである軸がリンクで効いているときは開いて見せる
+  await page.goto(INDEX + '#tag=' + encodeURIComponent(expect.probeTag));
+  check('#tag= を直接開く: 表示枚数', await shown(), expect.quantumTotal);
+  check('#tag= を直接開く: 折り畳みが開く',
+        await page.$eval('#more', e => e.open), true);
+
+  // 語彙に無い値は黙って捨てる
+  await page.goto(INDEX + '#cat=cat999&tag=ぬるぽ');
+  check('語彙に無い値は捨てて全件に戻る', await shown(), expect.total);
+  await page.goto(INDEX);
+}
+
 // --- キーボードだけで絞り込める ---
 await page.focus(`${GROUPS.split(',')[0]}[data-group="${expect.firstGroup.id}"]`);
 await page.keyboard.press('Enter');
 check('キーボード(Enter)で分野が切り替わる', await shown(), expect.firstGroup.n);
 await page.keyboard.press('Enter');   // もう一度で解除
+await openMore();                     // 畳んだ中のチップは焦点を持てない
 await page.focus('.chip[data-tag="自動更新"]');
 await page.keyboard.press('Space');
 check('キーボード(Space)で技術が切り替わる', await shown(), expect.autoUpdate);
