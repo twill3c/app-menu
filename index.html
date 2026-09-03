@@ -224,6 +224,15 @@
     border: 1px solid transparent;
     color: var(--accent);
   }
+  /* 実装の丸(3 種類目)。技術タグは横断の軸、こちらは実装の名前。
+     枠線だけにして、地色の技術・塗りの出典と見分ける。 */
+  .card .meta .lib {
+    border-radius: 999px;
+    padding: 0 8px;
+    background: transparent;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
@@ -324,7 +333,7 @@
   <section data-section data-cat="cat0">
     <h2>📰 情報収集</h2>
     <div class="grid">
-      <a class="card" data-tags="自然言語処理,統計,R,自動更新" data-src="報道・公式発表" href="https://midashi-sanmenkyo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計,R,自動更新" data-src="報道・公式発表" data-lib="生成:R(dplyr/ggplot2/stringi/xml2)" href="https://midashi-sanmenkyo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🪞</span>
         <div class="name">midashi-sanmenkyo — 見出しの三面鏡</div>
         <div class="desc">同じ出来事を NHK・朝日新聞・毎日新聞がどう見出しにしたかを並べて対照。文字バイグラム類似度で同一事象を判定(手ラベル較正済み)し、体言止め率やかぎ括弧率などの社別の癖も統計化。毎時自動更新。</div>
@@ -366,7 +375,7 @@
         <div class="url">hyakugaku-lens.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-01</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="統計,R,自動更新" data-src="報道・公式発表" href="https://hodo-hangenki.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="統計,R,自動更新" data-src="報道・公式発表" data-lib="生成:R(dplyr/ggplot2/survival)" href="https://hodo-hangenki.vercel.app" target="_blank" rel="noopener">
         <span class="icon">⏳</span>
         <div class="name">hodo-hangenki — 報道半減期</div>
         <div class="desc">ニュースは何時間で見出しから消えるのか。NHK ニュース RSS を毎時観測し、カプラン・マイヤー推定でカテゴリ別の半減期を測る寿命観測所。GitHub Actions が毎時自動更新。</div>
@@ -508,42 +517,42 @@
         <div class="url">token-hakari.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-29</span><span>最終更新 2026-09-01</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" href="https://imi-chizu.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" data-lib="生成:fugashi" href="https://imi-chizu.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🧭</span>
         <div class="name">imi-chizu — 意味地図</div>
         <div class="desc">青空文庫 2,959 作を数え上げて作った単語ベクトル。「王−男+女=女王」型の引き算を、出題をベクトルを見る前に宣言して全 296 問並べる。家族と性は 68%、体と働きは 5%。当たりも外れも同じ大きさで。</div>
         <div class="url">imi-chizu.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-29</span><span>最終更新 2026-09-01</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,音,機械学習" data-src="青空文庫" href="https://oto-utsushi.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,音,機械学習" data-src="青空文庫" data-lib="出荷:Transformers.js" href="https://oto-utsushi.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎙️</span>
         <div class="name">oto-utsushi — 音写ラボ</div>
         <div class="desc">青空文庫の一節を音読すると、ブラウザ内の Whisper が聞き落とした場所が原文の上に描かれる。測るのは滑舌ではなく機械の癖。正解が先に画面に在るので、認識器には原文を一切渡さない。音声はどこへも出ない。</div>
         <div class="url">oto-utsushi.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-29</span><span>最終更新 2026-09-01</span><span class="lic">MIT</span></div>
       </a>
-      <a class="card" data-tags="" data-src="" href="https://sahai-dojo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" data-src="" data-lib="出荷:CodeMirror" href="https://sahai-dojo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🥋</span>
         <div class="name">sahai-dojo — 差配道場</div>
         <div class="desc">意地悪なモデルを相手に、止まるエージェントループを自分で書いて採点される。引数の型を壊し、在らぬ道具を呼び、同じ手を繰り返し、未達なのに完了を宣言してくる相手に、到達・安全・予算・停止・被駆動の五つで判定。LLM は一度も呼ばず、外へ出る通信は実測 0 件。</div>
         <div class="url">sahai-dojo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-30</span><span>最終更新 2026-09-01</span><span class="lic">MIT</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="政府・自治体データ" href="https://tenkyo-lab.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="政府・自治体データ" data-lib="出荷:Transformers.js" href="https://tenkyo-lab.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔎</span>
         <div class="name">tenkyo-lab — 典拠ラボ</div>
         <div class="desc">条文どうしの参照から人手ゼロで作った 2,808 問で、RAG の検索側を測る実験台。つまみを回すと指標がその場で動く。密検索は BM25 とほぼ互角、粗く刻むほうが強い。接頭辞を間違えると精度は落ちるのにスコアは上がる。</div>
         <div class="url">tenkyo-lab.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-30</span><span>最終更新 2026-09-01</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理" data-src="青空文庫" href="https://kizami-ji.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理" data-src="青空文庫" data-lib="照合:MeCab" href="https://kizami-ji.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🛤️</span>
         <div class="name">kizami-ji — 刻み路</div>
         <div class="desc">日本語を単語に分ける処理は、辞書の候補を並べて一番安い道を選んでいるだけ。候補も生起コストも連接コストも全部見せる。青空文庫 128 万本の境界のうち 81.8% は跨ぐ語が辞書に無く、完全同点は千文に一つ。</div>
         <div class="url">kizami-ji.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-30</span><span>最終更新 2026-09-01</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理" data-src="青空文庫" href="https://kizami-kurabe.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理" data-src="青空文庫" data-lib="照合:LangChain" href="https://kizami-kurabe.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔪</span>
         <div class="name">kizami-kurabe — 刻み比べ</div>
         <div class="desc">RAG の前段「チャンク分割」を青空文庫 10 作で解剖。トークン刻みは日本語の文字を境界で壊し、既定の文字刻みは 3 万字を一塊で返す。「。」を区切りに足すと文境界一致率 72.5%→89.1%。Python 本体と照合済みの移植で自分の文も刻める。</div>
@@ -618,21 +627,21 @@
         <div class="url">korona-zuroku.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-02</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="機械学習" data-src="Wikimedia" href="https://manazashi-lab.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" data-src="Wikimedia" data-lib="出荷:ONNX Runtime Web,照合:Transformers,照合:ONNX Runtime" href="https://manazashi-lab.vercel.app" target="_blank" rel="noopener">
         <span class="icon">👁</span>
         <div class="name">manazashi-lab — まなざしラボ</div>
         <div class="desc">画像認識モデルを使うのではなく被験体として解剖する。見立て・まなざし(遮蔽感度マップ)・崩し(頑健性曲線)・前処理の罪の四科。推論は全て閲覧者の端末で行われ、画像はどこへも送られない。</div>
         <div class="url">manazashi-lab.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-29</span><span>最終更新 2026-09-01</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" href="https://jocho-iro.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" data-lib="生成:fugashi" href="https://jocho-iro.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎨</span>
         <div class="name">jocho-iro — 情緒の色</div>
         <div class="desc">青空文庫 300 作品を八情緒(喜怒哀怖好驚厭安)の色で染めた色見本帖。情緒リボンの壁・レーダー・情緒の川。kokoro-graph の姉妹アプリで、300 作はデータ駆動で再選出。</div>
         <div class="url">jocho-iro.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-26</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" data-repo="kokoro-graph" href="https://kokorograph.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" data-lib="生成:fugashi" data-repo="kokoro-graph" href="https://kokorograph.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📈</span>
         <div class="name">kokoro-graph — こころグラフ</div>
         <div class="desc">青空文庫 300 作品の行単位感情分析。感情バーコードの壁と起伏マップから作品を選び、感情曲線と本文を並べて読む。自前感情辞書 419 語・全指標に数理オラクル。</div>
@@ -653,35 +662,35 @@
         <div class="url">wakachi-ki.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-27</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="機械学習" data-src="公開データセット" href="https://tegaki-yomi.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" data-src="公開データセット" data-lib="生成:NumPy" href="https://tegaki-yomi.vercel.app" target="_blank" rel="noopener">
         <span class="icon">✍️</span>
         <div class="name">tegaki-yomi — 手書き数字認識</div>
         <div class="desc">描いた数字を MNIST 学習済みニューラルネット(精度 98%)がその場で読む。前処理・確率・隠れ層の重みテンプレートまで中身を全部見せる。</div>
         <div class="url">tegaki-yomi.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-17</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="機械学習" data-src="公開データセット" href="https://kuzushi-yomi.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" data-src="公開データセット" data-lib="生成:Chainer" href="https://kuzushi-yomi.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🖌️</span>
         <div class="name">kuzushi-yomi — くずし字読み</div>
         <div class="desc">江戸期のくずし字ひらがな(KMNIST)を、日本発の Chainer で学習した CNN がブラウザ内で読む。テスト精度 95.35%、誤読 465 字は混同行列から全部実物で見られる。手描き入力・特徴マップ・define-by-run の計算グラフまで中身を見せる。tegaki-yomi の姉妹作。</div>
         <div class="url">kuzushi-yomi.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-02</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="機械学習" data-src="公開データセット" href="https://senzai-niwa.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" data-src="公開データセット" data-lib="生成:PyTorch" href="https://senzai-niwa.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🌱</span>
         <div class="name">senzai-niwa — 潜在の庭</div>
         <div class="desc">VAE の潜在平面(2 次元)をなぞると手書きの字がその場で生まれる。庭は二つ — 数字(MNIST)とくずし字(KMNIST)。モーフ再生と 15×15 の格子俯瞰つき。学習は PyTorch、生成はブラウザ内 TypeScript — 二実装が誤差 1e-9 未満で一致することを庭ごとに照合済み。</div>
         <div class="url">senzai-niwa.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-03</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="機械学習" data-src="公開データセット" href="https://sumi-tsukuroi.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" data-src="公開データセット" data-lib="生成:Keras,生成:TensorFlow,照合:JAX" href="https://sumi-tsukuroi.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🧵</span>
         <div class="name">sumi-tsukuroi — 墨繕い</div>
         <div class="desc">くずし字(KMNIST)を墨飛び・かすれ・虫食いで壊すと、Keras 3 で学習した小さなオートエンコーダがその場でブラウザ内修復。同じ重みを TF/JAX/PyTorch の三バックエンドで照合(乖離 2.6e-6)、TS 推論とも 1e-9 未満で一致。「かすれは機械の読みを壊さない」実測の図録つき。</div>
         <div class="url">sumi-tsukuroi.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-03</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="機械学習" data-src="公開データセット" href="https://gihitsu-kobo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="機械学習" data-src="公開データセット" data-lib="生成:TensorFlow" href="https://gihitsu-kobo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🖌️</span>
         <div class="name">gihitsu-kobo — 偽筆工房</div>
         <div class="desc">くずし字(KMNIST)を贋作する偽筆師と見破る目利きを競わせた DCGAN。30 期の学習を巻き戻すスライダーで砂嵐が筆致になる過程を再生。学習はフリート初の TensorFlow、生成はブラウザ内 TypeScript — 二実装が誤差 1e-9 未満で一致。目利きの弁別力は AUC 0.715。</div>
@@ -694,35 +703,35 @@
   <section data-section data-cat="cat4">
     <h2>🗺️ 地図</h2>
     <div class="grid">
-      <a class="card" data-tags="地図,統計,R" data-src="政府・自治体データ" href="https://toukei-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,統計,R" data-src="政府・自治体データ" data-lib="生成:R(sf/dplyr/ggplot2/readxl)" href="https://toukei-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🗾</span>
         <div class="name">toukei-atlas — 日本統計地図帳</div>
         <div class="desc">高齢化率・人口密度・人口増減率などを市区町村単位の主題図で見る統計アトラス。R(sf + ggplot2)による印刷物品質の静的地図。全数値は政府公表値との照合検証済み。</div>
         <div class="url">toukei-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-19</span><span>最終更新 2026-08-28</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="地図,自動更新" data-src="政府・自治体データ,Wikimedia,地理院タイル" href="https://tsukiji-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,自動更新" data-src="政府・自治体データ,Wikimedia,地理院タイル" data-lib="出荷:MapLibre GL JS" href="https://tsukiji-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🐟</span>
         <div class="name">tsukiji-atlas</div>
         <div class="desc">築地・明石町の名所旧跡を時代別・分野別に可視化。Wikidata + 東京都オープンデータ + 手動キュレーション。</div>
         <div class="url">tsukiji-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-22</span><span>最終更新 2026-08-21</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="地図,統計,自動更新" data-src="政府・自治体データ,地理院タイル" href="https://bunka-cluster-map.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,統計,自動更新" data-src="政府・自治体データ,地理院タイル" data-lib="出荷:MapLibre GL JS" href="https://bunka-cluster-map.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🏛️</span>
         <div class="name">bunka-cluster-map</div>
         <div class="desc">東京の文化施設を1kmメッシュ集計・Gi*統計で分析し、単一集積か複合文化ゾーンかまで可視化。</div>
         <div class="url">bunka-cluster-map.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-13</span><span>最終更新 2026-08-26</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="地図,統計,自動更新" data-src="政府・自治体データ,地理院タイル" href="https://sakaba-density-map.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,統計,自動更新" data-src="政府・自治体データ,地理院タイル" data-lib="出荷:MapLibre GL JS" href="https://sakaba-density-map.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🏮</span>
         <div class="name">sakaba-density-map</div>
         <div class="desc">食品営業許可データを250mメッシュ統計化し、中野区の「大衆酒場ホットスポット」を静的マップで可視化。</div>
         <div class="url">sakaba-density-map.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-12</span><span>最終更新 2026-08-27</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="地図,自然言語処理,統計" data-src="青空文庫,地理院タイル" href="https://yamato-gaze.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="地図,自然言語処理,統計" data-src="青空文庫,地理院タイル" data-lib="出荷:MapLibre GL JS,生成:fugashi" href="https://yamato-gaze.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🪷</span>
         <div class="name">yamato-gaze — 大和路の視線</div>
         <div class="desc">和辻哲郎・亀井勝一郎・堀辰雄の奈良古寺巡礼記を整列比較し、視線の三型を計量する巡礼路地図の「三面鏡」。</div>
@@ -756,28 +765,28 @@
         <div class="url">furigana-keiryo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-29</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計,R" data-src="青空文庫" href="https://fukuo-keiryo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計,R" data-src="青空文庫" data-lib="生成:R(ggplot2/jsonlite)" href="https://fukuo-keiryo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🎙️</span>
         <div class="name">fukuo-keiryo — 福翁計量</div>
         <div class="desc">福澤諭吉『福翁自伝』を<b>口述筆記である一点</b>で計量。敬体率は本の中で二度折れ(18.1→6.2→25.7%)、三区間の信頼区間は重ならない。同じ人が<b>書いた</b>30 篇では文語 86.8%、敬体は 5,017 文中わずか 1 文だった。</div>
         <div class="url">fukuo-keiryo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-26</span><span>最終更新 2026-09-01</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" href="https://onomato-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" data-lib="生成:fugashi" href="https://onomato-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔔</span>
         <div class="name">onomato-atlas — 音象アトラス</div>
         <div class="desc">オノマトペの<b>音の形と使われ方を、別々の情報源から測る</b>。音側は表記から機械的に、意味側は青空文庫 2,200 作品の共起分布から。一致した範囲だけを地図にし、検定を通った 2 軸だけを採用。分割半で再現しなかった目玉機能は、測って捨てた。</div>
         <div class="url">onomato-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-25</span><span>最終更新 2026-08-26</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" href="https://ango-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" data-lib="生成:PyTorch,生成:Transformers,生成:fugashi" href="https://ango-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📗</span>
         <div class="name">ango-atlas — 安吾アトラス</div>
         <div class="desc">青空文庫の坂口安吾 513 作品・603 万字を、文体・主題・時系列・言及の四軸で俯瞰。目玉は<b>一節から探す</b>——15,430 の一節を事前ベクトル化してあり、クエリ時のモデル推論はゼロ(1 問 15.3ms)。新字新仮名/旧仮名の 50 組が正解対。</div>
         <div class="url">ango-atlas.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-09-01</span><span class="lic">MIT / 本文 PD</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" href="https://neko-atlas.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="青空文庫" data-lib="生成:fugashi" href="https://neko-atlas.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🐈</span>
         <div class="name">neko-atlas — 猫アトラス</div>
         <div class="desc">『吾輩は猫である』一作 376,432 字を、話者ではなく<b>応酬の構造</b>で描く。鉤括弧の境界だけを証拠に交替を取る。会話率は第一章 18.7% → 第十一章 78.0%。話者が明記された発話は 16.5% だけなので、話者ネットワークは出していない。</div>
@@ -928,14 +937,14 @@
         <div class="url">pack-weight-sim.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-06</span><span>最終更新 2026-08-27</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="探索" data-src="地理院タイル" href="https://bunka-hashigo.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="探索" data-src="地理院タイル" data-lib="出荷:MapLibre GL JS" href="https://bunka-hashigo.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🖼️</span>
         <div class="name">bunka-hashigo — 文化施設はしごプランナー</div>
         <div class="desc">美術館・博物館・古書店・ギャラリーに劇場公演を組み合わせた「文化はしご」1日プランを生成。休館日・最終入場も考慮。</div>
         <div class="url">bunka-hashigo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-07-13</span><span>最終更新 2026-08-26</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="探索" data-src="地理院タイル" href="https://hashigo-planner.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="探索" data-src="地理院タイル" data-lib="出荷:MapLibre GL JS" href="https://hashigo-planner.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🍶</span>
         <div class="name">hashigo-planner — 下町はしご酒プランナー</div>
         <div class="desc">エリア・開始時刻・軒数・予算から、営業時間と徒歩距離を考慮したはしご酒ルートを提案。</div>
@@ -983,14 +992,14 @@
         <div class="url">kasane-kairo.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-24</span><span>最終更新 2026-08-24</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="物理" data-src="気象・天文データ" data-repo="solar-system" href="https://solar-system-dusky-theta.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="物理" data-src="気象・天文データ" data-lib="出荷:three.js" data-repo="solar-system" href="https://solar-system-dusky-theta.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🪐</span>
         <div class="name">solar-system — 太陽系シミュレーター</div>
         <div class="desc">Three.js で太陽と8惑星を描画し、時間スライダーで公転を進める可視化モデル。</div>
         <div class="url">solar-system-dusky-theta.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-06-27</span><span>最終更新 2026-08-28</span><span class="lic none">ライセンスなし</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="物理" data-src="気象・天文データ" href="https://orbit-census.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="物理" data-src="気象・天文データ" data-lib="出荷:three.js,出荷:satellite.js" href="https://orbit-census.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🛰️</span>
         <div class="name">orbit-census — 人工衛星の国勢調査</div>
         <div class="desc">CelesTrak の軌道要素をブラウザ内で SGP4 伝播し、稼働衛星 16,000 機を間引かずに描く地球儀。低軌道の殻・GNSS の層・静止衛星のリングが一目で見える。cron も DB も無く、サーバーは TLE を配るだけ。位置計算は Web Worker、描画は頂点シェーダの補間。</div>
@@ -1044,14 +1053,14 @@
         <div class="url">sugi-nami.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-27</span><span>最終更新 2026-08-28</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,機械学習" data-src="青空文庫" href="https://kototoi-do.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,機械学習" data-src="青空文庫" data-lib="出荷:Transformers.js" href="https://kototoi-do.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📖</span>
         <div class="name">kototoi-do — 言問堂</div>
         <div class="desc">向島・言問橋のたもとにある架空の古書店。「雨の日に読みたい」のような言葉で青空文庫 4,974 作を本文の意味から引く。サーバ関数を持たず、模型も索引も端末に渡すので問いは店に届かない。書名は索引に入れず、書名で採点して棚の出来を測っている。</div>
         <div class="url">kototoi-do.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-08-29</span><span>最終更新 2026-09-02</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="自然言語処理,統計" data-src="報道・公式発表" href="https://mashaku.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="自然言語処理,統計" data-src="報道・公式発表" data-lib="出荷:Transformers.js" href="https://mashaku.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📏</span>
         <div class="name">mashaku — 株式会社 間尺</div>
         <div class="desc">諏訪の架空の AI 導入支援会社。事例の代わりにサイト自身を測る。費用式は TS と Python の二経路で 500 通り一致。同じ仕分けを三通りで解き、自分の規則を自分のデータで採点すると 16 ポイント高く出ることを実測。測っていない欄は空欄で出す。</div>
@@ -1092,40 +1101,47 @@
   <section data-section data-cat="cat18">
     <h2>📋 ガバナンス・規程</h2>
     <div class="grid">
-      <a class="card" data-tags="" data-src="政府・自治体データ" href="https://kitei-forge.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" data-src="政府・自治体データ" data-lib="出荷:docx" href="https://kitei-forge.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔨</span>
         <div class="name">kitei-forge — 規定鍛造</div>
         <div class="desc">中小SES向けのAI利用規定ジェネレータ。政府指針・ガイドライン14件を全件実測した典拠レジストリを土台に、診断→条項選択→厳格度調整→Markdown出力。全条項に典拠の該当箇所が脚注で付き、入力はブラウザの外に出ない。</div>
         <div class="url">kitei-forge.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-02</span><span>最終更新 2026-09-02</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="" data-src="政府・自治体データ" href="https://mamori-forge.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" data-src="政府・自治体データ" data-lib="出荷:docx" href="https://mamori-forge.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🛡️</span>
         <div class="name">mamori-forge — 守り鍛造</div>
         <div class="desc">中小企業向けの情報セキュリティ規程ジェネレータ。IPA・経産省・法令など典拠10件を全URL実測し、診断→条項選択→水準調整→Markdown/Word出力。IPA自社診断25項目とのカバレッジとSECURITY ACTIONへの距離も表示。入力はブラウザの外に出ない。</div>
         <div class="url">mamori-forge.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-03</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="" data-src="政府・自治体データ" href="https://hacchu-forge.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" data-src="政府・自治体データ" data-lib="出荷:docx" href="https://hacchu-forge.vercel.app" target="_blank" rel="noopener">
         <span class="icon">📦</span>
         <div class="name">hacchu-forge — 発注鍛造</div>
         <div class="desc">フリーランスへ発注する中小企業向けの義務チェック+取引条件明示書面(3条書面)ジェネレータ。フリーランス法の義務7件を条文実測の閾値(1か月/6か月/60日)で判定し、公取委規則の明示事項12号に沿って書面を生成。入力はブラウザの外に出ない。</div>
         <div class="url">hacchu-forge.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-03</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="" data-src="政府・自治体データ" href="https://hogo-forge.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" data-src="政府・自治体データ" data-lib="出荷:docx" href="https://hogo-forge.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🔏</span>
         <div class="name">hogo-forge — 保護鍛造</div>
         <div class="desc">中小企業向けのプライバシーポリシー・ジェネレータ。個情法32条・施行令10条が法定する公表事項10項目を条文から採録して分母にし、診断→条項選択→Markdown/Word出力。外部送信規律は条文の限定ごと正直に表示。入力はブラウザの外に出ない。</div>
         <div class="url">hogo-forge.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-03</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
-      <a class="card" data-tags="" data-src="政府・自治体データ" href="https://soncho-forge.vercel.app" target="_blank" rel="noopener">
+      <a class="card" data-tags="" data-src="政府・自治体データ" data-lib="出荷:docx" href="https://soncho-forge.vercel.app" target="_blank" rel="noopener">
         <span class="icon">🤝</span>
         <div class="name">soncho-forge — 尊重鍛造</div>
         <div class="desc">中小企業向けのハラスメント防止規程ジェネレータ。パワハラ・セクハラ・妊娠出産・育児介護の四本柱の措置義務を、指針の講ずべき措置10項目を分母に条文・告示の典拠つきで規程化。2026年10月の条番号繰り下げも告知。入力はブラウザの外に出ない。</div>
         <div class="url">soncho-forge.vercel.app</div>
         <div class="meta"><span>初回デプロイ 2026-09-03</span><span>最終更新 2026-09-03</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
+      </a>
+      <a class="card" data-tags="" data-src="政府・自治体データ" href="https://zaitaku-forge.vercel.app" target="_blank" rel="noopener">
+        <span class="icon">🏠</span>
+        <div class="name">zaitaku-forge — 在宅鍛造</div>
+        <div class="desc">中小企業向けのテレワーク規程ジェネレータ。厚労省テレワークガイドライン全11節を分母に、労働時間・中抜け・費用負担(労基法89条5号)・安全衛生・労災・セキュリティを典拠つきで規程化。条項12本は常時全部入りで診断は水準を切り替える。入力はブラウザの外に出ない。</div>
+        <div class="url">zaitaku-forge.vercel.app</div>
+        <div class="meta"><span>初回デプロイ 2026-09-04</span><span>最終更新 2026-09-04</span><span class="lic">MIT</span><span class="mob">📱 スマホ対応</span></div>
       </a>
     </div>
   </section>
@@ -1133,6 +1149,7 @@
   <footer>
     <p>各カードをクリックするとアプリが新しいタブで開きます。すべて Vercel で静的配信。</p>
     <p>1 行目のチップは<b>分野</b>、分野を選ぶと下に<b>棚</b>(見出しと同じ主題)が開く。「詳しく絞り込む」の中に<b>技術</b>(手法・素材・つくり)と<b>データの出典</b>。カード下部の丸はその技術と出典。掛け合わせて絞り込める(例: 文学・古典・美術 × 統計 × 青空文庫)。チップの数字は<b>他の絞り込みを効かせたときに残る枚数</b>で、0 件のチップは押せない。</p>
+    <p>破線の丸は<b>実装に使ったライブラリ</b>(実測)。🚚 は出荷 = ブラウザに出て行くもの、🏭 は生成 = 手元で回して重みや JSON を作ったもの、⚖️ は照合 = オラクル専用で出荷実装は参照しないもの。自由入力でも当たる(例: PyTorch、Chainer、MapLibre)。</p>
     <p>初回デプロイ日・最終更新日は Vercel のプロジェクト作成日・最新デプロイ日時(JST)、ライセンス有無は GitHub リポジトリの検出結果に基づく。</p>
     <p><a href="https://github.com/twill3c/app-menu/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a> © 2026 坂田哲朗 ・ <a href="https://github.com/twill3c/app-menu" target="_blank" rel="noopener">GitHub</a> ・ <a href="https://claude.ai/code/artifact/5828914a-e133-4dab-ba99-988b79b82bb2" target="_blank" rel="noopener">app-menu の歩き方</a> ・ <a href="https://claude.ai/code/artifact/03996522-5e4d-4194-a755-eef0540cd9ff" target="_blank" rel="noopener">app-menu 設計図</a></p>
   </footer>
@@ -1164,6 +1181,15 @@
 
   const listOf = v => (v || '').split(',').filter(Boolean);
 
+  // 実装の丸(data-lib)。値は「役割:名前」で、役割は 3 つ。
+  // その名前がブラウザに出て行くのか、手元で出荷物を作るのに使ったのか、
+  // オラクル専用なのかは別物なので、印を付けずには貼れない。
+  const ROLE = {
+    '出荷': ['🚚', 'ブラウザに出て行く'],
+    '生成': ['🏭', '手元で回して出荷物(重み・JSON)を作る'],
+    '照合': ['⚖️', 'オラクル専用 — 出荷実装はこれを参照しない'],
+  };
+
   // カード 1 枚ぶんの索引。textContent は丸を描いたあとに採る —— そうすると
   // 「青空文庫」「Rust/WASM」のようなタグ名・出典名でも自由入力が当たる。
   const items = [];
@@ -1182,6 +1208,15 @@
         const span = document.createElement('span');
         span.className = 'src';
         span.textContent = s;
+        meta.appendChild(span);
+      }
+      for (const entry of listOf(el.dataset.lib)) {
+        const [role, name] = entry.split(':');
+        const mark = ROLE[role];
+        const span = document.createElement('span');
+        span.className = 'lib';
+        span.textContent = mark ? `${mark[0]} ${name}` : entry;
+        if (mark) span.title = `${role} — ${mark[1]}`;
         meta.appendChild(span);
       }
       items.push({ el, cat: section.dataset.cat, tags, srcs,
