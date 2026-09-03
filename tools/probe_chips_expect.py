@@ -23,12 +23,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "index.html"
 
+GROUPS_BLOCK = re.compile(r'<div class="groups".*?</div>', re.S)
+GROUP_CHIP = re.compile(r'data-group="(g\d+)"')
 CAT_CHIP = re.compile(r'<(?:span|button)[^>]*class="chip"[^>]*data-cat="(cat\d+)"')
+CAT_GROUP = re.compile(r'data-cat="(cat\d+)"[^>]*data-group="(g\d+)"')
 TAG_CHIP = re.compile(r'<(?:span|button)[^>]*class="chip tagchip[^"]*"[^>]*data-tag="([^"]+)"')
 SRC_CHIP = re.compile(r'<(?:span|button)[^>]*class="chip srcchip[^"]*"[^>]*data-src="([^"]+)"')
 SECTION_RE = re.compile(r'<section data-section data-cat="([^"]+)"[^>]*>(.*?)</section>', re.S)
 CARD_RE = re.compile(r'<a class="card"(.*?)>(.*?)</a>', re.S)
 
+SENTINEL = "__none__"   # 「自作・合成」= 出典を持たないカード
 MISS_QUERY = "ぬるぽ"   # どのカードにも無い文字列(0 件の状態を作るため)
 PROBE_CATS = ("cat18", "cat2", "cat12", "cat14")
 PROBE_PAIRS = (("cat12", "統計"), ("cat5", "自然言語処理"))
@@ -40,7 +44,14 @@ def main(out: Path) -> int:
     html = INDEX.read_text(encoding="utf-8")
     cat_order = CAT_CHIP.findall(html)
     tag_order = [t for t in TAG_CHIP.findall(html) if t != "ALL"]
-    src_order = [s for s in SRC_CHIP.findall(html) if s != "ALL"]
+    # 「自作・合成」(SENTINEL) は出典の語彙ではないので、語彙の並びには入れない。
+    src_order = [s for s in SRC_CHIP.findall(html) if s not in ("ALL", SENTINEL)]
+    group_order = GROUP_CHIP.findall(GROUPS_BLOCK.search(html).group(0))
+    cat_group = dict(CAT_GROUP.findall(html))
+    orphan = [c for c in cat_order if c not in cat_group]
+    if orphan:
+        print(f"  [分野の無い棚] {' / '.join(orphan)}")
+        return 1
 
     cards = []
     for sec in SECTION_RE.finditer(html):
@@ -55,11 +66,12 @@ def main(out: Path) -> int:
             text = html_mod.unescape(re.sub(r"<[^>]+>", " ", body)) + " " + " ".join(tags + srcs)
             cards.append(dict(cat=sec.group(1), tags=tags, srcs=srcs, text=text.lower()))
 
-    def sel(cat="ALL", tag="ALL", src="ALL", q=""):
+    def sel(cat="ALL", tag="ALL", src="ALL", q="", group="ALL"):
         return [c for c in cards
-                if (cat == "ALL" or c["cat"] == cat)
+                if (group == "ALL" or cat_group.get(c["cat"]) == group)
+                and (cat == "ALL" or c["cat"] == cat)
                 and (tag == "ALL" or tag in c["tags"])
-                and (src == "ALL" or src in c["srcs"])
+                and (src == "ALL" or (not c["srcs"] if src == SENTINEL else src in c["srcs"]))
                 and (q == "" or q in c["text"])]
 
     def live_tags(cat="ALL", q=""):
@@ -70,20 +82,29 @@ def main(out: Path) -> int:
 
     data = dict(
         total=len(cards),
+        groups=[dict(id=g, n=len(sel(group=g))) for g in group_order],
         cats=[dict(id=c, n=len(sel(cat=c))) for c in cat_order],
         tags=[dict(v=t, n=len(sel(tag=t))) for t in tag_order],
-        srcs=[dict(v=s, n=len(sel(src=s))) for s in src_order],
-        probes=[dict(cat=c, n=len(sel(cat=c)), liveTags=live_tags(c), liveSrcs=live_srcs(c))
+        srcs=[dict(v=s, n=len(sel(src=s))) for s in src_order]
+             + [dict(v=SENTINEL, n=len(sel(src=SENTINEL)))],
+        probes=[dict(cat=c, group=cat_group[c], n=len(sel(cat=c)),
+                     groupN=len(sel(group=cat_group[c])),
+                     shelves=[[x, len(sel(cat=x))] for x in cat_order
+                              if cat_group[x] == cat_group[c]],
+                     liveTags=live_tags(c), liveSrcs=live_srcs(c))
                 for c in PROBE_CATS],
         pairs=[dict(cat=c, tag=t, n=len(sel(cat=c, tag=t)), tagTotal=len(sel(tag=t)))
                for c, t in PROBE_PAIRS],
         probeTag=PROBE_TAG,
         quantumTotal=len(sel(tag=PROBE_TAG)),
-        quantumLiveCats=[[c, len(sel(cat=c, tag=PROBE_TAG))] for c in cat_order
-                         if sel(cat=c, tag=PROBE_TAG)],
+        quantumLiveGroups=[[g, len(sel(group=g, tag=PROBE_TAG))] for g in group_order
+                           if sel(group=g, tag=PROBE_TAG)],
         missQuery=MISS_QUERY,
-        cat0=len(sel(cat="cat0")),
-        cat0AutoUpdate=len(sel(cat="cat0", tag="自動更新")),
+        sentinel=dict(v=SENTINEL, n=len(sel(src=SENTINEL)), label="自作・合成",
+                      liveGroups=[[g, len(sel(group=g, src=SENTINEL))] for g in group_order
+                                  if sel(group=g, src=SENTINEL)]),
+        firstGroup=dict(id=group_order[0], n=len(sel(group=group_order[0]))),
+        autoUpdate=len(sel(tag="自動更新")),
         query=dict(q=QUERY, n=len(sel(q=QUERY)),
                    liveCats=[[c, len(sel(cat=c, q=QUERY))] for c in cat_order
                              if sel(cat=c, q=QUERY)]),
@@ -94,11 +115,15 @@ def main(out: Path) -> int:
         return 1
 
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"カード {data['total']} 枚 / 主題 {len(cat_order)} / 技術 {len(tag_order)} / "
-          f"出典 {len(src_order)} → {out}")
+    print(f"カード {data['total']} 枚 / 分野 {len(group_order)} / 棚 {len(cat_order)} / "
+          f"技術 {len(tag_order)} / 出典 {len(src_order)} → {out}")
+    for g in data["groups"]:
+        shelves = [c for c in cat_order if cat_group[c] == g["id"]]
+        print(f"  {g['id']}  n={g['n']:3}  棚 {len(shelves)}")
     for p in data["probes"]:
         print(f"  {p['cat']:6} n={p['n']:3} 生きている技術 {len(p['liveTags']):2}/{len(tag_order)}"
               f" / 出典 {len(p['liveSrcs']):2}/{len(src_order)}")
+    print(f"  自作・合成 = {data['sentinel']['n']} 枚")
     return 0
 
 

@@ -36,9 +36,16 @@ NAME_RE = re.compile(r'<div class="name">([^<]*)</div>')
 CHIP_RE = re.compile(r'<(?:span|button)[^>]*class="chip srcchip[^"]*"[^>]*data-src="([^"]+)"')
 
 
+# 「自作・合成」チップの値。出典を持たないカードを引くための入口で、
+# 出典の語彙ではない(カードの data-src には現れない)。
+SENTINEL = "__none__"
+
+
 def main(verbose: bool) -> int:
     html = INDEX.read_text(encoding="utf-8")
-    vocab = [s for s in CHIP_RE.findall(html) if s != "ALL"]
+    all_chips = CHIP_RE.findall(html)
+    vocab = [s for s in all_chips if s not in ("ALL", SENTINEL)]
+    has_sentinel = SENTINEL in all_chips
 
     rows: list[tuple[str, list[str] | None]] = []
     for m in CARD_RE.finditer(html):
@@ -69,8 +76,15 @@ def main(verbose: bool) -> int:
         print(f"  [語彙外の出典] {s}: {' / '.join(holders)}")
     for s in dead:
         print(f"  [使われていないチップ] {s}")
+    # 「自作・合成」は出典なしのカードが 1 件以上あるときだけ意味を持つ。
+    # 全部のカードに出典が付いた日には、このチップも外す。
+    stale_sentinel = has_sentinel and not nosrc
+    if stale_sentinel:
+        print("  [自作・合成チップが空振り] 出典なしのカードが 1 件も無い")
+    if nosrc and not has_sentinel:
+        print(f"  (出典なし {len(nosrc)} 件を引く入口が無い —— 自作・合成チップは任意)")
 
-    if missing or unknown or dead:
+    if missing or unknown or dead or stale_sentinel:
         return 1
     print("語彙と一致")
     return 0

@@ -56,7 +56,22 @@
     transition: border-color 0.15s;
   }
   .search-box input:focus { border-color: var(--accent); }
-  .cats { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  /* 上端に 42 枚のチップが積まれていたので二段にした。既定では「分野」6 枚
+     だけを見せ、分野を選ぶとその中の棚が開く。技術と出典は折り畳みの中。 */
+  .groups { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 4px; }
+  .cats { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 4px; }
+  .axis .row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0;
+  }
+  .lead {
+    color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; padding-right: 2px;
+  }
+  details.more { margin: 8px 0 4px; }
+  details.more > summary {
+    cursor: pointer; color: var(--muted); font-size: 0.86rem; width: fit-content;
+  }
+  details.more > summary:hover { color: var(--text); }
+  details.more > summary .note { color: var(--accent); margin-left: 6px; }
   .chip {
     background: var(--card); border: 1px solid var(--border); color: var(--muted);
     border-radius: 999px; padding: 6px 13px; font-size: 0.86rem; cursor: pointer;
@@ -193,15 +208,7 @@
     margin-left: 8px;
     vertical-align: middle;
   }
-  .tags, .srcs {
-    display: flex; flex-wrap: wrap; align-items: center;
-    gap: 8px; margin: 10px 0 4px;
-  }
-  .tags .lead, .srcs .lead {
-    color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em;
-    padding-right: 2px;
-  }
-  .tags .tagchip, .srcs .srcchip { font-size: 0.82rem; padding: 5px 11px; }
+  .tagchip, .srcchip { font-size: 0.82rem; padding: 5px 11px; }
   .card .meta .tag {
     border-radius: 999px;
     padding: 0 8px;
@@ -231,58 +238,87 @@
     <input type="search" id="filter" placeholder="アプリ名・説明で絞り込み…" aria-label="アプリを検索">
   </div>
 
-  <div class="cats" id="cats" role="group" aria-label="主題で絞り込み">
-    <button type="button" class="chip on" data-cat="ALL" aria-pressed="true">すべて<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat0" aria-pressed="false">📰 情報収集<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat2" aria-pressed="false">🧩 パズル・思考<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat13" aria-pressed="false">🕹️ アクション・リアルタイム<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat9" aria-pressed="false">⌨️ タイピング<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat14" aria-pressed="false">🎼 音・音楽<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat10" aria-pressed="false">🤖 AI・言語モデル<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat3" aria-pressed="false">🧠 学習アルゴリズム<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat12" aria-pressed="false">📊 実データ分析<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat4" aria-pressed="false">🗺️ 地図<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat5" aria-pressed="false">📚 近代文学・翻訳<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat11" aria-pressed="false">📜 古典・歳時<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat16" aria-pressed="false">🏛️ 海外古典<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat6" aria-pressed="false">🧭 プランナー・シミュレータ<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat7" aria-pressed="false">🧮 量子・計算・天体<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat8" aria-pressed="false">🏮 ブランドサイト<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat15" aria-pressed="false">🖼️ 美術・表象<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat17" aria-pressed="false">🌿 生物・自然<span class="n"></span></button>
-    <button type="button" class="chip" data-cat="cat18" aria-pressed="false">📋 ガバナンス・規程<span class="n"></span></button>
+  <div class="groups" id="groups" role="group" aria-label="分野で絞り込み">
+    <button type="button" class="chip on" data-group="ALL" aria-pressed="true">すべて<span class="n"></span></button>
+    <button type="button" class="chip" data-group="g1" aria-pressed="false">🎮 遊ぶ<span class="n"></span></button>
+    <button type="button" class="chip" data-group="g2" aria-pressed="false">🤖 AI・機械学習<span class="n"></span></button>
+    <button type="button" class="chip" data-group="g3" aria-pressed="false">📊 データ・地図<span class="n"></span></button>
+    <button type="button" class="chip" data-group="g4" aria-pressed="false">📚 文学・古典・美術<span class="n"></span></button>
+    <button type="button" class="chip" data-group="g5" aria-pressed="false">🧮 しくみ・実務<span class="n"></span></button>
   </div>
 
-  <div class="tags" id="tags" role="group" aria-label="技術で絞り込み">
-    <span class="lead">技術</span>
-    <button type="button" class="chip tagchip on" data-tag="ALL" aria-pressed="true">指定なし<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="機械学習" aria-pressed="false">機械学習<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="統計" aria-pressed="false">統計<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="自然言語処理" aria-pressed="false">自然言語処理<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="地図" aria-pressed="false">地図<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="探索" aria-pressed="false">探索<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="物理" aria-pressed="false">物理<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="量子・計算理論" aria-pressed="false">量子・計算理論<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="音" aria-pressed="false">音<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="Rust/WASM" aria-pressed="false">Rust/WASM<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="R" aria-pressed="false">R<span class="n"></span></button>
-    <button type="button" class="chip tagchip" data-tag="自動更新" aria-pressed="false">自動更新<span class="n"></span></button>
+  <div class="cats hidden" id="cats" role="group" aria-label="棚で絞り込み">
+    <span class="lead">棚</span>
+    <button type="button" class="chip on" data-cat="ALL" aria-pressed="true">この分野すべて<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat0" data-group="g3" aria-pressed="false">📰 情報収集<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat2" data-group="g1" aria-pressed="false">🧩 パズル・思考<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat13" data-group="g1" aria-pressed="false">🕹️ アクション・リアルタイム<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat9" data-group="g1" aria-pressed="false">⌨️ タイピング<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat14" data-group="g1" aria-pressed="false">🎼 音・音楽<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat10" data-group="g2" aria-pressed="false">🤖 AI・言語モデル<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat3" data-group="g2" aria-pressed="false">🧠 学習アルゴリズム<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat12" data-group="g3" aria-pressed="false">📊 実データ分析<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat4" data-group="g3" aria-pressed="false">🗺️ 地図<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat5" data-group="g4" aria-pressed="false">📚 近代文学・翻訳<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat11" data-group="g4" aria-pressed="false">📜 古典・歳時<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat16" data-group="g4" aria-pressed="false">🏛️ 海外古典<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat6" data-group="g5" aria-pressed="false">🧭 プランナー・シミュレータ<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat7" data-group="g5" aria-pressed="false">🧮 量子・計算・天体<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat8" data-group="g5" aria-pressed="false">🏮 ブランドサイト<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat15" data-group="g4" aria-pressed="false">🖼️ 美術・表象<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat17" data-group="g3" aria-pressed="false">🌿 生物・自然<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat18" data-group="g5" aria-pressed="false">📋 ガバナンス・規程<span class="n"></span></button>
   </div>
 
-  <div class="srcs" id="srcs" role="group" aria-label="出典で絞り込み">
-    <span class="lead">出典</span>
-    <button type="button" class="chip srcchip on" data-src="ALL" aria-pressed="true">指定なし<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="青空文庫" aria-pressed="false">青空文庫<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="Project Gutenberg" aria-pressed="false">Project Gutenberg<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="Perseus" aria-pressed="false">Perseus<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="Wikimedia" aria-pressed="false">Wikimedia<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="報道・公式発表" aria-pressed="false">報道・公式発表<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="政府・自治体データ" aria-pressed="false">政府・自治体データ<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="気象・天文データ" aria-pressed="false">気象・天文データ<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="公開データセット" aria-pressed="false">公開データセット<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="地理院タイル" aria-pressed="false">地理院タイル<span class="n"></span></button>
-    <button type="button" class="chip srcchip" data-src="美術館オープンアクセス" aria-pressed="false">美術館オープンアクセス<span class="n"></span></button>
-  </div>
+  <details class="more" id="more">
+    <summary>詳しく絞り込む — 手法・素材・つくり・出典<span class="note" id="more-note"></span></summary>
+    <!-- 技術は 1 本の軸(単一選択)。行を 3 つに分けているのは表示だけで、
+         手法(何をしているか)・素材(何を扱うか)・つくり(何で作ったか)は
+         性質の違うものが 1 行に同居していたのを読める形にしたもの。 -->
+    <div class="axis" id="tags" role="group" aria-label="技術で絞り込み">
+      <div class="row">
+        <span class="lead">手法</span>
+        <button type="button" class="chip tagchip on" data-tag="ALL" aria-pressed="true" title="技術の絞り込みを外す">指定なし<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="機械学習" aria-pressed="false">機械学習<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="統計" aria-pressed="false">統計<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="自然言語処理" aria-pressed="false">自然言語処理<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="探索" aria-pressed="false">探索<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="物理" aria-pressed="false">物理<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="量子・計算理論" aria-pressed="false">量子・計算理論<span class="n"></span></button>
+      </div>
+      <div class="row">
+        <span class="lead">素材</span>
+        <button type="button" class="chip tagchip" data-tag="地図" aria-pressed="false">地図<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="音" aria-pressed="false">音<span class="n"></span></button>
+      </div>
+      <div class="row">
+        <span class="lead">つくり</span>
+        <button type="button" class="chip tagchip" data-tag="Rust/WASM" aria-pressed="false">Rust/WASM<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="R" aria-pressed="false">R<span class="n"></span></button>
+        <button type="button" class="chip tagchip" data-tag="自動更新" aria-pressed="false">自動更新<span class="n"></span></button>
+      </div>
+    </div>
+
+    <div class="axis" id="srcs" role="group" aria-label="出典で絞り込み">
+      <div class="row">
+        <span class="lead">出典</span>
+        <button type="button" class="chip srcchip on" data-src="ALL" aria-pressed="true" title="出典の絞り込みを外す">指定なし<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="青空文庫" aria-pressed="false">青空文庫<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="Project Gutenberg" aria-pressed="false">Project Gutenberg<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="Perseus" aria-pressed="false">Perseus<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="Wikimedia" aria-pressed="false">Wikimedia<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="報道・公式発表" aria-pressed="false">報道・公式発表<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="政府・自治体データ" aria-pressed="false">政府・自治体データ<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="気象・天文データ" aria-pressed="false">気象・天文データ<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="公開データセット" aria-pressed="false">公開データセット<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="地理院タイル" aria-pressed="false">地理院タイル<span class="n"></span></button>
+        <button type="button" class="chip srcchip" data-src="美術館オープンアクセス" aria-pressed="false">美術館オープンアクセス<span class="n"></span></button>
+        <!-- 出典を持たないカードは 33 枚ある。外部データを使っていないものを
+             引けるように、出典軸にも入口を置く(語彙ではないので __none__)。 -->
+        <button type="button" class="chip srcchip" data-src="__none__" aria-pressed="false">自作・合成<span class="n"></span></button>
+      </div>
+    </div>
+  </details>
   <p class="noresult hidden" id="noresult">該当するアプリがありません</p>
 
   <section data-section data-cat="cat0">
@@ -1096,7 +1132,7 @@
 
   <footer>
     <p>各カードをクリックするとアプリが新しいタブで開きます。すべて Vercel で静的配信。</p>
-    <p>見出しと 1 行目のチップは<b>主題</b>、2 行目のチップは<b>実装技術</b>、3 行目のチップは<b>データの出典</b>。カード下部の丸はその技術と出典。三つは掛け合わせて絞り込める(例: 近代文学・翻訳 × 統計 × 青空文庫)。</p>
+    <p>1 行目のチップは<b>分野</b>、分野を選ぶと下に<b>棚</b>(見出しと同じ主題)が開く。「詳しく絞り込む」の中に<b>技術</b>(手法・素材・つくり)と<b>データの出典</b>。カード下部の丸はその技術と出典。掛け合わせて絞り込める(例: 文学・古典・美術 × 統計 × 青空文庫)。チップの数字は<b>他の絞り込みを効かせたときに残る枚数</b>で、0 件のチップは押せない。</p>
     <p>初回デプロイ日・最終更新日は Vercel のプロジェクト作成日・最新デプロイ日時(JST)、ライセンス有無は GitHub リポジトリの検出結果に基づく。</p>
     <p><a href="https://github.com/twill3c/app-menu/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a> © 2026 坂田哲朗 ・ <a href="https://github.com/twill3c/app-menu" target="_blank" rel="noopener">GitHub</a> ・ <a href="https://claude.ai/code/artifact/5828914a-e133-4dab-ba99-988b79b82bb2" target="_blank" rel="noopener">app-menu の歩き方</a> ・ <a href="https://claude.ai/code/artifact/03996522-5e4d-4194-a755-eef0540cd9ff" target="_blank" rel="noopener">app-menu 設計図</a></p>
   </footer>
@@ -1110,10 +1146,21 @@
   const noresult = document.getElementById('noresult');
   const shownNote = document.getElementById('shown-note');
   const shownCount = document.getElementById('shown-count');
+  const catsRow = document.getElementById('cats');
+  const moreNote = document.getElementById('more-note');
   const sections = Array.from(document.querySelectorAll('[data-section]'));
+  // 棚チップも data-group を持つので、分野チップは #groups の中だけを採る。
+  const groupChips = Array.from(document.querySelectorAll('#groups .chip[data-group]'));
   const chips = Array.from(document.querySelectorAll('.chip[data-cat]'));
   const tagChips = Array.from(document.querySelectorAll('.chip[data-tag]'));
   const srcChips = Array.from(document.querySelectorAll('.chip[data-src]'));
+
+  // 棚(cat)がどの分野(group)に属するかは棚チップの data-group が唯一の出どころ。
+  // 分野は主題の上に足した段で、cat 番号は動かしていない。
+  const groupOf = {};
+  for (const chip of chips) {
+    if (chip.dataset.cat !== 'ALL') groupOf[chip.dataset.cat] = chip.dataset.group;
+  }
 
   const listOf = v => (v || '').split(',').filter(Boolean);
 
@@ -1143,23 +1190,31 @@
   }
   document.getElementById('total-count').textContent = items.length;
 
+  let curGroup = 'ALL';
   let curCat = 'ALL';
   let curTag = 'ALL';
   let curSrc = 'ALL';
 
+  const okGroup = (it, v) => v === 'ALL' || groupOf[it.cat] === v;
   const okCat = (it, v) => v === 'ALL' || it.cat === v;
   const okTag = (it, v) => v === 'ALL' || it.tags.includes(v);
-  const okSrc = (it, v) => v === 'ALL' || it.srcs.includes(v);
+  // __none__ は語彙ではなく「出典を持たないカード」を指す入口(自作・合成)。
+  const okSrc = (it, v) => v === 'ALL' || (v === '__none__' ? it.srcs.length === 0
+                                                           : it.srcs.includes(v));
   const okText = (it, q) => q === '' || it.text.includes(q);
 
   // チップの件数は「その軸だけを仮に v にしたとき、他の軸と自由入力の現在の
   // 選択のもとで何枚残るか」。単独の総数を出すと、押した先が 0 件のチップに
   // 大きな数字が並ぶ(実測で三軸の組合せ 17,784 通りのうち 92.2% が 0 件)。
   function liveCount(axis, v, q) {
+    // 棚は分野の下位なので、分野を仮に v にするときは棚の選択も外して数える。
+    const group = axis === 'group' ? v : curGroup;
+    const cat = axis === 'cat' ? v : (axis === 'group' ? 'ALL' : curCat);
     let n = 0;
     for (const it of items) {
       if (!okText(it, q)) continue;
-      if (!okCat(it, axis === 'cat' ? v : curCat)) continue;
+      if (!okGroup(it, group)) continue;
+      if (!okCat(it, cat)) continue;
       if (!okTag(it, axis === 'tag' ? v : curTag)) continue;
       if (!okSrc(it, axis === 'src' ? v : curSrc)) continue;
       n++;
@@ -1186,7 +1241,7 @@
     const q = input.value.trim().toLowerCase();
     let shown = 0;
     for (const it of items) {
-      const ok = okCat(it, curCat) && okTag(it, curTag)
+      const ok = okGroup(it, curGroup) && okCat(it, curCat) && okTag(it, curTag)
               && okSrc(it, curSrc) && okText(it, q);
       it.el.classList.toggle('hidden', !ok);
       if (ok) shown++;
@@ -1195,13 +1250,27 @@
       section.classList.toggle('hidden',
         section.querySelector('.card:not(.hidden)') === null);
     }
+    paint(groupChips, 'group', curGroup, q);
     paint(chips, 'cat', curCat, q);
     paint(tagChips, 'tag', curTag, q);
     paint(srcChips, 'src', curSrc, q);
+    // 棚チップは選ばれている分野のものだけ見せる。分野を選んでいなければ
+    // 行そのものを畳む(上端に 42 枚のチップを積まないため)。
+    catsRow.classList.toggle('hidden', curGroup === 'ALL');
+    for (const chip of chips) {
+      chip.classList.toggle('hidden',
+        chip.dataset.cat !== 'ALL' && chip.dataset.group !== curGroup);
+    }
+    // 折り畳みの中で絞り込んでいることが、畳んだままでも分かるように。
+    const inner = [];
+    if (curTag !== 'ALL') inner.push(curTag);
+    if (curSrc !== 'ALL') inner.push(curSrc === '__none__' ? '自作・合成' : curSrc);
+    moreNote.textContent = inner.length ? '· ' + inner.join(' / ') : '';
     noresult.classList.toggle('hidden', shown > 0);
     // 各軸の「すべて/指定なし」チップの数字は「この軸を外したら何件か」であって
     // いまの表示枚数ではない。表示枚数は絞り込み中だけ別に出す。
-    const filtering = curCat !== 'ALL' || curTag !== 'ALL' || curSrc !== 'ALL' || q !== '';
+    const filtering = curGroup !== 'ALL' || curCat !== 'ALL'
+                   || curTag !== 'ALL' || curSrc !== 'ALL' || q !== '';
     shownNote.classList.toggle('hidden', !filtering);
     shownCount.textContent = shown;
   }
@@ -1217,6 +1286,8 @@
       });
     }
   };
+  // 分野を切り替えたら棚の選択は外す(その棚は新しい分野の中に無い)。
+  bind(groupChips, 'group', () => curGroup, v => { curGroup = v; curCat = 'ALL'; });
   bind(chips, 'cat', () => curCat, v => { curCat = v; });
   bind(tagChips, 'tag', () => curTag, v => { curTag = v; });
   bind(srcChips, 'src', () => curSrc, v => { curSrc = v; });
