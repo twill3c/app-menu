@@ -61,11 +61,22 @@
     background: var(--card); border: 1px solid var(--border); color: var(--muted);
     border-radius: 999px; padding: 6px 13px; font-size: 0.86rem; cursor: pointer;
     user-select: none; white-space: nowrap; transition: border-color .15s, color .15s;
+    font-family: inherit; line-height: 1.6;
   }
-  .chip:hover { color: var(--text); border-color: var(--accent); }
+  .chip:not(:disabled):hover { color: var(--text); border-color: var(--accent); }
+  /* 0 件のチップは押せない。押した先が空になるチップに大きな数字が出ていると
+     絞り込みが行き止まりだらけになる(実測で三軸の組合せの 92% が 0 件)。 */
+  .chip:disabled { opacity: 0.35; cursor: default; }
+  .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
   .chip .n { opacity: .7; font-size: .8em; margin-left: 4px; }
   .noresult { color: var(--muted); font-size: 0.95rem; padding: 24px 0; }
+  /* 「すべて」チップの数字は「この軸を外したら何件か」なので、
+     いま出ている枚数はここに別に出す。 */
+  .shown {
+    margin-left: 8px; padding: 1px 10px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); font-size: 0.8rem;
+  }
   h2 {
     font-size: 1.05rem;
     color: var(--muted);
@@ -212,7 +223,8 @@
 <div class="container">
   <header>
     <h1>🗂️ App Menu</h1>
-    <p class="subtitle">Vercel で公開中のアプリ一覧 — <span id="total-count"></span> apps</p>
+    <p class="subtitle">Vercel で公開中のアプリ一覧 — <span id="total-count"></span> apps<span
+      class="shown hidden" id="shown-note">絞り込み中 <span id="shown-count"></span> 件</span></p>
   </header>
 
   <div class="search-box">
@@ -220,56 +232,56 @@
   </div>
 
   <div class="cats" id="cats" role="group" aria-label="主題で絞り込み">
-    <span class="chip on" data-cat="ALL">すべて<span class="n"></span></span>
-    <span class="chip" data-cat="cat0">📰 情報収集<span class="n"></span></span>
-    <span class="chip" data-cat="cat2">🧩 パズル・思考<span class="n"></span></span>
-    <span class="chip" data-cat="cat13">🕹️ アクション・リアルタイム<span class="n"></span></span>
-    <span class="chip" data-cat="cat9">⌨️ タイピング<span class="n"></span></span>
-    <span class="chip" data-cat="cat14">🎼 音・音楽<span class="n"></span></span>
-    <span class="chip" data-cat="cat10">🤖 AI・言語モデル<span class="n"></span></span>
-    <span class="chip" data-cat="cat3">🧠 学習アルゴリズム<span class="n"></span></span>
-    <span class="chip" data-cat="cat12">📊 実データ分析<span class="n"></span></span>
-    <span class="chip" data-cat="cat4">🗺️ 地図<span class="n"></span></span>
-    <span class="chip" data-cat="cat5">📚 近代文学・翻訳<span class="n"></span></span>
-    <span class="chip" data-cat="cat11">📜 古典・歳時<span class="n"></span></span>
-    <span class="chip" data-cat="cat16">🏛️ 海外古典<span class="n"></span></span>
-    <span class="chip" data-cat="cat6">🧭 プランナー・シミュレータ<span class="n"></span></span>
-    <span class="chip" data-cat="cat7">🧮 量子・計算・天体<span class="n"></span></span>
-    <span class="chip" data-cat="cat8">🏮 ブランドサイト<span class="n"></span></span>
-    <span class="chip" data-cat="cat15">🖼️ 美術・表象<span class="n"></span></span>
-    <span class="chip" data-cat="cat17">🌿 生物・自然<span class="n"></span></span>
-    <span class="chip" data-cat="cat18">📋 ガバナンス・規程<span class="n"></span></span>
+    <button type="button" class="chip on" data-cat="ALL" aria-pressed="true">すべて<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat0" aria-pressed="false">📰 情報収集<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat2" aria-pressed="false">🧩 パズル・思考<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat13" aria-pressed="false">🕹️ アクション・リアルタイム<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat9" aria-pressed="false">⌨️ タイピング<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat14" aria-pressed="false">🎼 音・音楽<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat10" aria-pressed="false">🤖 AI・言語モデル<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat3" aria-pressed="false">🧠 学習アルゴリズム<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat12" aria-pressed="false">📊 実データ分析<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat4" aria-pressed="false">🗺️ 地図<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat5" aria-pressed="false">📚 近代文学・翻訳<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat11" aria-pressed="false">📜 古典・歳時<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat16" aria-pressed="false">🏛️ 海外古典<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat6" aria-pressed="false">🧭 プランナー・シミュレータ<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat7" aria-pressed="false">🧮 量子・計算・天体<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat8" aria-pressed="false">🏮 ブランドサイト<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat15" aria-pressed="false">🖼️ 美術・表象<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat17" aria-pressed="false">🌿 生物・自然<span class="n"></span></button>
+    <button type="button" class="chip" data-cat="cat18" aria-pressed="false">📋 ガバナンス・規程<span class="n"></span></button>
   </div>
 
   <div class="tags" id="tags" role="group" aria-label="技術で絞り込み">
     <span class="lead">技術</span>
-    <span class="chip tagchip on" data-tag="ALL">指定なし<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="機械学習">機械学習<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="統計">統計<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="自然言語処理">自然言語処理<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="地図">地図<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="探索">探索<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="物理">物理<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="量子・計算理論">量子・計算理論<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="音">音<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="Rust/WASM">Rust/WASM<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="R">R<span class="n"></span></span>
-    <span class="chip tagchip" data-tag="自動更新">自動更新<span class="n"></span></span>
+    <button type="button" class="chip tagchip on" data-tag="ALL" aria-pressed="true">指定なし<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="機械学習" aria-pressed="false">機械学習<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="統計" aria-pressed="false">統計<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="自然言語処理" aria-pressed="false">自然言語処理<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="地図" aria-pressed="false">地図<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="探索" aria-pressed="false">探索<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="物理" aria-pressed="false">物理<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="量子・計算理論" aria-pressed="false">量子・計算理論<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="音" aria-pressed="false">音<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="Rust/WASM" aria-pressed="false">Rust/WASM<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="R" aria-pressed="false">R<span class="n"></span></button>
+    <button type="button" class="chip tagchip" data-tag="自動更新" aria-pressed="false">自動更新<span class="n"></span></button>
   </div>
 
   <div class="srcs" id="srcs" role="group" aria-label="出典で絞り込み">
     <span class="lead">出典</span>
-    <span class="chip srcchip on" data-src="ALL">指定なし<span class="n"></span></span>
-    <span class="chip srcchip" data-src="青空文庫">青空文庫<span class="n"></span></span>
-    <span class="chip srcchip" data-src="Project Gutenberg">Project Gutenberg<span class="n"></span></span>
-    <span class="chip srcchip" data-src="Perseus">Perseus<span class="n"></span></span>
-    <span class="chip srcchip" data-src="Wikimedia">Wikimedia<span class="n"></span></span>
-    <span class="chip srcchip" data-src="報道・公式発表">報道・公式発表<span class="n"></span></span>
-    <span class="chip srcchip" data-src="政府・自治体データ">政府・自治体データ<span class="n"></span></span>
-    <span class="chip srcchip" data-src="気象・天文データ">気象・天文データ<span class="n"></span></span>
-    <span class="chip srcchip" data-src="公開データセット">公開データセット<span class="n"></span></span>
-    <span class="chip srcchip" data-src="地理院タイル">地理院タイル<span class="n"></span></span>
-    <span class="chip srcchip" data-src="美術館オープンアクセス">美術館オープンアクセス<span class="n"></span></span>
+    <button type="button" class="chip srcchip on" data-src="ALL" aria-pressed="true">指定なし<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="青空文庫" aria-pressed="false">青空文庫<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="Project Gutenberg" aria-pressed="false">Project Gutenberg<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="Perseus" aria-pressed="false">Perseus<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="Wikimedia" aria-pressed="false">Wikimedia<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="報道・公式発表" aria-pressed="false">報道・公式発表<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="政府・自治体データ" aria-pressed="false">政府・自治体データ<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="気象・天文データ" aria-pressed="false">気象・天文データ<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="公開データセット" aria-pressed="false">公開データセット<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="地理院タイル" aria-pressed="false">地理院タイル<span class="n"></span></button>
+    <button type="button" class="chip srcchip" data-src="美術館オープンアクセス" aria-pressed="false">美術館オープンアクセス<span class="n"></span></button>
   </div>
   <p class="noresult hidden" id="noresult">該当するアプリがありません</p>
 
@@ -1091,109 +1103,123 @@
 </div>
 
 <script>
-  const cards = Array.from(document.querySelectorAll('.card'));
-  document.getElementById('total-count').textContent = cards.length;
-
+  // 絞り込みは 3 軸(主題・技術・出典)と自由入力の AND。
+  // カードの data-cat / data-tags / data-src が唯一の出どころで、
+  // 見えている丸もチップの件数も毎回そこから描き直す(二重管理をしない)。
   const input = document.getElementById('filter');
+  const noresult = document.getElementById('noresult');
+  const shownNote = document.getElementById('shown-note');
+  const shownCount = document.getElementById('shown-count');
   const sections = Array.from(document.querySelectorAll('[data-section]'));
   const chips = Array.from(document.querySelectorAll('.chip[data-cat]'));
   const tagChips = Array.from(document.querySelectorAll('.chip[data-tag]'));
   const srcChips = Array.from(document.querySelectorAll('.chip[data-src]'));
+
+  const listOf = v => (v || '').split(',').filter(Boolean);
+
+  // カード 1 枚ぶんの索引。textContent は丸を描いたあとに採る —— そうすると
+  // 「青空文庫」「Rust/WASM」のようなタグ名・出典名でも自由入力が当たる。
+  const items = [];
+  for (const section of sections) {
+    for (const el of section.querySelectorAll('.card')) {
+      const tags = listOf(el.dataset.tags);
+      const srcs = listOf(el.dataset.src);
+      const meta = el.querySelector('.meta');
+      for (const t of tags) {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = t;
+        meta.appendChild(span);
+      }
+      for (const s of srcs) {
+        const span = document.createElement('span');
+        span.className = 'src';
+        span.textContent = s;
+        meta.appendChild(span);
+      }
+      items.push({ el, cat: section.dataset.cat, tags, srcs,
+                   text: el.textContent.toLowerCase() });
+    }
+  }
+  document.getElementById('total-count').textContent = items.length;
+
   let curCat = 'ALL';
   let curTag = 'ALL';
   let curSrc = 'ALL';
 
-  // カテゴリは主題・タグは技術。カードの data-tags が唯一の出どころで、
-  // 見えているタグの丸は毎回そこから描き直す(二重管理をしない)。
-  const tagsOf = card => (card.dataset.tags || '').split(',').filter(Boolean);
-  // 出典(3 本目の軸)も同じ流儀。data-src が唯一の出どころ。
-  const srcsOf = card => (card.dataset.src || '').split(',').filter(Boolean);
-  for (const card of cards) {
-    const meta = card.querySelector('.meta');
-    for (const t of tagsOf(card)) {
-      const span = document.createElement('span');
-      span.className = 'tag';
-      span.textContent = t;
-      meta.appendChild(span);
+  const okCat = (it, v) => v === 'ALL' || it.cat === v;
+  const okTag = (it, v) => v === 'ALL' || it.tags.includes(v);
+  const okSrc = (it, v) => v === 'ALL' || it.srcs.includes(v);
+  const okText = (it, q) => q === '' || it.text.includes(q);
+
+  // チップの件数は「その軸だけを仮に v にしたとき、他の軸と自由入力の現在の
+  // 選択のもとで何枚残るか」。単独の総数を出すと、押した先が 0 件のチップに
+  // 大きな数字が並ぶ(実測で三軸の組合せ 17,784 通りのうち 92.2% が 0 件)。
+  function liveCount(axis, v, q) {
+    let n = 0;
+    for (const it of items) {
+      if (!okText(it, q)) continue;
+      if (!okCat(it, axis === 'cat' ? v : curCat)) continue;
+      if (!okTag(it, axis === 'tag' ? v : curTag)) continue;
+      if (!okSrc(it, axis === 'src' ? v : curSrc)) continue;
+      n++;
     }
-    for (const s of srcsOf(card)) {
-      const span = document.createElement('span');
-      span.className = 'src';
-      span.textContent = s;
-      meta.appendChild(span);
+    return n;
+  }
+
+  function paint(list, axis, cur, q) {
+    for (const chip of list) {
+      const v = chip.dataset[axis];
+      const n = liveCount(axis, v, q);
+      const on = v === cur;
+      chip.querySelector('.n').textContent = n;
+      chip.classList.toggle('on', on);
+      chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+      // 0 件のチップは押せない。ただし選択中のもの(押して解除する)と
+      // 「すべて/指定なし」(いつでも戻れる脱出口)は必ず残す —— 自由入力が
+      // 何にも当たらないときに全チップが死ぬと、絞り込みから出られなくなる。
+      chip.disabled = n === 0 && !on && v !== 'ALL';
     }
-  }
-
-  // チップに各カテゴリのアプリ数を表示
-  for (const chip of chips) {
-    const cat = chip.dataset.cat;
-    const n = cat === 'ALL' ? cards.length
-      : sections.filter(s => s.dataset.cat === cat)
-                .reduce((sum, s) => sum + s.querySelectorAll('.card').length, 0);
-    chip.querySelector('.n').textContent = n;
-  }
-
-  // 技術チップにも該当数を表示
-  for (const chip of tagChips) {
-    const tag = chip.dataset.tag;
-    const n = tag === 'ALL' ? cards.length
-      : cards.filter(c => tagsOf(c).includes(tag)).length;
-    chip.querySelector('.n').textContent = n;
-  }
-
-  // 出典チップにも該当数を表示
-  for (const chip of srcChips) {
-    const src = chip.dataset.src;
-    const n = src === 'ALL' ? cards.length
-      : cards.filter(c => srcsOf(c).includes(src)).length;
-    chip.querySelector('.n').textContent = n;
   }
 
   function render() {
     const q = input.value.trim().toLowerCase();
     let shown = 0;
-    for (const section of sections) {
-      const inCat = curCat === 'ALL' || section.dataset.cat === curCat;
-      let visible = 0;
-      for (const card of section.querySelectorAll('.card')) {
-        const hit = q === '' || card.textContent.toLowerCase().includes(q);
-        const inTag = curTag === 'ALL' || tagsOf(card).includes(curTag);
-        const inSrc = curSrc === 'ALL' || srcsOf(card).includes(curSrc);
-        const ok = inCat && inTag && inSrc && hit;
-        card.classList.toggle('hidden', !ok);
-        if (ok) visible++;
-      }
-      section.classList.toggle('hidden', visible === 0);
-      shown += visible;
+    for (const it of items) {
+      const ok = okCat(it, curCat) && okTag(it, curTag)
+              && okSrc(it, curSrc) && okText(it, q);
+      it.el.classList.toggle('hidden', !ok);
+      if (ok) shown++;
     }
-    document.getElementById('noresult').classList.toggle('hidden', shown > 0);
+    for (const section of sections) {
+      section.classList.toggle('hidden',
+        section.querySelector('.card:not(.hidden)') === null);
+    }
+    paint(chips, 'cat', curCat, q);
+    paint(tagChips, 'tag', curTag, q);
+    paint(srcChips, 'src', curSrc, q);
+    noresult.classList.toggle('hidden', shown > 0);
+    // 各軸の「すべて/指定なし」チップの数字は「この軸を外したら何件か」であって
+    // いまの表示枚数ではない。表示枚数は絞り込み中だけ別に出す。
+    const filtering = curCat !== 'ALL' || curTag !== 'ALL' || curSrc !== 'ALL' || q !== '';
+    shownNote.classList.toggle('hidden', !filtering);
+    shownCount.textContent = shown;
   }
 
   input.addEventListener('input', render);
-  for (const chip of chips) {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('on'));
-      chip.classList.add('on');
-      curCat = chip.dataset.cat;
-      render();
-    });
-  }
-  for (const chip of tagChips) {
-    chip.addEventListener('click', () => {
-      tagChips.forEach(c => c.classList.remove('on'));
-      chip.classList.add('on');
-      curTag = chip.dataset.tag;
-      render();
-    });
-  }
-  for (const chip of srcChips) {
-    chip.addEventListener('click', () => {
-      srcChips.forEach(c => c.classList.remove('on'));
-      chip.classList.add('on');
-      curSrc = chip.dataset.src;
-      render();
-    });
-  }
+  // 選択中のチップをもう一度押すと解除(= その軸を ALL に戻す)。
+  const bind = (list, axis, get, set) => {
+    for (const chip of list) {
+      chip.addEventListener('click', () => {
+        const v = chip.dataset[axis];
+        set(v === get() ? 'ALL' : v);
+        render();
+      });
+    }
+  };
+  bind(chips, 'cat', () => curCat, v => { curCat = v; });
+  bind(tagChips, 'tag', () => curTag, v => { curTag = v; });
+  bind(srcChips, 'src', () => curSrc, v => { curSrc = v; });
   render();
 </script>
 </body>

@@ -32,7 +32,8 @@ INDEX = ROOT / "index.html"
 CARD_RE = re.compile(r'<a class="card"(?P<attrs>[^>]*)>(?P<body>.*?)</a>', re.S)
 SRC_ATTR_RE = re.compile(r'data-src="([^"]*)"')
 NAME_RE = re.compile(r'<div class="name">([^<]*)</div>')
-CHIP_RE = re.compile(r'<span class="chip srcchip[^"]*" data-src="([^"]+)"')
+# チップは <button>(キーボードで押せる)。以前は <span> だったので両方を拾う。
+CHIP_RE = re.compile(r'<(?:span|button)[^>]*class="chip srcchip[^"]*"[^>]*data-src="([^"]+)"')
 
 
 def main(verbose: bool) -> int:

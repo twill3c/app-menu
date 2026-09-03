@@ -27,7 +27,8 @@ INDEX = ROOT / "index.html"
 CARD_RE = re.compile(r'<a class="card"(?P<attrs>[^>]*)>(?P<body>.*?)</a>', re.S)
 TAGS_ATTR_RE = re.compile(r'data-tags="([^"]*)"')
 NAME_RE = re.compile(r'<div class="name">([^<]*)</div>')
-CHIP_RE = re.compile(r'<span class="chip tagchip[^"]*" data-tag="([^"]+)"')
+# チップは <button>(キーボードで押せる)。以前は <span> だったので両方を拾う。
+CHIP_RE = re.compile(r'<(?:span|button)[^>]*class="chip tagchip[^"]*"[^>]*data-tag="([^"]+)"')
 
 
 def main(verbose: bool) -> int:

@@ -35,7 +35,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "index.html"
 
-CHIP_RE = re.compile(r'<span class="chip" data-cat="(cat\d+)"[^>]*>(.*?)<span class="n">')
+# チップは <button>(キーボードで押せる)。以前は <span> だったので両方を拾う。
+CHIP_RE = re.compile(
+    r'<(?:span|button)[^>]*class="chip"[^>]*data-cat="(cat\d+)"[^>]*>(.*?)<span class="n">')
 SECTION_RE = re.compile(
     r'<section data-section data-cat="(cat\d+)"[^>]*>\s*<h2>(.*?)</h2>(.*?)</section>',
     re.S)
