@@ -62,7 +62,7 @@ VOCAB = {
     "PyTorch", "Chainer", "TensorFlow", "Keras", "NumPy", "Transformers",
     "fugashi", "R",
     # 照合側
-    "MeCab", "LangChain", "JAX", "ONNX Runtime",
+    "MeCab", "LangChain", "JAX", "ONNX Runtime", "astropy",
 }
 
 # --measure が探す印。値は (探すファイル, 正規表現)。
@@ -78,6 +78,8 @@ SIGNS = {
     "Transformers": [("*.py", r"^\s*(?:import|from)\s+transformers\b"),
                      ("requirements*.txt", r"^transformers\b")],
     "ONNX Runtime": [("*.py", r"^\s*import onnxruntime\b"), ("requirements*.txt", r"^onnxruntime\b")],
+    "astropy": [("*.py", r"^\s*(?:import|from)\s+astropy\b"),
+                ("requirements*.txt", r"^astropy\b")],
     "fugashi": [("*.py", r"\bfugashi\.(?:Generic)?Tagger\(")],
     "MeCab": [("*.py", r"\bfugashi\.(?:Generic)?Tagger\(")],   # fugashi = MeCab の Python 束縛
     "LangChain": [("*.py", r"^\s*(?:import|from)\s+langchain\w*")],
