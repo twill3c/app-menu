@@ -153,6 +153,10 @@ out.a11y = await page.evaluate(() => ({
   chipsHavePressed: Array.from(document.querySelectorAll('.chip')).every(e => e.hasAttribute('aria-pressed')),
   tracksHavePressed: Array.from(document.querySelectorAll('#tracks button')).every(e => e.hasAttribute('aria-pressed')),
   summaryHasControls: !!document.querySelector('#more > summary[aria-controls]'),
+  summaryExpandedSynced: document.querySelector('#more > summary')
+    .getAttribute('aria-expanded') === String(document.getElementById('more').open),
+  decorativeIconsHidden: Array.from(document.querySelectorAll('#results .card h3 .ic, #tracks .ic'))
+    .every(e => e.getAttribute('aria-hidden') === 'true'),
   langIsJa: document.documentElement.lang === 'ja',
   jsonLd: !!document.querySelector('script[type="application/ld+json"]'),
 }));

@@ -180,7 +180,8 @@ details.more > summary .active { color: var(--accent); }
 .noresult { margin-top: 28px; color: var(--muted); }
 .noresult b { color: var(--text); }
 footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); }
-footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 14px; }
+footer p { margin-bottom: 8px; max-width: 62em; }
+footer b { color: var(--text); font-weight: 600; }
 
 /* ---------------------------------------------------------------- responsive */
 @media (max-width: 1000px) {

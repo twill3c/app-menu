@@ -266,7 +266,11 @@ function renderCard(a, big) {
   c.append(tops);
 
   const h = el('h3');
-  if (a.icon) h.append(el('span', 'ic', a.icon));
+  if (a.icon) {
+    const ic = el('span', 'ic', a.icon);
+    ic.setAttribute('aria-hidden', 'true');   // 絵文字は飾り。読み上げさせない
+    h.append(ic);
+  }
   if (a.appUrl) {
     const link = el('a', null, a.title);
     link.href = a.appUrl; link.target = '_blank'; link.rel = 'noopener';
@@ -378,8 +382,9 @@ function renderTracks() {
     b.setAttribute('aria-pressed', on ? 'true' : 'false');
     b.disabled = n === 0 && !on;
     const title = el('div', 't');
-    title.append(el('span', 'ic', t.icon || ''), document.createTextNode(t.label),
-                 el('span', 'n', '  ' + n));
+    const ic = el('span', 'ic', t.icon || '');
+    ic.setAttribute('aria-hidden', 'true');
+    title.append(ic, document.createTextNode(t.label), el('span', 'n', '  ' + n));
     b.append(title, el('div', 'd', t.note || ''));
     b.addEventListener('click', () => { toggle('tracks', t.id); });
     wrap.append(b);
@@ -651,6 +656,14 @@ async function main() {
     apply(true);
     input.focus();
   });
+  // <details> は開閉を自前で持つが、SPEC §40 が aria-expanded を求めているので
+  // summary に載せて同期させる(支援技術には二重に伝わるだけで害はない)。
+  const more = document.getElementById('more');
+  const summary = more.querySelector('summary');
+  const syncExpanded = () => summary.setAttribute('aria-expanded', more.open ? 'true' : 'false');
+  more.addEventListener('toggle', syncExpanded);
+  syncExpanded();
+
   const planned = document.getElementById('toggle-planned');
   planned.addEventListener('click', () => {
     state.showPlanned = !state.showPlanned;

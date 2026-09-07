@@ -68,12 +68,26 @@
   </section>
 
   <footer>
-    <ul>
-      <li><a href="https://github.com/twill3c/app-menu">このサイトのソース</a></li>
-      <li>データは <code>data/apps.json</code> が唯一の出どころ</li>
-      <li>静的サイト・依存ゼロ・API キー不要</li>
-      <li>MIT License</li>
-    </ul>
+    <p>カードの「アプリを見る」で新しいタブに開きます。すべて Vercel で静的配信。</p>
+    <p>絞り込みは 8 つの軸 —— <b>Track</b>(どんな能力か)・<b>分野</b>(何を対象にしたか)・
+      <b>手法</b>・<b>表示と体験</b>・<b>言語</b>・<b>実装</b>・<b>出典</b>・<b>シリーズ</b>。
+      <b>同じ軸の中は OR、違う軸どうしは AND</b> で掛け合わせられます
+      (例: 文学・民俗・言語 × 自然言語処理 × 青空文庫)。チップの数字は
+      <b>いま押したら何件になるか</b>で、0 件のチップは押せません。
+      絞り込んだ状態は URL にそのまま残るので、共有できます。</p>
+    <p>カードの<b>言語・実装・バッジは実測値</b>です。各リポジトリを走査して数え、
+      111 プロジェクトで共通のスキャフォールドは除いてあります。ライブラリの印は
+      🚚 出荷 = ブラウザで動く / 🏭 生成 = 手元で重みや JSON を作った /
+      ⚖️ 照合 = オラクル専用。バッジの判定条件は
+      <a href="https://github.com/twill3c/app-menu/blob/main/data/taxonomy.json" target="_blank" rel="noopener">taxonomy.json</a>
+      に書いてあります。</p>
+    <p>初回デプロイ日・最終更新日は Vercel のプロジェクト作成日と各リポジトリの
+      最終コミット日(JST)。ソースが GitHub にないアプリには GitHub のボタンを出しません。</p>
+    <p><a href="https://github.com/twill3c/app-menu/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+      © 2026 坂田哲朗 ・
+      <a href="https://github.com/twill3c/app-menu" target="_blank" rel="noopener">GitHub</a> ・
+      <a href="https://claude.ai/code/artifact/5828914a-e133-4dab-ba99-988b79b82bb2" target="_blank" rel="noopener">app-menu の歩き方</a> ・
+      <a href="https://claude.ai/code/artifact/03996522-5e4d-4194-a755-eef0540cd9ff" target="_blank" rel="noopener">app-menu 設計図</a></p>
   </footer>
 </div>
 
