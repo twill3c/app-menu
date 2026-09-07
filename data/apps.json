@@ -8668,6 +8668,120 @@
    "firstDeployedAt": "",
    "updatedAt": "",
    "status": "planned"
+  },
+  {
+   "id": "japan-geo-onsen",
+   "title": "日本列島 自然環境・温泉GIS",
+   "shortTitle": "japan-geo-onsen",
+   "aliases": [
+    "japan-geo-onsen",
+    "温泉GIS"
+   ],
+   "icon": "♨",
+   "series": "standalone",
+   "tracks": [
+    "data-geo"
+   ],
+   "domains": [
+    "weather-environment",
+    "science-medical"
+   ],
+   "methods": [
+    "gis",
+    "spatial-statistics",
+    "statistics",
+    "statistical-test"
+   ],
+   "experience": [
+    "map",
+    "layers",
+    "interactive",
+    "chart"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "ETL・空間結合・統計・検証",
+     "loc": 2801
+    },
+    {
+     "name": "TypeScript",
+     "role": "地図UI・標高タイル解読・等高線生成",
+     "loc": 1531
+    },
+    {
+     "name": "JavaScript",
+     "role": "実ブラウザ検品",
+     "loc": 327
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 217
+    }
+   ],
+   "runtimes": [
+    "Browser"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing"
+   ],
+   "dataSources": [
+    {
+     "category": "gsi",
+     "name": "国土地理院タイル(地図・陰影起伏・色別標高・標高)"
+    },
+    {
+     "category": "jma",
+     "name": "気象庁 活火山一覧"
+    },
+    {
+     "category": "ksj",
+     "name": "国土数値情報 観光資源データ(P12)"
+    },
+    {
+     "category": "gov-dataset",
+     "name": "産総研 20万分の1日本シームレス地質図V2"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "MapLibre GL JS",
+     "role": "ship"
+    }
+   ],
+   "summary": "地形・地質・火山・温泉を一枚の地図に重ねる。等高線は事前に作った線ではなく、表示範囲の標高タイルをその場で読んで引く。温泉の泉質・泉温・湧出量は全国の公開データが存在しないので、値を作らず「公開データに無い」と書いて出す。温泉の分布は同じデータの温泉以外の観光地点を対照に置いて比べる。",
+   "description": "",
+   "keywords": [
+    "温泉",
+    "地質図",
+    "活火山",
+    "等高線",
+    "標高タイル",
+    "MapLibre",
+    "空間結合"
+   ],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "open-data",
+    "static-deploy",
+    "no-api-key",
+    "reproducible"
+   ],
+   "appUrl": "https://japan-geo-onsen.vercel.app",
+   "githubUrl": "https://github.com/twill3c/japan-geo-onsen",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-07",
+   "updatedAt": "2026-09-08",
+   "status": "published"
   }
  ]
 }
