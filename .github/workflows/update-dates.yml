@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Refresh card dates
+      - name: 最終更新日を実測値に同期
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python tools/update_dates.py
@@ -28,10 +28,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add data/apps.json
           if git diff --cached --quiet; then
             echo "変更なし — コミットしない"
           else
-            git commit -m "chore: カードの最終更新日を実測値に同期 $(date -u +%Y-%m-%d)"
+            git commit -m "chore: apps.json の最終更新日を実測値に同期 $(date -u +%Y-%m-%d)"
             git push
           fi

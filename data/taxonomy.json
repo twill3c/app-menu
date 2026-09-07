@@ -1,0 +1,789 @@
+{
+ "$comment": "app-menu Portfolio Edition V2.0 の分類語彙。表示名・順序・アイコンはここが唯一の出どころで、index.html にも app.js にもハードコードしない(SPEC §34)。",
+ "tracks": [
+  {
+   "id": "ai-insight",
+   "label": "AIを理解・可視化する",
+   "order": 10,
+   "icon": "🤖",
+   "note": "深層学習・機械学習・XAI・モデル解析・特徴量可視化・学習過程可視化"
+  },
+  {
+   "id": "data-geo",
+   "label": "公開データを地図で読む",
+   "order": 20,
+   "icon": "🗺️",
+   "note": "GIS・地理空間解析・公開統計・地域差分析・時系列地図"
+  },
+  {
+   "id": "computational-humanities",
+   "label": "文学・文化を計量する",
+   "order": 30,
+   "icon": "📚",
+   "note": "青空文庫・Project Gutenberg・民俗学・歴史資料・NLP・Embedding"
+  },
+  {
+   "id": "simulation",
+   "label": "シミュレーションで理解する",
+   "order": 40,
+   "icon": "🧪",
+   "note": "物理・探索・最適化・強化学習・エージェント・数値計算"
+  },
+  {
+   "id": "browser-ai",
+   "label": "ブラウザだけでAIを動かす",
+   "order": 50,
+   "icon": "🌐",
+   "note": "ONNX Runtime Web・Transformers.js・WebGPU・WebAssembly・ブラウザ内推論"
+  },
+  {
+   "id": "practical-tools",
+   "label": "実務に落とし込む",
+   "order": 60,
+   "icon": "🛠️",
+   "note": "業務支援・ジェネレータ・プランナー・可視化ツール・ガバナンス支援"
+  }
+ ],
+ "domains": [
+  {
+   "id": "society-transport",
+   "label": "社会・都市・交通",
+   "order": 10,
+   "icon": "🚉"
+  },
+  {
+   "id": "disaster-infra",
+   "label": "防災・インフラ",
+   "order": 20,
+   "icon": "🚨"
+  },
+  {
+   "id": "agri-forest-fishery",
+   "label": "農林水産",
+   "order": 30,
+   "icon": "🌾"
+  },
+  {
+   "id": "weather-environment",
+   "label": "気象・自然環境",
+   "order": 40,
+   "icon": "🌤️"
+  },
+  {
+   "id": "history-archaeology-faith",
+   "label": "歴史・考古・信仰",
+   "order": 50,
+   "icon": "⛩️"
+  },
+  {
+   "id": "literature-folklore-language",
+   "label": "文学・民俗・言語",
+   "order": 60,
+   "icon": "📖"
+  },
+  {
+   "id": "art-music",
+   "label": "芸術・音楽",
+   "order": 70,
+   "icon": "🎨"
+  },
+  {
+   "id": "science-medical",
+   "label": "科学・医療",
+   "order": 80,
+   "icon": "🔬"
+  },
+  {
+   "id": "ai-computing",
+   "label": "AI・コンピューティング",
+   "order": 90,
+   "icon": "💻"
+  },
+  {
+   "id": "business-governance",
+   "label": "実務・ガバナンス",
+   "order": 100,
+   "icon": "📋"
+  },
+  {
+   "id": "game-education",
+   "label": "ゲーム・教育",
+   "order": 110,
+   "icon": "🎮"
+  }
+ ],
+ "methods": [
+  {
+   "id": "deep-learning",
+   "label": "深層学習",
+   "order": 10
+  },
+  {
+   "id": "machine-learning",
+   "label": "機械学習",
+   "order": 20
+  },
+  {
+   "id": "nlp",
+   "label": "自然言語処理",
+   "order": 30
+  },
+  {
+   "id": "embedding",
+   "label": "Embedding",
+   "order": 40
+  },
+  {
+   "id": "image-recognition",
+   "label": "画像認識",
+   "order": 50
+  },
+  {
+   "id": "speech-recognition",
+   "label": "音声認識",
+   "order": 60
+  },
+  {
+   "id": "time-series",
+   "label": "時系列分析",
+   "order": 70
+  },
+  {
+   "id": "statistics",
+   "label": "統計解析",
+   "order": 80
+  },
+  {
+   "id": "statistical-test",
+   "label": "統計検定",
+   "order": 90
+  },
+  {
+   "id": "regression",
+   "label": "回帰",
+   "order": 100
+  },
+  {
+   "id": "clustering",
+   "label": "クラスタリング",
+   "order": 110
+  },
+  {
+   "id": "anomaly-detection",
+   "label": "異常検知",
+   "order": 120
+  },
+  {
+   "id": "spatial-statistics",
+   "label": "空間統計",
+   "order": 130
+  },
+  {
+   "id": "gis",
+   "label": "GIS",
+   "order": 140
+  },
+  {
+   "id": "graph-analysis",
+   "label": "グラフ分析",
+   "order": 150
+  },
+  {
+   "id": "reinforcement-learning",
+   "label": "強化学習",
+   "order": 160
+  },
+  {
+   "id": "optimization",
+   "label": "最適化",
+   "order": 170
+  },
+  {
+   "id": "search",
+   "label": "探索",
+   "order": 180
+  },
+  {
+   "id": "simulation",
+   "label": "シミュレーション",
+   "order": 190
+  },
+  {
+   "id": "numerical",
+   "label": "数値計算",
+   "order": 200
+  },
+  {
+   "id": "rule-based",
+   "label": "ルールベース分析",
+   "order": 210
+  }
+ ],
+ "experience": [
+  {
+   "id": "map",
+   "label": "地図 / Atlas",
+   "order": 10
+  },
+  {
+   "id": "dashboard",
+   "label": "ダッシュボード",
+   "order": 20
+  },
+  {
+   "id": "chart",
+   "label": "チャート",
+   "order": 30
+  },
+  {
+   "id": "timeline",
+   "label": "タイムライン",
+   "order": 40
+  },
+  {
+   "id": "network",
+   "label": "ネットワーク",
+   "order": 50
+  },
+  {
+   "id": "three-d",
+   "label": "3D",
+   "order": 60
+  },
+  {
+   "id": "heatmap",
+   "label": "ヒートマップ",
+   "order": 70
+  },
+  {
+   "id": "simulator",
+   "label": "シミュレータ",
+   "order": 80
+  },
+  {
+   "id": "search",
+   "label": "検索",
+   "order": 90
+  },
+  {
+   "id": "comparison",
+   "label": "比較",
+   "order": 100
+  },
+  {
+   "id": "generator",
+   "label": "ジェネレータ",
+   "order": 110
+  },
+  {
+   "id": "game",
+   "label": "ゲーム",
+   "order": 120
+  },
+  {
+   "id": "interactive",
+   "label": "インタラクティブ操作",
+   "order": 130
+  },
+  {
+   "id": "layers",
+   "label": "レイヤー管理",
+   "order": 140
+  },
+  {
+   "id": "animation",
+   "label": "アニメーション",
+   "order": 150
+  }
+ ],
+ "languages": [
+  {
+   "id": "Python",
+   "label": "Python",
+   "order": 10,
+   "note": "AI、深層学習、ETL、データ分析"
+  },
+  {
+   "id": "TypeScript",
+   "label": "TypeScript",
+   "order": 20,
+   "note": "Web UI、型安全なフロントエンド"
+  },
+  {
+   "id": "JavaScript",
+   "label": "JavaScript",
+   "order": 30,
+   "note": "軽量ブラウザ実装"
+  },
+  {
+   "id": "Go",
+   "label": "Go",
+   "order": 40,
+   "note": "並行処理、ネットワーク処理、高速バックエンド、WASM"
+  },
+  {
+   "id": "Rust",
+   "label": "Rust",
+   "order": 50,
+   "note": "メモリ安全、高速処理、WASM、システム寄り処理"
+  },
+  {
+   "id": "R",
+   "label": "R",
+   "order": 60,
+   "note": "統計解析、検定、回帰、可視化"
+  },
+  {
+   "id": "Ruby",
+   "label": "Ruby",
+   "order": 70,
+   "note": "テキスト処理スクリプト"
+  },
+  {
+   "id": "SQL",
+   "label": "SQL",
+   "order": 80,
+   "note": "データ抽出・集計"
+  },
+  {
+   "id": "DAX",
+   "label": "DAX",
+   "order": 90,
+   "note": "BI・分析モデル"
+  },
+  {
+   "id": "HTML",
+   "label": "HTML",
+   "order": 100,
+   "note": "構造"
+  },
+  {
+   "id": "CSS",
+   "label": "CSS",
+   "order": 110,
+   "note": "表現"
+  }
+ ],
+ "runtimes": [
+  {
+   "id": "WebAssembly",
+   "label": "WebAssembly",
+   "order": 10
+  },
+  {
+   "id": "WebGPU",
+   "label": "WebGPU",
+   "order": 20
+  },
+  {
+   "id": "Node.js",
+   "label": "Node.js",
+   "order": 30
+  },
+  {
+   "id": "Browser",
+   "label": "Browser",
+   "order": 40
+  },
+  {
+   "id": "Python Runtime",
+   "label": "Python Runtime",
+   "order": 50
+  },
+  {
+   "id": "GitHub Actions",
+   "label": "GitHub Actions",
+   "order": 60
+  }
+ ],
+ "architecture": [
+  {
+   "id": "browser-inference",
+   "label": "ブラウザ内推論",
+   "order": 10
+  },
+  {
+   "id": "client-only",
+   "label": "Client-only",
+   "order": 20
+  },
+  {
+   "id": "static-site",
+   "label": "静的サイト",
+   "order": 30
+  },
+  {
+   "id": "webassembly",
+   "label": "WebAssembly",
+   "order": 40
+  },
+  {
+   "id": "webgpu",
+   "label": "WebGPU",
+   "order": 50
+  },
+  {
+   "id": "web-worker",
+   "label": "Web Worker",
+   "order": 60
+  },
+  {
+   "id": "github-actions",
+   "label": "GitHub Actions",
+   "order": 70
+  },
+  {
+   "id": "auto-update",
+   "label": "自動更新",
+   "order": 80
+  },
+  {
+   "id": "offline",
+   "label": "オフライン対応",
+   "order": 90
+  },
+  {
+   "id": "pwa",
+   "label": "PWA",
+   "order": 100
+  },
+  {
+   "id": "no-api",
+   "label": "API不要",
+   "order": 110
+  },
+  {
+   "id": "serverless",
+   "label": "サーバーレス",
+   "order": 120
+  },
+  {
+   "id": "zero-dependency",
+   "label": "依存ゼロ",
+   "order": 130
+  },
+  {
+   "id": "local-processing",
+   "label": "ローカル処理",
+   "order": 140
+  },
+  {
+   "id": "reproducible-build",
+   "label": "再現可能ビルド",
+   "order": 150
+  }
+ ],
+ "dataSources": [
+  {
+   "id": "aozora",
+   "label": "青空文庫",
+   "order": 10
+  },
+  {
+   "id": "gutenberg",
+   "label": "Project Gutenberg",
+   "order": 20
+  },
+  {
+   "id": "perseus",
+   "label": "Perseus",
+   "order": 30
+  },
+  {
+   "id": "internet-archive",
+   "label": "Internet Archive",
+   "order": 40
+  },
+  {
+   "id": "wikimedia",
+   "label": "Wikimedia Commons",
+   "order": 50
+  },
+  {
+   "id": "museum-open-access",
+   "label": "美術館オープンアクセス",
+   "order": 60,
+   "note": "Met・シカゴ美術館などの CC0 / パブリックドメイン公開画像"
+  },
+  {
+   "id": "gov-statistics",
+   "label": "政府統計",
+   "order": 70
+  },
+  {
+   "id": "laws-guidelines",
+   "label": "法令・行政指針",
+   "order": 72,
+   "note": "e-Gov 法令・各省ガイドライン・告示。統計ではないので政府統計とは分ける"
+  },
+  {
+   "id": "gov-dataset",
+   "label": "府省庁の公開データ",
+   "order": 74,
+   "note": "統計表ではない府省庁の公開資料(レッドリスト・許認可一覧など)"
+  },
+  {
+   "id": "astronomy-catalog",
+   "label": "天文カタログ・軌道要素",
+   "order": 76,
+   "note": "恒星カタログ・TLE・観測アーカイブ。気象庁とは出どころが違うので分ける"
+  },
+  {
+   "id": "ksj",
+   "label": "国土数値情報",
+   "order": 80
+  },
+  {
+   "id": "municipal-open-data",
+   "label": "自治体オープンデータ",
+   "order": 90
+  },
+  {
+   "id": "jma",
+   "label": "気象庁",
+   "order": 100
+  },
+  {
+   "id": "gsi",
+   "label": "国土地理院",
+   "order": 110
+  },
+  {
+   "id": "maff",
+   "label": "農林水産省",
+   "order": 120
+  },
+  {
+   "id": "rinya",
+   "label": "林野庁",
+   "order": 130
+  },
+  {
+   "id": "suisan",
+   "label": "水産庁",
+   "order": 140
+  },
+  {
+   "id": "ndl",
+   "label": "国立国会図書館",
+   "order": 150
+  },
+  {
+   "id": "research-dataset",
+   "label": "公開研究データセット",
+   "order": 160
+  },
+  {
+   "id": "kaggle",
+   "label": "Kaggle",
+   "order": 170
+  },
+  {
+   "id": "github-open-data",
+   "label": "GitHub公開データ",
+   "order": 180
+  },
+  {
+   "id": "press-release",
+   "label": "報道・公式発表",
+   "order": 190,
+   "note": "企業・官公庁の公式発表および報道機関のフィード"
+  },
+  {
+   "id": "other-open-data",
+   "label": "その他Public Domain / Open Data",
+   "order": 200
+  }
+ ],
+ "series": [
+  {
+   "id": "atlas-ai",
+   "label": "Atlas AI",
+   "order": 10,
+   "icon": "🗺️",
+   "note": "公開データ・文献・位置情報を統合し、GIS・統計・機械学習・深層学習によって「場所」から読むシリーズ"
+  },
+  {
+   "id": "lens",
+   "label": "Lens",
+   "order": 20,
+   "icon": "🔍",
+   "note": "公開情報を定点観測し、集めて並べて見せるシリーズ"
+  },
+  {
+   "id": "lab",
+   "label": "Lab",
+   "order": 30,
+   "icon": "🧪",
+   "note": "対象を解剖台に載せて、仕組みを測って見せるシリーズ"
+  },
+  {
+   "id": "forge",
+   "label": "Forge",
+   "order": 40,
+   "icon": "🔨",
+   "note": "入力から成果物を鍛造するジェネレータ"
+  },
+  {
+   "id": "dojo",
+   "label": "Dojo",
+   "order": 50,
+   "icon": "🥋",
+   "note": "反復で身につける訓練アプリ"
+  },
+  {
+   "id": "simulator",
+   "label": "Simulator",
+   "order": 60,
+   "icon": "🎛️",
+   "note": "動かして確かめるシミュレータ"
+  },
+  {
+   "id": "planner",
+   "label": "Planner",
+   "order": 70,
+   "icon": "🧭",
+   "note": "計画・選択を支援する道具"
+  },
+  {
+   "id": "games",
+   "label": "Games",
+   "order": 80,
+   "icon": "🎮",
+   "note": "遊びとして成立させたもの"
+  },
+  {
+   "id": "standalone",
+   "label": "Standalone",
+   "order": 90,
+   "icon": "📦",
+   "note": "シリーズに属さない単発作品"
+  }
+ ],
+ "badges": [
+  {
+   "id": "verified",
+   "label": "検証済み",
+   "icon": "✓",
+   "order": 10,
+   "condition": "テストコード・比較検証・オラクル実装・統計検定・他実装との照合のいずれかが存在する"
+  },
+  {
+   "id": "cross-validated",
+   "label": "相互検証・二重採点",
+   "icon": "⚖",
+   "order": 20,
+   "condition": "同じ量を二つの独立した実装で計算し、一致を検査で確かめている"
+  },
+  {
+   "id": "client-only",
+   "label": "ブラウザ内完結",
+   "icon": "🖥",
+   "order": 30,
+   "condition": "入力データを外部サーバーへ送信せず、推論・処理がブラウザ内で完結する"
+  },
+  {
+   "id": "browser-inference",
+   "label": "ブラウザ内推論",
+   "icon": "🧠",
+   "order": 40,
+   "condition": "推論ライブラリを src から import する、または重みを配って順伝播を自前実装している"
+  },
+  {
+   "id": "open-data",
+   "label": "Open Data",
+   "icon": "🔓",
+   "order": 50,
+   "condition": "主要データソースが再利用可能な公開データである"
+  },
+  {
+   "id": "public-domain",
+   "label": "Public Domain",
+   "icon": "📜",
+   "order": 60,
+   "condition": "主要素材がパブリックドメイン(青空文庫・Gutenberg・Perseus・CC0 等)である"
+  },
+  {
+   "id": "trained-model",
+   "label": "学習済みモデル",
+   "icon": "🏭",
+   "order": 70,
+   "condition": "自前で学習した重みをリポジトリに同梱して配っている"
+  },
+  {
+   "id": "static-deploy",
+   "label": "静的デプロイ",
+   "icon": "📄",
+   "order": 80,
+   "condition": "サーバー関数を持たず、静的ファイルのみで配信される"
+  },
+  {
+   "id": "no-api-key",
+   "label": "APIキー不要",
+   "icon": "🔑",
+   "order": 90,
+   "condition": "実行時に読む API キー・シークレットが存在しない"
+  },
+  {
+   "id": "reproducible",
+   "label": "再現可能",
+   "icon": "🔁",
+   "order": 100,
+   "condition": "検査またはビルドが CI で自動実行され、手元でも同じものを走らせられる"
+  },
+  {
+   "id": "offline",
+   "label": "オフライン対応",
+   "icon": "✈",
+   "order": 110,
+   "condition": "初回読み込み後、ネットワークなしで主要機能が動く"
+  }
+ ],
+ "status": [
+  {
+   "id": "planned",
+   "label": "企画中",
+   "order": 10
+  },
+  {
+   "id": "prototype",
+   "label": "試作",
+   "order": 20
+  },
+  {
+   "id": "beta",
+   "label": "ベータ",
+   "order": 30
+  },
+  {
+   "id": "published",
+   "label": "公開中",
+   "order": 40
+  },
+  {
+   "id": "archived",
+   "label": "凍結",
+   "order": 50
+  }
+ ],
+ "libraryRoles": [
+  {
+   "id": "ship",
+   "label": "出荷",
+   "icon": "🚚",
+   "note": "ブラウザに出て行く"
+  },
+  {
+   "id": "build",
+   "label": "生成",
+   "icon": "🏭",
+   "note": "手元で回して出荷物(重み・JSON)を作る"
+  },
+  {
+   "id": "oracle",
+   "label": "照合",
+   "icon": "⚖️",
+   "note": "オラクル専用 — 出荷実装はこれを参照しない"
+  }
+ ]
+}

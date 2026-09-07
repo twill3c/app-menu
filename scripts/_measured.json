@@ -1,0 +1,5192 @@
+{
+ "midashi-sanmenkyo": {
+  "dir": "midashi-sanmenkyo",
+  "exists": true,
+  "langs": {
+   "R": 880,
+   "CSS": 118,
+   "HTML": 86
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "R": {
+    "tests": 489,
+    "R": 391
+   },
+   "CSS": {
+    "site": 118
+   },
+   "HTML": {
+    "site": 86
+   }
+  },
+  "secret_envs": []
+ },
+ "koho-lens": {
+  "dir": "koho-lens",
+  "exists": true,
+  "langs": {
+   "HTML": 6725,
+   "Python": 1253
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 21,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/fixtures/pages/nri/0.html"
+  ],
+  "shared_skipped": 3,
+  "bydir": {
+   "Python": {
+    "src": 733,
+    "tests": 447,
+    "tools": 73
+   },
+   "HTML": {
+    "tests": 6725
+   }
+  },
+  "secret_envs": []
+ },
+ "kiban-lens": {
+  "dir": "kiban-lens",
+  "exists": true,
+  "langs": {
+   "Python": 1603
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [
+   "ANTHROPIC_API_KEY"
+  ],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 2,
+  "bydir": {
+   "Python": {
+    "src": 1008,
+    "tests": 509,
+    "tools": 86
+   }
+  },
+  "secret_envs": [
+   "ANTHROPIC_API_KEY"
+  ]
+ },
+ "kasumigaseki-lens": {
+  "dir": "kasumigaseki-lens",
+  "exists": true,
+  "langs": {
+   "HTML": 6364,
+   "Python": 1667
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 20,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 3,
+  "bydir": {
+   "Python": {
+    "src": 933,
+    "tests": 647,
+    "tools": 87
+   },
+   "HTML": {
+    "tests": 6364
+   }
+  },
+  "secret_envs": []
+ },
+ "hyakunin-lens": {
+  "dir": "hyakunin-lens",
+  "exists": true,
+  "langs": {
+   "Python": 1197,
+   "HTML": 218
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [
+   "YOUTUBE_API_KEY"
+  ],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "Python": {
+    "src": 539,
+    "tests": 485,
+    "tools": 173
+   },
+   "HTML": {
+    "src": 218
+   }
+  },
+  "secret_envs": [
+   "YOUTUBE_API_KEY"
+  ]
+ },
+ "hyakugaku-lens": {
+  "dir": "hyakugaku-lens",
+  "exists": true,
+  "langs": {
+   "Python": 4447,
+   "HTML": 226
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [
+   "YOUTUBE_API_KEY"
+  ],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 2,
+  "bydir": {
+   "Python": {
+    "tests": 2081,
+    "src": 1262,
+    "tools": 1104
+   },
+   "HTML": {
+    "src": 226
+   }
+  },
+  "secret_envs": [
+   "YOUTUBE_API_KEY"
+  ]
+ },
+ "hodo-hangenki": {
+  "dir": "hodo-hangenki",
+  "exists": true,
+  "langs": {
+   "R": 673,
+   "CSS": 129,
+   "HTML": 82
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/testthat/test-km.R"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "R": {
+    "tests": 377,
+    "R": 296
+   },
+   "CSS": {
+    "site": 129
+   },
+   "HTML": {
+    "site": 82
+   }
+  },
+  "secret_envs": []
+ },
+ "yomikiri-ban": {
+  "dir": "yomikiri-ban",
+  "exists": true,
+  "langs": {
+   "Rust": 2228,
+   "JavaScript": 520,
+   "Python": 191,
+   "CSS": 120,
+   "HTML": 119
+  },
+  "flags": [
+   "cargo",
+   "tests",
+   "wasm"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 6,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "rust/src/board.rs"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Rust": {
+    "rust": 2228
+   },
+   "JavaScript": {
+    "web": 416,
+    "scripts": 104
+   },
+   "Python": {
+    "scripts": 191
+   },
+   "HTML": {
+    "web": 119
+   },
+   "CSS": {
+    "web": 120
+   }
+  },
+  "secret_envs": []
+ },
+ "karakuri-hako": {
+  "dir": "karakuri-hako",
+  "exists": true,
+  "langs": {
+   "CSS": 705,
+   "JavaScript": 194,
+   "HTML": 129,
+   "Python": 83
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "html-validate",
+   "playwright"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 2,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "scripts": 83
+   },
+   "JavaScript": {
+    "tests": 194
+   },
+   "HTML": {
+    "web": 129
+   },
+   "CSS": {
+    "web": 705
+   }
+  },
+  "secret_envs": []
+ },
+ "nanpure-forge": {
+  "dir": "nanpure-forge",
+  "exists": true,
+  "langs": {
+   "Rust": 588,
+   "JavaScript": 205,
+   "CSS": 138,
+   "Python": 66,
+   "HTML": 64
+  },
+  "flags": [
+   "cargo",
+   "tests",
+   "wasm"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 2,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Rust": {
+    "rust": 588
+   },
+   "Python": {
+    "scripts": 66
+   },
+   "JavaScript": {
+    "web": 205
+   },
+   "HTML": {
+    "web": 64
+   },
+   "CSS": {
+    "web": 138
+   }
+  },
+  "secret_envs": []
+ },
+ "jirai-sweep": {
+  "dir": "jirai-sweep",
+  "exists": true,
+  "langs": {
+   "HTML": 1949,
+   "TypeScript": 1325,
+   "CSS": 238,
+   "JavaScript": 77
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 7,
+  "bydir": {
+   "TypeScript": {
+    "src": 1243,
+    "tests": 57,
+    ".": 25
+   },
+   "HTML": {
+    "coverage": 1949
+   },
+   "JavaScript": {
+    "scripts": 77
+   },
+   "CSS": {
+    "src": 238
+   }
+  },
+  "secret_envs": []
+ },
+ "meikyu-rogue": {
+  "dir": "meikyu-rogue",
+  "exists": true,
+  "langs": {
+   "HTML": 2650,
+   "TypeScript": 2338
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 9,
+  "bydir": {
+   "HTML": {
+    "coverage": 2650
+   },
+   "TypeScript": {
+    "src": 2338
+   }
+  },
+  "secret_envs": []
+ },
+ "soko-forge": {
+  "dir": "soko-forge",
+  "exists": true,
+  "langs": {
+   "HTML": 3030,
+   "TypeScript": 1859,
+   "CSS": 321,
+   "JavaScript": 78
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 7,
+  "bydir": {
+   "TypeScript": {
+    "src": 1713,
+    "scripts": 120,
+    ".": 26
+   },
+   "HTML": {
+    "coverage": 3030
+   },
+   "JavaScript": {
+    "scripts": 78
+   },
+   "CSS": {
+    "src": 321
+   }
+  },
+  "secret_envs": []
+ },
+ "kawara-kuzushi": {
+  "dir": "kawara-kuzushi",
+  "exists": true,
+  "langs": {
+   "HTML": 1391,
+   "TypeScript": 1029,
+   "CSS": 417
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 11,
+  "bydir": {
+   "HTML": {
+    "coverage": 1391
+   },
+   "CSS": {
+    "src": 417
+   },
+   "TypeScript": {
+    "src": 1029
+   }
+  },
+  "secret_envs": []
+ },
+ "yagura-defense": {
+  "dir": "yagura-defense",
+  "exists": true,
+  "langs": {
+   "HTML": 3267,
+   "TypeScript": 2892,
+   "CSS": 45
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 9,
+  "bydir": {
+   "HTML": {
+    "coverage": 3267
+   },
+   "CSS": {
+    "src": 45
+   },
+   "TypeScript": {
+    "src": 2892
+   }
+  },
+  "secret_envs": []
+ },
+ "kaguya-lander": {
+  "dir": "kaguya-lander",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1211,
+   "CSS": 244
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 3,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 984,
+    "tests": 212,
+    ".": 15
+   },
+   "CSS": {
+    "src": 244
+   }
+  },
+  "secret_envs": []
+ },
+ "go-particle-lab": {
+  "dir": "go-particle-lab",
+  "exists": true,
+  "langs": {
+   "Go": 2031,
+   "JavaScript": 1080,
+   "HTML": 365,
+   "CSS": 234
+  },
+  "flags": [
+   "go",
+   "tests",
+   "wasm"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 8,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "internal/physics/physics_test.go"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Go": {
+    "internal": 1740,
+    "cmd": 172,
+    "tests": 119
+   },
+   "HTML": {
+    "docs": 284,
+    "web": 81
+   },
+   "JavaScript": {
+    "web": 886,
+    "scripts": 194
+   },
+   "CSS": {
+    "web": 234
+   }
+  },
+  "secret_envs": []
+ },
+ "yokemichi": {
+  "dir": "yokemichi",
+  "exists": true,
+  "langs": {
+   "HTML": 5009,
+   "TypeScript": 3542,
+   "CSS": 222,
+   "JavaScript": 77
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 15,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "src/core/__tests__/collide.test.ts",
+   "src/core/__tests__/measure.test.ts",
+   "src/core/__tests__/solver_fast.test.ts"
+  ],
+  "shared_skipped": 7,
+  "bydir": {
+   "TypeScript": {
+    "src": 3199,
+    "tests": 309,
+    ".": 34
+   },
+   "HTML": {
+    "coverage": 5009
+   },
+   "JavaScript": {
+    "scripts": 77
+   },
+   "CSS": {
+    "src": 222
+   }
+  },
+  "secret_envs": []
+ },
+ "command-type": {
+  "dir": "command-type",
+  "exists": true,
+  "langs": {
+   "HTML": 2818,
+   "TypeScript": 2508,
+   "CSS": 657,
+   "JavaScript": 78
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 15,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 7,
+  "bydir": {
+   "TypeScript": {
+    "src": 2482,
+    ".": 26
+   },
+   "HTML": {
+    "coverage": 2818
+   },
+   "JavaScript": {
+    "scripts": 78
+   },
+   "CSS": {
+    "src": 657
+   }
+  },
+  "secret_envs": []
+ },
+ "bungo-type": {
+  "dir": "bungo-type",
+  "exists": true,
+  "langs": {
+   "HTML": 3249,
+   "TypeScript": 1274,
+   "CSS": 392,
+   "JavaScript": 38
+  },
+  "flags": [
+   "ci",
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "src": 1246,
+    ".": 28
+   },
+   "HTML": {
+    "coverage": 3249
+   },
+   "JavaScript": {
+    "scripts": 38
+   },
+   "CSS": {
+    "src": 392
+   }
+  },
+  "secret_envs": []
+ },
+ "onkan-dojo": {
+  "dir": "onkan-dojo",
+  "exists": true,
+  "langs": {
+   "HTML": 4195,
+   "TypeScript": 3416,
+   "CSS": 573
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@testing-library/dom",
+   "@testing-library/react",
+   "@testing-library/user-event",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "jsdom",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "src/core/__tests__/spectrum.test.ts"
+  ],
+  "shared_skipped": 7,
+  "bydir": {
+   "TypeScript": {
+    "src": 3378,
+    ".": 38
+   },
+   "HTML": {
+    "coverage": 4195
+   },
+   "CSS": {
+    "src": 573
+   }
+  },
+  "secret_envs": []
+ },
+ "tsugi-no-hito-ji": {
+  "dir": "tsugi-no-hito-ji",
+  "exists": true,
+  "langs": {
+   "Python": 944,
+   "JavaScript": 884,
+   "HTML": 248,
+   "CSS": 199
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "playwright"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 10,
+  "xval_test_where": [
+   "tests/test_counts.py",
+   "tests/test_crossimpl.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 944
+   },
+   "HTML": {
+    "web": 248
+   },
+   "CSS": {
+    "web": 199
+   },
+   "JavaScript": {
+    "web": 884
+   }
+  },
+  "secret_envs": []
+ },
+ "token-hakari": {
+  "dir": "token-hakari",
+  "exists": true,
+  "langs": {
+   "Python": 589,
+   "JavaScript": 410,
+   "HTML": 187,
+   "CSS": 166
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "playwright"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 6,
+  "xval_test_where": [
+   "tests/test_bpe.py",
+   "tests/test_crossimpl.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 589
+   },
+   "HTML": {
+    "web": 187
+   },
+   "CSS": {
+    "web": 166
+   },
+   "JavaScript": {
+    "web": 410
+   }
+  },
+  "secret_envs": []
+ },
+ "imi-chizu": {
+  "dir": "imi-chizu",
+  "exists": true,
+  "langs": {
+   "Python": 591,
+   "JavaScript": 380,
+   "HTML": 170,
+   "CSS": 168
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "playwright"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 6,
+  "xval_test_where": [
+   "tests/test_crossimpl.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 591
+   },
+   "HTML": {
+    "web": 170
+   },
+   "CSS": {
+    "web": 168
+   },
+   "JavaScript": {
+    "web": 380
+   }
+  },
+  "secret_envs": []
+ },
+ "oto-utsushi": {
+  "dir": "oto-utsushi",
+  "exists": true,
+  "langs": {
+   "HTML": 4171,
+   "TypeScript": 3175,
+   "JavaScript": 524,
+   "Python": 391,
+   "CSS": 262
+  },
+  "flags": [
+   "browser-ai-dep",
+   "tests"
+  ],
+  "deps": [
+   "@huggingface/transformers",
+   "@testing-library/dom",
+   "@testing-library/react",
+   "@testing-library/user-event",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "jsdom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 13,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "src/core/__tests__/align.test.ts"
+  ],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "src": 3112,
+    ".": 63
+   },
+   "HTML": {
+    "coverage": 4171
+   },
+   "JavaScript": {
+    "scripts": 524
+   },
+   "CSS": {
+    "src": 262
+   },
+   "Python": {
+    "tools": 391
+   }
+  },
+  "secret_envs": []
+ },
+ "sahai-dojo": {
+  "dir": "sahai-dojo",
+  "exists": true,
+  "langs": {
+   "TypeScript": 5275,
+   "CSS": 403,
+   "JavaScript": 221
+  },
+  "flags": [
+   "tests",
+   "web-worker"
+  ],
+  "deps": [
+   "@codemirror/lang-javascript",
+   "@codemirror/state",
+   "@codemirror/view",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "codemirror",
+   "esbuild",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 17,
+  "xval_test_hits": 4,
+  "xval_test_where": [
+   "tests/judge.test.ts",
+   "tests/oracle.test.ts",
+   "tests/sandbox.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 3270,
+    "tests": 1907,
+    "scripts": 79,
+    ".": 19
+   },
+   "JavaScript": {
+    "scripts": 221
+   },
+   "CSS": {
+    "src": 403
+   }
+  },
+  "secret_envs": []
+ },
+ "tenkyo-lab": {
+  "dir": "tenkyo-lab",
+  "exists": true,
+  "langs": {
+   "JavaScript": 5174,
+   "TypeScript": 1762,
+   "Python": 102,
+   "CSS": 77
+  },
+  "flags": [
+   "browser-ai-dep",
+   "tests",
+   "wasm",
+   "weights"
+  ],
+  "deps": [
+   "@huggingface/transformers",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 12,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/evalpack.test.mjs"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "app": 1432,
+    "src": 288,
+    ".": 42
+   },
+   "CSS": {
+    "app": 77
+   },
+   "JavaScript": {
+    "scripts": 2740,
+    "tests": 1464,
+    "src": 970
+   },
+   "Python": {
+    "scripts": 102
+   }
+  },
+  "secret_envs": []
+ },
+ "kizami-ji": {
+  "dir": "kizami-ji",
+  "exists": true,
+  "langs": {
+   "Python": 3069,
+   "TypeScript": 2470,
+   "CSS": 176,
+   "JavaScript": 44
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 4,
+  "xval_test_where": [
+   "tests/ts/analyze.test.ts",
+   "tests/ts/lattice.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 2066,
+    "tests": 382,
+    ".": 22
+   },
+   "Python": {
+    "scripts": 1787,
+    "tests": 1028,
+    "probe": 254
+   },
+   "JavaScript": {
+    "scripts": 44
+   },
+   "CSS": {
+    "src": 176
+   }
+  },
+  "secret_envs": []
+ },
+ "kizami-kurabe": {
+  "dir": "kizami-kurabe",
+  "exists": true,
+  "langs": {
+   "Python": 1042,
+   "JavaScript": 477,
+   "HTML": 464,
+   "CSS": 128
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 3,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "tests/test_l1_site_data.py",
+   "tests/test_l2_port_parity.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "HTML": {
+    "docs": 254,
+    "web": 210
+   },
+   "Python": {
+    "etl": 552,
+    "tests": 490
+   },
+   "JavaScript": {
+    "web": 477
+   },
+   "CSS": {
+    "web": 128
+   }
+  },
+  "secret_envs": []
+ },
+ "shinka-lander": {
+  "dir": "shinka-lander",
+  "exists": true,
+  "langs": {
+   "HTML": 1497,
+   "TypeScript": 1242,
+   "CSS": 386
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 11,
+  "bydir": {
+   "HTML": {
+    "coverage": 1497
+   },
+   "CSS": {
+    "src": 386
+   },
+   "TypeScript": {
+    "src": 1242
+   }
+  },
+  "secret_envs": []
+ },
+ "toba-bandit": {
+  "dir": "toba-bandit",
+  "exists": true,
+  "langs": {
+   "HTML": 1263,
+   "TypeScript": 1004,
+   "CSS": 369
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 11,
+  "bydir": {
+   "HTML": {
+    "coverage": 1263
+   },
+   "CSS": {
+    "src": 369
+   },
+   "TypeScript": {
+    "src": 1004
+   }
+  },
+  "secret_envs": []
+ },
+ "murewake-lab": {
+  "dir": "murewake-lab",
+  "exists": true,
+  "langs": {
+   "HTML": 1720,
+   "TypeScript": 1256,
+   "CSS": 264
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 11,
+  "bydir": {
+   "HTML": {
+    "coverage": 1720
+   },
+   "CSS": {
+    "src": 264
+   },
+   "TypeScript": {
+    "src": 1256
+   }
+  },
+  "secret_envs": []
+ },
+ "kobai-walk": {
+  "dir": "kobai-walk",
+  "exists": true,
+  "langs": {
+   "HTML": 1851,
+   "TypeScript": 1356,
+   "CSS": 236
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "src/core/__tests__/model.test.ts"
+  ],
+  "shared_skipped": 11,
+  "bydir": {
+   "HTML": {
+    "coverage": 1851
+   },
+   "CSS": {
+    "src": 236
+   },
+   "TypeScript": {
+    "src": 1356
+   }
+  },
+  "secret_envs": []
+ },
+ "kyokai-lab": {
+  "dir": "kyokai-lab",
+  "exists": true,
+  "langs": {
+   "HTML": 1964,
+   "TypeScript": 1418,
+   "CSS": 222
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "src/core/__tests__/gradcheck.test.ts"
+  ],
+  "shared_skipped": 10,
+  "bydir": {
+   "HTML": {
+    "coverage": 1964
+   },
+   "CSS": {
+    "src": 222
+   },
+   "TypeScript": {
+    "src": 1418
+   }
+  },
+  "secret_envs": []
+ },
+ "kyoka-grid": {
+  "dir": "kyoka-grid",
+  "exists": true,
+  "langs": {
+   "HTML": 2634,
+   "TypeScript": 1912,
+   "CSS": 221
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 10,
+  "bydir": {
+   "HTML": {
+    "coverage": 2634
+   },
+   "CSS": {
+    "src": 221
+   },
+   "TypeScript": {
+    "src": 1912
+   }
+  },
+  "secret_envs": []
+ },
+ "asterism-lens": {
+  "dir": "asterism-lens",
+  "exists": true,
+  "langs": {
+   "Python": 3923,
+   "TypeScript": 1417,
+   "JavaScript": 273,
+   "CSS": 206,
+   "HTML": 177
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [],
+  "pyimports": [
+   "onnxruntime",
+   "torch"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 13,
+  "xval_test_hits": 5,
+  "xval_test_where": [
+   "tests/test_boundaries.py",
+   "tests/test_healpix.py",
+   "tests/test_model.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "training": 2690,
+    "tests": 1233
+   },
+   "HTML": {
+    "web": 177
+   },
+   "TypeScript": {
+    "web": 1417
+   },
+   "CSS": {
+    "web": 206
+   },
+   "JavaScript": {
+    "web": 273
+   }
+  },
+  "secret_envs": []
+ },
+ "kansetsu-koyomi": {
+  "dir": "kansetsu-koyomi",
+  "exists": true,
+  "langs": {
+   "HTML": 58142,
+   "TypeScript": 2467,
+   "Python": 1121,
+   "CSS": 576,
+   "JavaScript": 162
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/test_gates.py"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "JavaScript": {
+    "scripts": 152,
+    ".": 10
+   },
+   "TypeScript": {
+    "app": 917,
+    "components": 902,
+    "lib": 347,
+    "tests-js": 291,
+    ".": 10
+   },
+   "CSS": {
+    "app": 576
+   },
+   "Python": {
+    "etl": 764,
+    "tests": 357
+   },
+   "HTML": {
+    "raw": 58142
+   }
+  },
+  "secret_envs": []
+ },
+ "korona-zuroku": {
+  "dir": "korona-zuroku",
+  "exists": true,
+  "langs": {
+   "TypeScript": 2836,
+   "Python": 1595,
+   "JavaScript": 784,
+   "CSS": 454
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "topojson-client",
+   "typescript",
+   "vitest",
+   "world-atlas"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "tests/test_etl.py",
+   "tests/test_web.py"
+  ],
+  "shared_skipped": 3,
+  "bydir": {
+   "JavaScript": {
+    "scripts": 774,
+    ".": 10
+   },
+   "TypeScript": {
+    "app": 1386,
+    "tests-js": 768,
+    "lib": 682
+   },
+   "CSS": {
+    "lib": 287,
+    "app": 167
+   },
+   "Python": {
+    "etl": 1260,
+    "tests": 335
+   }
+  },
+  "secret_envs": []
+ },
+ "manazashi-lab": {
+  "dir": "manazashi-lab",
+  "exists": true,
+  "langs": {
+   "TypeScript": 4824,
+   "JavaScript": 1388,
+   "Python": 757,
+   "CSS": 448
+  },
+  "flags": [
+   "browser-ai-dep",
+   "tests",
+   "wasm",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "onnxruntime-node",
+   "onnxruntime-web",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "onnxruntime",
+   "transformers"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 13,
+  "xval_test_hits": 4,
+  "xval_test_where": [
+   "tests/infer.test.ts",
+   "tests/kuzushi.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 3244,
+    "tests": 1551,
+    ".": 29
+   },
+   "JavaScript": {
+    "scripts": 1388
+   },
+   "Python": {
+    "scripts": 757
+   },
+   "CSS": {
+    "src": 448
+   }
+  },
+  "secret_envs": []
+ },
+ "jocho-iro": {
+  "dir": "jocho-iro",
+  "exists": true,
+  "langs": {
+   "Python": 1104,
+   "HTML": 1027,
+   "TypeScript": 729,
+   "CSS": 86
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 12,
+  "bydir": {
+   "Python": {
+    "pipeline": 766,
+    "tests": 338
+   },
+   "HTML": {
+    "web": 1027
+   },
+   "CSS": {
+    "web": 86
+   },
+   "TypeScript": {
+    "web": 729
+   }
+  },
+  "secret_envs": []
+ },
+ "kokoro-graph": {
+  "dir": "kokoro-graph",
+  "exists": true,
+  "langs": {
+   "Python": 929,
+   "HTML": 894,
+   "TypeScript": 832,
+   "CSS": 251
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 12,
+  "bydir": {
+   "Python": {
+    "pipeline": 652,
+    "tests": 277
+   },
+   "HTML": {
+    "web": 894
+   },
+   "CSS": {
+    "web": 251
+   },
+   "TypeScript": {
+    "web": 832
+   }
+  },
+  "secret_envs": []
+ },
+ "satei-kobo": {
+  "dir": "satei-kobo",
+  "exists": true,
+  "langs": {
+   "JavaScript": 1403,
+   "Python": 896,
+   "CSS": 269,
+   "HTML": 222
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [
+   "sklearn"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "tests/test_display.py",
+   "tests/test_gates_js.py",
+   "tests/test_linalg.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 896
+   },
+   "HTML": {
+    "web": 222
+   },
+   "CSS": {
+    "web": 269
+   },
+   "JavaScript": {
+    "web": 1403
+   }
+  },
+  "secret_envs": []
+ },
+ "wakachi-ki": {
+  "dir": "wakachi-ki",
+  "exists": true,
+  "langs": {
+   "JavaScript": 1327,
+   "Python": 1136,
+   "CSS": 336,
+   "HTML": 322
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "tests/test_gates.py",
+   "tests/test_gates_metrics.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "HTML": {
+    "web": 247,
+    "data": 75
+   },
+   "Python": {
+    "tests": 1136
+   },
+   "CSS": {
+    "web": 336
+   },
+   "JavaScript": {
+    "web": 1327
+   }
+  },
+  "secret_envs": []
+ },
+ "tegaki-yomi": {
+  "dir": "tegaki-yomi",
+  "exists": true,
+  "langs": {
+   "HTML": 1091,
+   "TypeScript": 922,
+   "CSS": 504,
+   "Python": 179
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "src/core/__tests__/oracle.test.ts"
+  ],
+  "shared_skipped": 9,
+  "bydir": {
+   "HTML": {
+    "coverage": 1091
+   },
+   "CSS": {
+    "src": 504
+   },
+   "TypeScript": {
+    "src": 922
+   },
+   "Python": {
+    "training": 179
+   }
+  },
+  "secret_envs": []
+ },
+ "kuzushi-yomi": {
+  "dir": "kuzushi-yomi",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1997,
+   "Python": 765,
+   "CSS": 452,
+   "JavaScript": 313
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "chainer"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 8,
+  "xval_test_hits": 5,
+  "xval_test_where": [
+   "src/core/__tests__/graph.test.ts",
+   "src/core/__tests__/parity.test.ts",
+   "training/test_artifacts.py"
+  ],
+  "shared_skipped": 2,
+  "bydir": {
+   "TypeScript": {
+    "src": 1984,
+    ".": 13
+   },
+   "JavaScript": {
+    "scripts": 313
+   },
+   "CSS": {
+    "src": 452
+   },
+   "Python": {
+    "training": 765
+   }
+  },
+  "secret_envs": []
+ },
+ "senzai-niwa": {
+  "dir": "senzai-niwa",
+  "exists": true,
+  "langs": {
+   "HTML": 1503,
+   "TypeScript": 1014,
+   "CSS": 240,
+   "Python": 213
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "torch"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 6,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "src/core/__tests__/decoder.test.ts"
+  ],
+  "shared_skipped": 9,
+  "bydir": {
+   "HTML": {
+    "coverage": 1503
+   },
+   "CSS": {
+    "src": 240
+   },
+   "TypeScript": {
+    "src": 1014
+   },
+   "Python": {
+    "training": 213
+   }
+  },
+  "secret_envs": []
+ },
+ "sumi-tsukuroi": {
+  "dir": "sumi-tsukuroi",
+  "exists": true,
+  "langs": {
+   "HTML": 1805,
+   "TypeScript": 1235,
+   "Python": 612,
+   "CSS": 295,
+   "JavaScript": 199
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "jax",
+   "keras",
+   "tensorflow",
+   "torch"
+  ],
+  "envs": [
+   "KERAS_BACKEND"
+  ],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "src/core/__tests__/engine.test.ts"
+  ],
+  "shared_skipped": 8,
+  "bydir": {
+   "TypeScript": {
+    "src": 1209,
+    ".": 26
+   },
+   "HTML": {
+    "coverage": 1545,
+    "docs": 260
+   },
+   "JavaScript": {
+    "scripts": 199
+   },
+   "CSS": {
+    "src": 295
+   },
+   "Python": {
+    "training": 612
+   }
+  },
+  "secret_envs": []
+ },
+ "gihitsu-kobo": {
+  "dir": "gihitsu-kobo",
+  "exists": true,
+  "langs": {
+   "HTML": 1639,
+   "TypeScript": 1177,
+   "Python": 393,
+   "JavaScript": 285,
+   "CSS": 45
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "keras",
+   "tensorflow"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "src/core/__tests__/oracle.test.ts"
+  ],
+  "shared_skipped": 8,
+  "bydir": {
+   "HTML": {
+    "coverage": 1639
+   },
+   "JavaScript": {
+    "scripts": 285
+   },
+   "CSS": {
+    "src": 45
+   },
+   "TypeScript": {
+    "src": 1177
+   },
+   "Python": {
+    "training": 393
+   }
+  },
+  "secret_envs": []
+ },
+ "yonmoku-narabe": {
+  "dir": "yonmoku-narabe",
+  "exists": true,
+  "langs": {
+   "Python": 1898,
+   "JavaScript": 890,
+   "HTML": 88,
+   "CSS": 73
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [],
+  "pyimports": [
+   "torch"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 13,
+  "xval_test_hits": 4,
+  "xval_test_where": [
+   "scripts/check_mcts.mjs",
+   "scripts/check_net.mjs",
+   "scripts/check_rules.mjs"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "JavaScript": {
+    "web": 583,
+    "scripts": 307
+   },
+   "Python": {
+    "training": 1075,
+    "tests": 706,
+    "scripts": 117
+   },
+   "HTML": {
+    "web": 88
+   },
+   "CSS": {
+    "web": 73
+   }
+  },
+  "secret_envs": []
+ },
+ "toukei-atlas": {
+  "dir": "toukei-atlas",
+  "exists": true,
+  "langs": {
+   "R": 1052,
+   "CSS": 129,
+   "HTML": 82
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 8,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "R": {
+    "tests": 542,
+    "R": 510
+   },
+   "CSS": {
+    "site": 129
+   },
+   "HTML": {
+    "site": 82
+   }
+  },
+  "secret_envs": []
+ },
+ "tsukiji-atlas": {
+  "dir": "tsukiji-atlas",
+  "exists": true,
+  "langs": {
+   "Python": 1051,
+   "TypeScript": 591,
+   "JavaScript": 115,
+   "CSS": 79
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 8,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 4,
+  "bydir": {
+   "Python": {
+    "tests": 344,
+    "extract": 273,
+    "transform": 236,
+    "gold": 196,
+    ".": 2
+   },
+   "JavaScript": {
+    "web": 115
+   },
+   "TypeScript": {
+    "web": 591
+   },
+   "CSS": {
+    "web": 79
+   }
+  },
+  "secret_envs": []
+ },
+ "bunka-cluster-map": {
+  "dir": "bunka-cluster-map",
+  "exists": true,
+  "langs": {
+   "Python": 2860,
+   "HTML": 2836,
+   "TypeScript": 1588,
+   "CSS": 236
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 16,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 7,
+  "bydir": {
+   "Python": {
+    "pipeline": 2860
+   },
+   "HTML": {
+    "web": 2836
+   },
+   "TypeScript": {
+    "web": 1588
+   },
+   "CSS": {
+    "web": 236
+   }
+  },
+  "secret_envs": []
+ },
+ "sakaba-density-map": {
+  "dir": "sakaba-density-map",
+  "exists": true,
+  "langs": {
+   "Python": 1828,
+   "HTML": 1728,
+   "TypeScript": 994
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "cron",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 14,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 8,
+  "bydir": {
+   "Python": {
+    "pipeline": 1828
+   },
+   "HTML": {
+    "web": 1728
+   },
+   "TypeScript": {
+    "web": 994
+   }
+  },
+  "secret_envs": []
+ },
+ "yamato-gaze": {
+  "dir": "yamato-gaze",
+  "exists": true,
+  "langs": {
+   "Python": 2355,
+   "TypeScript": 1277,
+   "CSS": 144,
+   "JavaScript": 68
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 14,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "Python": {
+    "tests": 861,
+    "transform": 537,
+    "extract": 356,
+    "gold": 350,
+    "analyze": 251
+   },
+   "JavaScript": {
+    "web": 68
+   },
+   "TypeScript": {
+    "web": 1277
+   },
+   "CSS": {
+    "web": 144
+   }
+  },
+  "secret_envs": []
+ },
+ "saitojo-zu": {
+  "dir": "saitojo-zu",
+  "exists": true,
+  "langs": {
+   "Python": 4657,
+   "HTML": 1313,
+   "JavaScript": 870,
+   "CSS": 275
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/test_graph.py"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "HTML": {
+    "docs": 1198,
+    "web": 115
+   },
+   "Python": {
+    "pipeline": 2320,
+    "tests": 1987,
+    "tools": 350
+   },
+   "CSS": {
+    "web": 275
+   },
+   "JavaScript": {
+    "web": 870
+   }
+  },
+  "secret_envs": []
+ },
+ "kyoen-zu": {
+  "dir": "kyoen-zu",
+  "exists": true,
+  "langs": {
+   "Python": 2813,
+   "HTML": 1430
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 12,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/test_graph.py"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "HTML": {
+    "tools": 1049,
+    "docs": 381
+   },
+   "Python": {
+    "tests": 1333,
+    "pipeline": 1288,
+    "tools": 192
+   }
+  },
+  "secret_envs": []
+ },
+ "furigana-keiryo": {
+  "dir": "furigana-keiryo",
+  "exists": true,
+  "langs": {
+   "Ruby": 3024,
+   "HTML": 500
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Ruby": {
+    "bin": 1449,
+    "lib": 839,
+    "test": 736
+   },
+   "HTML": {
+    "web": 500
+   }
+  },
+  "secret_envs": []
+ },
+ "fukuo-keiryo": {
+  "dir": "fukuo-keiryo",
+  "exists": true,
+  "langs": {
+   "HTML": 14211,
+   "R": 1490
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 4,
+  "xval_test_where": [
+   "tests/testthat/helper-source.R",
+   "tests/testthat/test-site.R",
+   "tests/testthat/test-taisho.R"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "HTML": {
+    "data": 14211
+   },
+   "R": {
+    "R": 908,
+    "tests": 582
+   }
+  },
+  "secret_envs": []
+ },
+ "onomato-atlas": {
+  "dir": "onomato-atlas",
+  "exists": true,
+  "langs": {
+   "Python": 3882,
+   "TypeScript": 1116,
+   "CSS": 79
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 18,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "web/src/lib/__tests__/phonDist.test.ts"
+  ],
+  "shared_skipped": 2,
+  "bydir": {
+   "Python": {
+    "pipeline": 1885,
+    "tests": 1529,
+    "probes": 468
+   },
+   "TypeScript": {
+    "web": 1116
+   },
+   "CSS": {
+    "web": 79
+   }
+  },
+  "secret_envs": []
+ },
+ "ango-atlas": {
+  "dir": "ango-atlas",
+  "exists": true,
+  "langs": {
+   "HTML": 124768,
+   "Python": 5399,
+   "JavaScript": 383,
+   "CSS": 89
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [],
+  "pyimports": [
+   "sklearn",
+   "torch",
+   "transformers"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 20,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "tests/bm25_node.js",
+   "tests/test_search.py"
+  ],
+  "shared_skipped": 2,
+  "bydir": {
+   "HTML": {
+    "data": 122798,
+    "tests": 1236,
+    "web": 734
+   },
+   "Python": {
+    "pipeline": 3682,
+    "tests": 1717
+   },
+   "JavaScript": {
+    "web": 227,
+    "tests": 156
+   },
+   "CSS": {
+    "web": 89
+   }
+  },
+  "secret_envs": []
+ },
+ "neko-atlas": {
+  "dir": "neko-atlas",
+  "exists": true,
+  "langs": {
+   "Python": 5243,
+   "JavaScript": 1378,
+   "HTML": 538,
+   "CSS": 263
+  },
+  "flags": [
+   "tests",
+   "weights"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "Python": {
+    "pipeline": 3756,
+    "tests": 1487
+   },
+   "JavaScript": {
+    "web": 1378
+   },
+   "HTML": {
+    "web": 538
+   },
+   "CSS": {
+    "web": 263
+   }
+  },
+  "secret_envs": []
+ },
+ "jikenbo-atlas": {
+  "dir": "jikenbo-atlas",
+  "exists": true,
+  "langs": {
+   "HTML": 9325,
+   "Python": 2549,
+   "JavaScript": 718,
+   "CSS": 219
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "HTML": {
+    "data": 8868,
+    "web": 259,
+    "tests": 198
+   },
+   "Python": {
+    "tests": 1464,
+    "pipeline": 1085
+   },
+   "JavaScript": {
+    "web": 718
+   },
+   "CSS": {
+    "web": 219
+   }
+  },
+  "secret_envs": []
+ },
+ "kiko-atlas": {
+  "dir": "kiko-atlas",
+  "exists": true,
+  "langs": {
+   "Python": 789,
+   "JavaScript": 460,
+   "CSS": 189,
+   "HTML": 79
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 3,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "Python": {
+    "pipeline": 443,
+    "tests": 344,
+    ".": 2
+   },
+   "JavaScript": {
+    "web": 460
+   },
+   "HTML": {
+    "web": 79
+   },
+   "CSS": {
+    "web": 189
+   }
+  },
+  "secret_envs": []
+ },
+ "honyaku-atlas": {
+  "dir": "honyaku-atlas",
+  "exists": true,
+  "langs": {
+   "HTML": 4160,
+   "TypeScript": 2668,
+   "CSS": 310
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@types/js-yaml",
+   "@types/node",
+   "@vitest/coverage-v8",
+   "js-yaml",
+   "tsx",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 15,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "HTML": {
+    "coverage": 4140,
+    ".": 20
+   },
+   "TypeScript": {
+    "tests": 1379,
+    "src": 1259,
+    ".": 30
+   },
+   "CSS": {
+    "src": 310
+   }
+  },
+  "secret_envs": []
+ },
+ "honyaku-query": {
+  "dir": "honyaku-query",
+  "exists": true,
+  "langs": {
+   "HTML": 5789,
+   "TypeScript": 2094,
+   "CSS": 250
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@vitest/coverage-v8",
+   "jsdom",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 13,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 7,
+  "bydir": {
+   "HTML": {
+    "coverage": 5769,
+    ".": 20
+   },
+   "TypeScript": {
+    "src": 1282,
+    "tests": 812
+   },
+   "CSS": {
+    "src": 250
+   }
+  },
+  "secret_envs": []
+ },
+ "aozora-sakuin": {
+  "dir": "aozora-sakuin",
+  "exists": true,
+  "langs": {
+   "Rust": 4054,
+   "Python": 1425,
+   "JavaScript": 1028,
+   "CSS": 305,
+   "HTML": 116
+  },
+  "flags": [
+   "cargo",
+   "tests",
+   "wasm"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 14,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "rust/tests/oracle.rs",
+   "rust/tests/range.rs"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "pipeline": 580,
+    "tests": 530,
+    "scripts": 315
+   },
+   "Rust": {
+    "rust": 4054
+   },
+   "JavaScript": {
+    "web": 528,
+    "scripts": 500
+   },
+   "CSS": {
+    "web": 305
+   },
+   "HTML": {
+    "web": 116
+   }
+  },
+  "secret_envs": []
+ },
+ "hanshichi-atlas": {
+  "dir": "hanshichi-atlas",
+  "exists": true,
+  "langs": {
+   "HTML": 18840,
+   "Python": 3794,
+   "JavaScript": 1058,
+   "CSS": 229
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "HTML": {
+    "data": 18487,
+    "web": 337,
+    "tests": 16
+   },
+   "Python": {
+    "pipeline": 2651,
+    "tests": 1143
+   },
+   "JavaScript": {
+    "web": 1058
+   },
+   "CSS": {
+    "web": 229
+   }
+  },
+  "secret_envs": []
+ },
+ "makura-atlas": {
+  "dir": "makura-atlas",
+  "exists": true,
+  "langs": {
+   "JavaScript": 441,
+   "Python": 207,
+   "CSS": 163,
+   "HTML": 92
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 2,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 207
+   },
+   "JavaScript": {
+    "web": 441
+   },
+   "HTML": {
+    "web": 92
+   },
+   "CSS": {
+    "web": 163
+   }
+  },
+  "secret_envs": []
+ },
+ "hojoki-atlas": {
+  "dir": "hojoki-atlas",
+  "exists": true,
+  "langs": {
+   "JavaScript": 485,
+   "Python": 223,
+   "CSS": 160,
+   "HTML": 95
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 2,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 223
+   },
+   "JavaScript": {
+    "web": 485
+   },
+   "HTML": {
+    "web": 95
+   },
+   "CSS": {
+    "web": 160
+   }
+  },
+  "secret_envs": []
+ },
+ "tsurezure-atlas": {
+  "dir": "tsurezure-atlas",
+  "exists": true,
+  "langs": {
+   "JavaScript": 435,
+   "CSS": 181,
+   "Python": 176,
+   "HTML": 97
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 2,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 176
+   },
+   "JavaScript": {
+    "web": 435
+   },
+   "HTML": {
+    "web": 97
+   },
+   "CSS": {
+    "web": 181
+   }
+  },
+  "secret_envs": []
+ },
+ "saijiki-lens": {
+  "dir": "saijiki-lens",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1778,
+   "Python": 1765,
+   "CSS": 641,
+   "HTML": 600,
+   "JavaScript": 321
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/test_sekki.py"
+  ],
+  "shared_skipped": 5,
+  "bydir": {
+   "HTML": {
+    "data": 600
+   },
+   "Python": {
+    "pipeline": 1293,
+    "tests": 472
+   },
+   "TypeScript": {
+    "web": 1778
+   },
+   "JavaScript": {
+    "web": 321
+   },
+   "CSS": {
+    "web": 641
+   }
+  },
+  "secret_envs": []
+ },
+ "iro-koyomi": {
+  "dir": "iro-koyomi",
+  "exists": true,
+  "langs": {
+   "Python": 1912,
+   "HTML": 1293,
+   "TypeScript": 1125,
+   "CSS": 139
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 14,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 14,
+  "bydir": {
+   "Python": {
+    "pipeline": 1319,
+    "tests": 593
+   },
+   "HTML": {
+    "web": 1293
+   },
+   "CSS": {
+    "web": 139
+   },
+   "TypeScript": {
+    "web": 1125
+   }
+  },
+  "secret_envs": []
+ },
+ "kuriya-cho": {
+  "dir": "kuriya-cho",
+  "exists": true,
+  "langs": {
+   "Python": 3990,
+   "HTML": 1036,
+   "CSS": 263,
+   "JavaScript": 240
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "tests/js_generate.mjs",
+   "tests/test_search_and_generator.py"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "Python": {
+    "pipeline": 2838,
+    "tests": 1152
+   },
+   "JavaScript": {
+    "web": 204,
+    "tests": 36
+   },
+   "HTML": {
+    "web": 1036
+   },
+   "CSS": {
+    "web": 263
+   }
+  },
+  "secret_envs": []
+ },
+ "beagle-atlas": {
+  "dir": "beagle-atlas",
+  "exists": true,
+  "langs": {
+   "HTML": 111591,
+   "Python": 15542,
+   "TypeScript": 1642,
+   "CSS": 364,
+   "JavaScript": 33
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript"
+  ],
+  "pyimports": [
+   "transformers"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 6,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "tests/test_sources.py"
+  ],
+  "shared_skipped": 2,
+  "bydir": {
+   "JavaScript": {
+    "scripts": 23,
+    ".": 10
+   },
+   "CSS": {
+    "app": 364
+   },
+   "TypeScript": {
+    "app": 1087,
+    "components": 312,
+    "lib": 243
+   },
+   "Python": {
+    "etl": 14783,
+    "tests": 759
+   },
+   "HTML": {
+    "raw": 111591
+   }
+  },
+  "secret_envs": []
+ },
+ "mondo-atlas": {
+  "dir": "mondo-atlas",
+  "exists": true,
+  "langs": {
+   "Python": 4744,
+   "TypeScript": 4032,
+   "CSS": 1312,
+   "HTML": 1262,
+   "JavaScript": 462
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "tests/test_normalize.py",
+   "tests-js/breath.test.ts"
+  ],
+  "shared_skipped": 4,
+  "bydir": {
+   "JavaScript": {
+    "etl": 362,
+    "scripts": 90,
+    ".": 10
+   },
+   "TypeScript": {
+    "app": 1981,
+    "tests-js": 1382,
+    "lib": 669
+   },
+   "CSS": {
+    "app": 1312
+   },
+   "HTML": {
+    "docs": 1262
+   },
+   "Python": {
+    "etl": 3937,
+    "tests": 807
+   }
+  },
+  "secret_envs": []
+ },
+ "omotegae-za": {
+  "dir": "omotegae-za",
+  "exists": true,
+  "langs": {
+   "Python": 3691,
+   "TypeScript": 1396,
+   "CSS": 207
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 8,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/test_translation.py"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 1327,
+    "scripts": 56,
+    ".": 13
+   },
+   "Python": {
+    "pipeline": 1941,
+    "tests": 1750
+   },
+   "CSS": {
+    "src": 207
+   }
+  },
+  "secret_envs": []
+ },
+ "uta-gaeshi": {
+  "dir": "uta-gaeshi",
+  "exists": true,
+  "langs": {
+   "Python": 4825
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "Python": {
+    "pipeline": 2461,
+    "tests": 1200,
+    "data": 1164
+   }
+  },
+  "secret_envs": []
+ },
+ "ikari-uta": {
+  "dir": "ikari-uta",
+  "exists": true,
+  "langs": {
+   "Python": 2774,
+   "CSS": 242,
+   "JavaScript": 134
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/test_parse.py"
+  ],
+  "shared_skipped": 2,
+  "bydir": {
+   "Python": {
+    "pipeline": 1632,
+    "tests": 1142
+   },
+   "JavaScript": {
+    "site": 134
+   },
+   "CSS": {
+    "site": 242
+   }
+  },
+  "secret_envs": []
+ },
+ "disaster-drill": {
+  "dir": "disaster-drill",
+  "exists": true,
+  "langs": {
+   "TypeScript": 5159,
+   "HTML": 2559,
+   "CSS": 687,
+   "Python": 518,
+   "JavaScript": 86
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@testing-library/dom",
+   "@testing-library/react",
+   "@testing-library/user-event",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "jsdom",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 13,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "src": 3654,
+    "tests": 1454,
+    ".": 51
+   },
+   "HTML": {
+    "coverage": 2559
+   },
+   "Python": {
+    "scripts": 518
+   },
+   "JavaScript": {
+    "scripts": 86
+   },
+   "CSS": {
+    "src": 687
+   }
+  },
+  "secret_envs": []
+ },
+ "tarp-shelter-lab": {
+  "dir": "tarp-shelter-lab",
+  "exists": true,
+  "langs": {
+   "TypeScript": 4122,
+   "CSS": 1018,
+   "JavaScript": 983,
+   "HTML": 231
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "playwright",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "HTML": {
+    ".": 231
+   },
+   "TypeScript": {
+    "src": 2930,
+    "tests": 1183,
+    ".": 9
+   },
+   "JavaScript": {
+    "scripts": 983
+   },
+   "CSS": {
+    "styles": 1018
+   }
+  },
+  "secret_envs": []
+ },
+ "diamond-fuji-finder": {
+  "dir": "diamond-fuji-finder",
+  "exists": true,
+  "langs": {
+   "HTML": 1824,
+   "TypeScript": 1323,
+   "CSS": 170
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 6,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 9,
+  "bydir": {
+   "HTML": {
+    "coverage": 1824
+   },
+   "CSS": {
+    "src": 170
+   },
+   "TypeScript": {
+    "src": 1323
+   }
+  },
+  "secret_envs": []
+ },
+ "yama-tenki-finder": {
+  "dir": "yama-tenki-finder",
+  "exists": true,
+  "langs": {
+   "HTML": 2488,
+   "TypeScript": 1422,
+   "CSS": 388
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@types/node",
+   "@types/react",
+   "@vitest/coverage-v8",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "src": 519,
+    "tests": 484,
+    "app": 395,
+    ".": 24
+   },
+   "CSS": {
+    "app": 388
+   },
+   "HTML": {
+    "coverage": 2488
+   }
+  },
+  "secret_envs": []
+ },
+ "pack-weight-sim": {
+  "dir": "pack-weight-sim",
+  "exists": true,
+  "langs": {
+   "HTML": 4819,
+   "TypeScript": 2226,
+   "CSS": 400
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@vitest/coverage-v8",
+   "jsdom",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "HTML": {
+    "coverage": 4799,
+    ".": 20
+   },
+   "TypeScript": {
+    "tests": 1235,
+    "src": 991
+   },
+   "CSS": {
+    "src": 400
+   }
+  },
+  "secret_envs": []
+ },
+ "bunka-hashigo": {
+  "dir": "bunka-hashigo",
+  "exists": true,
+  "langs": {
+   "HTML": 5294,
+   "TypeScript": 3351,
+   "CSS": 306
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@types/js-yaml",
+   "@types/node",
+   "@vitest/coverage-v8",
+   "js-yaml",
+   "jsdom",
+   "maplibre-gl",
+   "tsx",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 14,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 7,
+  "bydir": {
+   "HTML": {
+    "coverage": 5281,
+    ".": 13
+   },
+   "TypeScript": {
+    "tests": 1664,
+    "src": 1651,
+    ".": 36
+   },
+   "CSS": {
+    "src": 306
+   }
+  },
+  "secret_envs": []
+ },
+ "hashigo-planner": {
+  "dir": "hashigo-planner",
+  "exists": true,
+  "langs": {
+   "HTML": 3943,
+   "TypeScript": 2502,
+   "CSS": 318
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@types/js-yaml",
+   "@types/node",
+   "@vitest/coverage-v8",
+   "js-yaml",
+   "maplibre-gl",
+   "tsx",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 12,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "HTML": {
+    "coverage": 3930,
+    ".": 13
+   },
+   "TypeScript": {
+    "src": 1302,
+    "tests": 1167,
+    ".": 33
+   },
+   "CSS": {
+    "src": 318
+   }
+  },
+  "secret_envs": []
+ },
+ "senbero-sim": {
+  "dir": "senbero-sim",
+  "exists": true,
+  "langs": {
+   "HTML": 5769,
+   "TypeScript": 2299
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@vitest/coverage-v8",
+   "jsdom",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 12,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "HTML": {
+    "coverage": 5656,
+    ".": 113
+   },
+   "TypeScript": {
+    "src": 1256,
+    "tests": 1043
+   }
+  },
+  "secret_envs": []
+ },
+ "grutto-sim": {
+  "dir": "grutto-sim",
+  "exists": true,
+  "langs": {
+   "HTML": 4466,
+   "TypeScript": 2297,
+   "CSS": 274
+  },
+  "flags": [
+   "ci",
+   "ci-test",
+   "tests"
+  ],
+  "deps": [
+   "@biomejs/biome",
+   "@vitest/coverage-v8",
+   "jsdom",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 5,
+  "bydir": {
+   "HTML": {
+    "coverage": 4453,
+    ".": 13
+   },
+   "TypeScript": {
+    "src": 1225,
+    "tests": 1046,
+    ".": 26
+   },
+   "CSS": {
+    "src": 274
+   }
+  },
+  "secret_envs": []
+ },
+ "go-realtime-processing-simulator": {
+  "dir": "go-realtime-processing-simulator",
+  "exists": true,
+  "langs": {
+   "Go": 2559,
+   "JavaScript": 316
+  },
+  "flags": [
+   "go",
+   "tests",
+   "wasm"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 9,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Go": {
+    "internal": 2029,
+    "tests": 327,
+    "cmd": 146,
+    ".": 57
+   },
+   "JavaScript": {
+    "tests": 316
+   }
+  },
+  "secret_envs": []
+ },
+ "go-parallel-web-crawler": {
+  "dir": "go-parallel-web-crawler",
+  "exists": true,
+  "langs": {
+   "Go": 4000,
+   "JavaScript": 1217,
+   "TypeScript": 359
+  },
+  "flags": [
+   "go",
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 19,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/ui/benchmark.test.mjs"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Go": {
+    "internal": 3753,
+    "cmd": 166,
+    "tests": 47,
+    ".": 34
+   },
+   "TypeScript": {
+    "bench": 359
+   },
+   "JavaScript": {
+    "tests": 854,
+    "bench": 334,
+    "scripts": 29
+   }
+  },
+  "secret_envs": []
+ },
+ "mugen-tape": {
+  "dir": "mugen-tape",
+  "exists": true,
+  "langs": {
+   "JavaScript": 971,
+   "Python": 565,
+   "CSS": 283,
+   "HTML": 130
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "tests/test_engine.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 565
+   },
+   "HTML": {
+    "web": 130
+   },
+   "CSS": {
+    "web": 283
+   },
+   "JavaScript": {
+    "web": 971
+   }
+  },
+  "secret_envs": []
+ },
+ "shinpuku-gekijo": {
+  "dir": "shinpuku-gekijo",
+  "exists": true,
+  "langs": {
+   "JavaScript": 401,
+   "Python": 400,
+   "CSS": 189,
+   "HTML": 109
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/test_engine.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 400
+   },
+   "HTML": {
+    "web": 109
+   },
+   "CSS": {
+    "web": 189
+   },
+   "JavaScript": {
+    "web": 401
+   }
+  },
+  "secret_envs": []
+ },
+ "kasane-kairo": {
+  "dir": "kasane-kairo",
+  "exists": true,
+  "langs": {
+   "JavaScript": 960,
+   "Python": 621,
+   "CSS": 235,
+   "HTML": 131
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 2,
+  "xval_test_where": [
+   "tests/test_engine.py"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "tests": 621
+   },
+   "HTML": {
+    "web": 131
+   },
+   "CSS": {
+    "web": 235
+   },
+   "JavaScript": {
+    "web": 960
+   }
+  },
+  "secret_envs": []
+ },
+ "transit-lens": {
+  "dir": "transit-lens",
+  "exists": true,
+  "langs": {
+   "TypeScript": 3158,
+   "Python": 3006,
+   "CSS": 818,
+   "JavaScript": 303
+  },
+  "flags": [
+   "browser-ai-dep",
+   "tests",
+   "wasm",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "onnxruntime-node",
+   "onnxruntime-web",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "onnxruntime",
+   "sklearn",
+   "torch"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 8,
+  "xval_test_hits": 5,
+  "xval_test_where": [
+   "tests/pack.test.ts",
+   "tests/physics.test.ts",
+   "tests/views.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 2733,
+    "tests": 397,
+    ".": 28
+   },
+   "JavaScript": {
+    "scripts": 303
+   },
+   "CSS": {
+    "src": 818
+   },
+   "Python": {
+    "training": 2419,
+    "tests": 587
+   }
+  },
+  "secret_envs": []
+ },
+ "solar-system": {
+  "dir": "solar-system",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1071,
+   "Python": 163,
+   "CSS": 156,
+   "JavaScript": 30
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@playwright/test",
+   "@react-three/drei",
+   "@react-three/fiber",
+   "@tailwindcss/postcss",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@types/three",
+   "@vitejs/plugin-react",
+   "eslint",
+   "eslint-config-next",
+   "next",
+   "react",
+   "react-dom",
+   "tailwindcss",
+   "three",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "JavaScript": {
+    ".": 30
+   },
+   "TypeScript": {
+    "src": 710,
+    "tests": 298,
+    ".": 63
+   },
+   "Python": {
+    "scripts": 163
+   },
+   "CSS": {
+    "src": 156
+   }
+  },
+  "secret_envs": []
+ },
+ "orbit-census": {
+  "dir": "orbit-census",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1144,
+   "JavaScript": 413,
+   "CSS": 292
+  },
+  "flags": [
+   "server-api",
+   "tests",
+   "web-worker"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/three",
+   "next",
+   "react",
+   "react-dom",
+   "satellite.js",
+   "three",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "JavaScript": {
+    "src": 218,
+    "scripts": 188,
+    ".": 7
+   },
+   "TypeScript": {
+    "src": 785,
+    "tests": 277,
+    "app": 67,
+    ".": 15
+   },
+   "CSS": {
+    "app": 292
+   }
+  },
+  "secret_envs": []
+ },
+ "zensen-goyomi": {
+  "dir": "zensen-goyomi",
+  "exists": true,
+  "langs": {
+   "Python": 3727,
+   "HTML": 3553,
+   "TypeScript": 1860,
+   "CSS": 454,
+   "JavaScript": 10
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests-js/season.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "JavaScript": {
+    ".": 10
+   },
+   "TypeScript": {
+    "components": 938,
+    "app": 449,
+    "lib": 344,
+    "tests-js": 120,
+    ".": 9
+   },
+   "CSS": {
+    "app": 454
+   },
+   "Python": {
+    "etl": 2527,
+    "tests": 1032,
+    "scripts": 168
+   },
+   "HTML": {
+    "raw": 3553
+   }
+  },
+  "secret_envs": []
+ },
+ "na-no-eda": {
+  "dir": "na-no-eda",
+  "exists": true,
+  "langs": {
+   "Python": 2436,
+   "HTML": 2028
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0,
+  "bydir": {
+   "Python": {
+    "pipeline": 1725,
+    "tests": 711
+   },
+   "HTML": {
+    "site": 2028
+   }
+  },
+  "secret_envs": []
+ },
+ "senoto-mori": {
+  "dir": "senoto-mori",
+  "exists": true,
+  "langs": {
+   "TypeScript": 6832,
+   "CSS": 1090,
+   "JavaScript": 187
+  },
+  "flags": [
+   "server-api",
+   "tests"
+  ],
+  "deps": [
+   "@mdx-js/loader",
+   "@mdx-js/react",
+   "@next/mdx",
+   "@types/mdx",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "@vitest/coverage-v8",
+   "next",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest",
+   "zod"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 14,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/pricing.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 4896,
+    "tests": 1890,
+    ".": 46
+   },
+   "JavaScript": {
+    "scripts": 187
+   },
+   "CSS": {
+    "src": 1090
+   }
+  },
+  "secret_envs": []
+ },
+ "hoshihata": {
+  "dir": "hoshihata",
+  "exists": true,
+  "langs": {
+   "TypeScript": 7360,
+   "HTML": 3519,
+   "JavaScript": 1213,
+   "CSS": 595
+  },
+  "flags": [
+   "tests",
+   "web-worker"
+  ],
+  "deps": [
+   "@mdx-js/loader",
+   "@mdx-js/react",
+   "@next/mdx",
+   "@types/mdx",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 11,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/terrain.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 5215,
+    "tests": 2115,
+    ".": 30
+   },
+   "HTML": {
+    "data": 3519
+   },
+   "JavaScript": {
+    "scripts": 1213
+   },
+   "CSS": {
+    "src": 595
+   }
+  },
+  "secret_envs": []
+ },
+ "sugi-nami": {
+  "dir": "sugi-nami",
+  "exists": true,
+  "langs": {
+   "TypeScript": 5575,
+   "CSS": 147,
+   "JavaScript": 5
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@mdx-js/loader",
+   "@mdx-js/react",
+   "@next/mdx",
+   "@tailwindcss/postcss",
+   "@types/mdx",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "react",
+   "react-dom",
+   "tailwindcss",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 6,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 5552,
+    ".": 23
+   },
+   "JavaScript": {
+    ".": 5
+   },
+   "CSS": {
+    "src": 147
+   }
+  },
+  "secret_envs": []
+ },
+ "kototoi-do": {
+  "dir": "kototoi-do",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1193,
+   "JavaScript": 983,
+   "CSS": 168,
+   "Python": 102
+  },
+  "flags": [
+   "browser-ai-dep",
+   "tests",
+   "wasm",
+   "weights"
+  ],
+  "deps": [
+   "@huggingface/transformers",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 8,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 720,
+    "tests": 428,
+    ".": 45
+   },
+   "JavaScript": {
+    "scripts": 983
+   },
+   "Python": {
+    "scripts": 102
+   },
+   "CSS": {
+    "src": 168
+   }
+  },
+  "secret_envs": []
+ },
+ "mashaku": {
+  "dir": "mashaku",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1393,
+   "JavaScript": 330,
+   "CSS": 175,
+   "Python": 101
+  },
+  "flags": [
+   "browser-ai-dep",
+   "tests"
+  ],
+  "deps": [
+   "@huggingface/transformers",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 5,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/cost.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 983,
+    "tests": 390,
+    ".": 20
+   },
+   "JavaScript": {
+    "scripts": 330
+   },
+   "Python": {
+    "scripts": 101
+   },
+   "CSS": {
+    "src": 175
+   }
+  },
+  "secret_envs": []
+ },
+ "chikuma-seiki": {
+  "dir": "chikuma-seiki",
+  "exists": true,
+  "langs": {
+   "TypeScript": 8579,
+   "CSS": 134,
+   "JavaScript": 104
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@tailwindcss/postcss",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "tailwindcss",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 23,
+  "xval_test_hits": 3,
+  "xval_test_where": [
+   "src/lib/aoi.test.ts",
+   "src/lib/schedule.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 8562,
+    ".": 17
+   },
+   "JavaScript": {
+    "bin": 99,
+    ".": 5
+   },
+   "CSS": {
+    "src": 134
+   }
+  },
+  "secret_envs": []
+ },
+ "hanshoku-atlas": {
+  "dir": "hanshoku-atlas",
+  "exists": true,
+  "langs": {
+   "TypeScript": 4950,
+   "JavaScript": 1305,
+   "CSS": 861,
+   "Python": 538,
+   "Rust": 341
+  },
+  "flags": [
+   "cargo",
+   "ci",
+   "ci-test",
+   "tests",
+   "wasm",
+   "web-worker"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 12,
+  "xval_test_hits": 4,
+  "xval_test_where": [
+   "rust/src/lib.rs",
+   "tests/color.test.ts",
+   "tests/wasm.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "JavaScript": {
+    "pipeline": 689,
+    "scripts": 463,
+    ".": 153
+   },
+   "TypeScript": {
+    "src": 3395,
+    "tests": 1534,
+    ".": 21
+   },
+   "Python": {
+    "pipeline": 377,
+    "scripts": 161
+   },
+   "Rust": {
+    "rust": 341
+   },
+   "CSS": {
+    "src": 861
+   }
+  },
+  "secret_envs": []
+ },
+ "kozu-lab": {
+  "dir": "kozu-lab",
+  "exists": true,
+  "langs": {
+   "TypeScript": 8207,
+   "Rust": 1254,
+   "JavaScript": 268,
+   "CSS": 94,
+   "Python": 54
+  },
+  "flags": [
+   "cargo",
+   "tests",
+   "wasm"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "react",
+   "react-dom",
+   "tsx",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 16,
+  "xval_test_hits": 1,
+  "xval_test_where": [
+   "tests/crossimpl.test.ts"
+  ],
+  "shared_skipped": 1,
+  "bydir": {
+   "TypeScript": {
+    "src": 4857,
+    "tests": 2702,
+    "scripts": 619,
+    ".": 29
+   },
+   "Rust": {
+    "rust": 1254
+   },
+   "JavaScript": {
+    "scripts": 268
+   },
+   "Python": {
+    "scripts": 54
+   },
+   "CSS": {
+    "src": 94
+   }
+  },
+  "secret_envs": []
+ },
+ "kitei-forge": {
+  "dir": "kitei-forge",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1734,
+   "HTML": 1
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "docx",
+   "fflate",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 6,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 7,
+  "bydir": {
+   "HTML": {
+    ".cache-src": 1
+   },
+   "TypeScript": {
+    "lib": 787,
+    "app": 562,
+    "tests-js": 385
+   }
+  },
+  "secret_envs": []
+ },
+ "mamori-forge": {
+  "dir": "mamori-forge",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1879
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "docx",
+   "fflate",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 6,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "lib": 888,
+    "app": 581,
+    "tests-js": 410
+   }
+  },
+  "secret_envs": []
+ },
+ "hacchu-forge": {
+  "dir": "hacchu-forge",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1230
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "docx",
+   "fflate",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "lib": 486,
+    "app": 468,
+    "tests-js": 276
+   }
+  },
+  "secret_envs": []
+ },
+ "hogo-forge": {
+  "dir": "hogo-forge",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1219
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "docx",
+   "fflate",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "app": 483,
+    "lib": 463,
+    "tests-js": 273
+   }
+  },
+  "secret_envs": []
+ },
+ "soncho-forge": {
+  "dir": "soncho-forge",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1154
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "docx",
+   "fflate",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "app": 464,
+    "lib": 449,
+    "tests-js": 241
+   }
+  },
+  "secret_envs": []
+ },
+ "zaitaku-forge": {
+  "dir": "zaitaku-forge",
+  "exists": true,
+  "langs": {
+   "TypeScript": 1148
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "docx",
+   "fflate",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 4,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 6,
+  "bydir": {
+   "TypeScript": {
+    "app": 502,
+    "lib": 424,
+    "tests-js": 222
+   }
+  },
+  "secret_envs": []
+ },
+ "station-flow-atlas-ai": {
+  "dir": "station-flow-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "food-self-sufficiency-atlas-ai": {
+  "dir": "food-self-sufficiency-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "forestry-atlas-ai": {
+  "dir": "forestry-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "disaster-base-atlas-ai": {
+  "dir": "disaster-base-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "river-fishery-rights-atlas-ai": {
+  "dir": "river-fishery-rights-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "ja-atlas-ai": {
+  "dir": "ja-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "fishing-port-atlas-ai": {
+  "dir": "fishing-port-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "weather-atmosphere-atlas-ai": {
+  "dir": "weather-atmosphere-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "long-trail-atlas-ai": {
+  "dir": "long-trail-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "torahiko-geoscience-atlas-ai": {
+  "dir": "torahiko-geoscience-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "yanagita-folklore-atlas-ai": {
+  "dir": "yanagita-folklore-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "mystery-weird-atlas-ai": {
+  "dir": "mystery-weird-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "matatabi-atlas-ai": {
+  "dir": "matatabi-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "aozora-flora-atlas-ai": {
+  "dir": "aozora-flora-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "world-folktale-atlas-ai": {
+  "dir": "world-folktale-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "kofun-atlas-ai": {
+  "dir": "kofun-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "jinja-origin-atlas-ai": {
+  "dir": "jinja-origin-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ },
+ "archaeostone-atlas-ai": {
+  "dir": "archaeostone-atlas-ai",
+  "exists": false,
+  "langs": {},
+  "flags": [],
+  "deps": [],
+  "pyimports": [],
+  "envs": [],
+  "license": null,
+  "testfiles": 0,
+  "xval_test_hits": 0,
+  "xval_test_where": [],
+  "shared_skipped": 0
+ }
+}

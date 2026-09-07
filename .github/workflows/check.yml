@@ -4,13 +4,19 @@ on:
   push:
     branches: [main]
     paths:
+      - 'data/**'
+      - 'scripts/**'
+      - 'app.js'
       - 'index.html'
-      - 'tools/**'
+      - 'styles.css'
       - '.github/workflows/check.yml'
   pull_request:
     paths:
+      - 'data/**'
+      - 'scripts/**'
+      - 'app.js'
       - 'index.html'
-      - 'tools/**'
+      - 'styles.css'
       - '.github/workflows/check.yml'
   workflow_dispatch:
 
@@ -29,26 +35,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      # 説明文 160 字以内。超過が 1 件でもあれば exit 1
-      - name: 説明文の長さ
-        run: python tools/check_desc.py
-      # 語彙外のタグ・data-tags の欠落・誰も使っていないチップ
-      # 前段が落ちても両方の結果を一度に見たいので always()
-      - name: 技術タグの整合
+      # V1 の検査 5 本(説明文の長さ・技術タグ・出典・カテゴリ構造・実装ライブラリ)は
+      # 対象が index.html から data/apps.json へ移ったのでこの 1 本に畳んである。
+      # id 重複・必須項目・未定義 taxonomy・URL/日付の形式・featuredOrder の重複・
+      # githubUrl の食い違い・summary 160 字・誰も使っていない語彙。
+      - name: apps.json の検査
+        run: python scripts/validate_apps.py --verbose
+      # 陽性対照。**緑になる検査は赤にできることを見ていないと意味がない** ——
+      # わざと 12 通りに壊した apps.json を作り、全部 exit 1 になることと、
+      # 無傷なら 0 になることを確かめる。
+      - name: 検査そのものの検査(陽性対照)
         if: always()
-        run: python tools/check_tags.py
-      # 語彙外の出典・data-src の欠落・誰も使っていないチップ
-      - name: 出典タグの整合
+        run: python scripts/selftest_validate.py
+      # 画面の JSON がそのまま読めること(壊れた JSON を配らない)
+      - name: データが JSON として読めるか
         if: always()
-        run: python tools/check_src.py
-      # カテゴリ軸の構造。cat の重複・チップと棚の食い違い・同名カテゴリ・空の棚
-      # 2026-09-01 に cat15 が 🎨 と 🖼️ で二重定義されたまま通った穴を塞ぐもの
-      - name: カテゴリ軸の構造
-        if: always()
-        run: python tools/check_cats.py
-      # 実装ライブラリ(data-lib)の役割と語彙。--measure は付けない ——
-      # 兄弟リポジトリの実測との突き合わせは、別リポジトリ(9 件は private)を
-      # 読む必要があり CI からは見えない。手元で走らせる検査。
-      - name: 実装ライブラリの整合
-        if: always()
-        run: python tools/check_lib.py
+        run: |
+          python -c "import json;[json.load(open(p,encoding='utf-8')) for p in ['data/apps.json','data/taxonomy.json','data/search-synonyms.json']];print('3 ファイルとも読めた')"
