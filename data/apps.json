@@ -8920,6 +8920,144 @@
    "firstDeployedAt": "2026-09-08",
    "updatedAt": "2026-09-08",
    "status": "published"
+  },
+  {
+   "id": "folksound-atlas",
+   "title": "FolkSound Atlas",
+   "shortTitle": "folksound-atlas",
+   "aliases": [
+    "folksound-atlas",
+    "フォークサウンドアトラス",
+    "民謡アトラス",
+    "音響アトラス"
+   ],
+   "icon": "🪕",
+   "series": "atlas-ai",
+   "tracks": [
+    "ai-insight",
+    "data-geo"
+   ],
+   "domains": [
+    "art-music",
+    "literature-folklore-language"
+   ],
+   "methods": [
+    "deep-learning",
+    "embedding",
+    "statistical-test",
+    "clustering",
+    "statistics",
+    "gis"
+   ],
+   "experience": [
+    "map",
+    "chart",
+    "comparison",
+    "search",
+    "interactive"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "ETL・権利判定・特徴量・CNN 学習・Mantel 検定",
+     "loc": 4154
+    },
+    {
+     "name": "TypeScript",
+     "role": "世界地図・音響空間・曲の詳細",
+     "loc": 1729
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 346
+    },
+    {
+     "name": "JavaScript",
+     "role": "実ブラウザ検品・画面撮影",
+     "loc": 312
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing",
+    "reproducible-build"
+   ],
+   "dataSources": [
+    {
+     "category": "wikimedia",
+     "name": "Wikimedia Commons 民謡・伝統音楽の録音(PD / CC0 / CC BY / CC BY-SA)"
+    },
+    {
+     "category": "other-open-data",
+     "name": "Wikidata P625 coordinate location(国の代表点)"
+    },
+    {
+     "category": "gov-dataset",
+     "name": "Natural Earth Admin 0 Countries(Public Domain)"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "PyTorch",
+     "role": "build"
+    },
+    {
+     "name": "librosa / soundfile / soxr",
+     "role": "build"
+    },
+    {
+     "name": "UMAP-learn / scikit-learn",
+     "role": "build"
+    },
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    }
+   ],
+   "summary": "権利を一件ずつ確かめた世界の民謡 314 本を、波形・音響特徴量・深層学習 Embedding で並べ直し、「地理的に近い音楽は音響的にも近いのか」を置換検定で測る。答えは否だった —— 地理との相関 r=0.039 は録音の出自を統制すると消え、出自のほうが 5 倍強く効く。落ちた目玉をそのまま画面に出している。",
+   "description": "",
+   "keywords": [
+    "民謡",
+    "フォークソング",
+    "音響特徴量",
+    "Embedding",
+    "UMAP",
+    "Mantel 検定",
+    "交絡",
+    "循環の禁止",
+    "Wikimedia Commons",
+    "パブリックドメイン"
+   ],
+   "badges": [
+    "verified",
+    "client-only",
+    "open-data",
+    "public-domain",
+    "trained-model",
+    "static-deploy",
+    "no-api-key",
+    "reproducible"
+   ],
+   "appUrl": "https://folksound-atlas.vercel.app",
+   "githubUrl": "https://github.com/twill3c/folksound-atlas",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-08",
+   "updatedAt": "2026-09-08",
+   "status": "published"
   }
  ]
 }
