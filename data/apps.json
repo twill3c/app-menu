@@ -8598,9 +8598,12 @@
   {
    "id": "jinja-origin-atlas-ai",
    "title": "Jinja Origin Atlas AI",
-   "shortTitle": "Jinja Origin Atlas AI",
-   "aliases": [],
-   "icon": "🗺️",
+   "shortTitle": "jinja-origin-atlas-ai",
+   "aliases": [
+    "jinja-origin-atlas-ai",
+    "神社由緒アトラス"
+   ],
+   "icon": "⛩️",
    "series": "atlas-ai",
    "tracks": [
     "data-geo",
@@ -8609,28 +8612,124 @@
    "domains": [
     "history-archaeology-faith"
    ],
-   "methods": [],
-   "experience": [
-    "map"
+   "methods": [
+    "gis",
+    "nlp",
+    "embedding",
+    "clustering",
+    "statistical-test",
+    "rule-based"
    ],
-   "languages": [],
-   "runtimes": [],
-   "architecture": [],
-   "dataSources": [],
-   "libraries": [],
-   "summary": "神社の由緒と祭神の分布を地図で読む。",
+   "experience": [
+    "map",
+    "layers",
+    "search",
+    "comparison",
+    "dashboard",
+    "chart"
+   ],
+   "languages": [
+    {
+     "name": "TypeScript",
+     "role": "地図・意味空間・詳細画面(Next.js 静的書き出し)",
+     "loc": 2079
+    },
+    {
+     "name": "Python",
+     "role": "ETL・名寄せ・地理特徴量・埋め込みパイプライン",
+     "loc": 3091
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Node.js",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing",
+    "reproducible-build"
+   ],
+   "dataSources": [
+    {
+     "category": "other-open-data",
+     "name": "OpenStreetMap(神社 40,776 件・ODbL)"
+    },
+    {
+     "category": "wikimedia",
+     "name": "Wikidata(祭神 P825・社格 P13723・母院 P612)"
+    },
+    {
+     "category": "wikimedia",
+     "name": "日本語版ウィキペディア(由緒本文・CC BY-SA)"
+    },
+    {
+     "category": "gsi",
+     "name": "国土地理院 標高タイル"
+    },
+    {
+     "category": "ksj",
+     "name": "国土数値情報 河川(W05)"
+    },
+    {
+     "category": "gov-dataset",
+     "name": "ジャパンサーチ(由緒資料の権利判定)"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "MapLibre GL JS",
+     "role": "ship"
+    },
+    {
+     "name": "sentence-transformers(multilingual-e5-base)",
+     "role": "build"
+    },
+    {
+     "name": "scikit-learn(HDBSCAN)/ umap-learn",
+     "role": "build"
+    },
+    {
+     "name": "GeoPandas / pyproj",
+     "role": "build"
+    },
+    {
+     "name": "国土地理院 DEM の ele タグ照合 / 平面直角座標系 vs UTM",
+     "role": "oracle"
+    }
+   ],
+   "summary": "神社を公開情報だけから地図に置き、史実・社伝・AI 推定を画面の上で混ぜない。祭神と社格で系統を決め、標高と河川距離を測り、由緒の文章を Transformer で解析する。名寄せは Wikidata と OSM の相互リンク 825 組を較正半分と取り置き半分に割って検証した(取り置きで適合率 0.99)。",
    "description": "",
-   "keywords": [],
-   "badges": [],
-   "appUrl": "",
-   "githubUrl": "",
-   "license": "",
-   "mobile": false,
+   "keywords": [
+    "神社",
+    "由緒",
+    "祭神",
+    "社格",
+    "GIS",
+    "Embedding",
+    "OpenStreetMap",
+    "Wikidata"
+   ],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "open-data",
+    "static-deploy",
+    "no-api-key",
+    "reproducible"
+   ],
+   "appUrl": "https://jinja-origin-atlas-ai.vercel.app",
+   "githubUrl": "https://github.com/twill3c/jinja-origin-atlas-ai",
+   "license": "MIT",
+   "mobile": true,
    "featured": false,
    "featuredOrder": null,
-   "firstDeployedAt": "",
-   "updatedAt": "",
-   "status": "planned"
+   "firstDeployedAt": "2026-09-09",
+   "updatedAt": "2026-09-09",
+   "status": "published"
   },
   {
    "id": "archaeostone-atlas-ai",
