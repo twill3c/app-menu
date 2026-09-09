@@ -8228,38 +8228,149 @@
   {
    "id": "fishing-port-atlas-ai",
    "title": "Fishing Port Atlas AI",
-   "shortTitle": "Fishing Port Atlas AI",
-   "aliases": [],
-   "icon": "🗺️",
+   "shortTitle": "fishing-port-atlas-ai",
+   "aliases": [
+    "fishing-port-atlas-ai",
+    "漁港アトラス",
+    "フィッシングポートアトラス",
+    "漁港",
+    "海面水温"
+   ],
+   "icon": "⚓",
    "series": "atlas-ai",
    "tracks": [
     "data-geo"
    ],
    "domains": [
-    "agri-forest-fishery"
+    "agri-forest-fishery",
+    "weather-environment"
    ],
-   "methods": [],
+   "methods": [
+    "gis",
+    "statistics",
+    "regression",
+    "statistical-test"
+   ],
    "experience": [
-    "map"
+    "map",
+    "chart",
+    "search",
+    "comparison",
+    "layers"
    ],
-   "languages": [],
-   "runtimes": [],
-   "architecture": [],
-   "dataSources": [],
-   "libraries": [],
-   "summary": "漁港の規模と水揚げを地図で読む。",
+   "languages": [
+    {
+     "name": "Python",
+     "role": "PDF の罫線からの表復元・突合・海面水温の回帰・配信データ生成",
+     "loc": 2568
+    },
+    {
+     "name": "TypeScript",
+     "role": "地図・海域の表・散布図・詳細 Drawer",
+     "loc": 2464
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 686
+    },
+    {
+     "name": "JavaScript",
+     "role": "実ブラウザ検品・画面撮影",
+     "loc": 552
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing",
+    "reproducible-build"
+   ],
+   "dataSources": [
+    {
+     "category": "suisan",
+     "name": "水産庁 漁港一覧(令和8年4月1日現在・PDF 42 本)"
+    },
+    {
+     "category": "ksj",
+     "name": "国土数値情報 漁港データ C09-06(点 2,931 / 区域線 3,292)"
+    },
+    {
+     "category": "jma",
+     "name": "気象庁 日本沿岸域の海面水温(沿岸海域 107・1982-)"
+    },
+    {
+     "category": "gsi",
+     "name": "地理院タイル(淡色・標準)"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "MapLibre GL JS",
+     "role": "ship"
+    },
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "pdfplumber",
+     "role": "build"
+    },
+    {
+     "name": "pyshp / Shapely",
+     "role": "build"
+    },
+    {
+     "name": "SciPy / NumPy",
+     "role": "build"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    },
+    {
+     "name": "Vitest",
+     "role": "oracle"
+    }
+   ],
+   "summary": "全国 2,768 の指定漁港を、水産庁の PDF から罫線の座標を頼りに 1 字ずつ組み直す。正解は明細とは別の集計表 2 枚で、4 系統が一致した。沿岸海域 107 の水温は 100/102 で上昇し、冷たい海ほど速い(ρ=-0.565)。",
    "description": "",
-   "keywords": [],
-   "badges": [],
-   "appUrl": "",
-   "githubUrl": "",
-   "license": "",
-   "mobile": false,
+   "keywords": [
+    "漁港",
+    "海面水温",
+    "国土数値情報",
+    "水産庁",
+    "気象庁",
+    "PDF 表抽出",
+    "二文書突合",
+    "二実装照合",
+    "測って捨てた",
+    "欠損を0で埋めない"
+   ],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "open-data",
+    "static-deploy",
+    "no-api-key",
+    "reproducible"
+   ],
+   "appUrl": "https://fishing-port-atlas-ai.vercel.app",
+   "githubUrl": "https://github.com/twill3c/fishing-port-atlas-ai",
+   "license": "MIT",
+   "mobile": true,
    "featured": false,
    "featuredOrder": null,
-   "firstDeployedAt": "",
-   "updatedAt": "",
-   "status": "planned"
+   "firstDeployedAt": "2026-09-09",
+   "updatedAt": "2026-09-10",
+   "status": "published"
   },
   {
    "id": "weather-atmosphere-atlas-ai",

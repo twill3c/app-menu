@@ -5023,17 +5023,64 @@
  },
  "fishing-port-atlas-ai": {
   "dir": "fishing-port-atlas-ai",
-  "exists": false,
-  "langs": {},
-  "flags": [],
-  "deps": [],
+  "exists": true,
+  "langs": {
+   "Python": 2568,
+   "TypeScript": 2464,
+   "CSS": 686,
+   "JavaScript": 552,
+   "HTML": 394
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "maplibre-gl",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vite",
+   "vitest"
+  ],
   "pyimports": [],
   "envs": [],
-  "license": null,
-  "testfiles": 0,
-  "xval_test_hits": 0,
-  "xval_test_where": [],
-  "shared_skipped": 0
+  "license": "MIT",
+  "testfiles": 7,
+  "xval_test_hits": 5,
+  "xval_test_where": [
+   "tests/data/test_ocean.py",
+   "tests/frontend/ocean.test.ts"
+  ],
+  "shared_skipped": 0,
+  "bydir": {
+   "TypeScript": {
+    "components": 914,
+    "app": 724,
+    "lib": 438,
+    "tests": 359,
+    ".": 29
+   },
+   "CSS": {
+    "app": 686
+   },
+   "HTML": {
+    "data": 394
+   },
+   "Python": {
+    "data-pipeline": 1914,
+    "tests": 579,
+    "scripts": 75
+   },
+   "JavaScript": {
+    "scripts": 552
+   }
+  },
+  "secret_envs": []
  },
  "weather-atmosphere-atlas-ai": {
   "dir": "weather-atmosphere-atlas-ai",
