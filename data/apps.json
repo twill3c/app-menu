@@ -9433,6 +9433,75 @@
    "firstDeployedAt": "2026-09-10",
    "updatedAt": "2026-09-14",
    "status": "published"
+  },
+  {
+   "id": "physics-puzzle-lab",
+   "title": "Physics Puzzle Lab",
+   "shortTitle": "physics-puzzle-lab",
+   "aliases": [
+    "physics-puzzle-lab",
+    "物理パズル"
+   ],
+   "icon": "🧲",
+   "series": "games",
+   "tracks": [
+    "simulation"
+   ],
+   "domains": [
+    "game-education",
+    "science-medical"
+   ],
+   "methods": [
+    "simulation",
+    "numerical"
+   ],
+   "experience": [
+    "game",
+    "simulator",
+    "interactive",
+    "animation"
+   ],
+   "languages": [
+    {
+     "name": "TypeScript",
+     "role": "フロントエンド",
+     "loc": 7871
+    }
+   ],
+   "runtimes": [
+    "Browser"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api"
+   ],
+   "dataSources": [],
+   "libraries": [
+    {
+     "name": "Matter.js",
+     "role": "ship"
+    }
+   ],
+   "summary": "ボールをゴールへ導く 2D 物理パズル 20 面と、重力・摩擦・反発を動かす物理実験室。配る面はすべて出荷と同じエンジンで解けることを確かめてあり、物理は固定刻みなので同じ置き方は同じ結果になる。",
+   "description": "",
+   "keywords": [],
+   "badges": [
+    "verified",
+    "client-only",
+    "static-deploy",
+    "no-api-key",
+    "reproducible"
+   ],
+   "appUrl": "https://physics-puzzle-lab-gamma.vercel.app",
+   "githubUrl": "https://github.com/twill3c/physics-puzzle-lab",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-14",
+   "updatedAt": "2026-09-14",
+   "status": "published"
   }
  ]
 }
