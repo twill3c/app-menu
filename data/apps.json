@@ -9173,14 +9173,16 @@
     "statistical-test",
     "clustering",
     "statistics",
-    "gis"
+    "gis",
+    "graph-analysis"
    ],
    "experience": [
     "map",
     "chart",
     "comparison",
     "search",
-    "interactive"
+    "interactive",
+    "network"
    ],
    "languages": [
     {
@@ -9251,7 +9253,7 @@
      "role": "oracle"
     }
    ],
-   "summary": "権利を一件ずつ確かめた世界の民謡 314 本を、波形・音響特徴量・深層学習 Embedding で並べ直し、「地理的に近い音楽は音響的にも近いのか」を置換検定で測る。答えは否だった —— 地理との相関 r=0.039 は録音の出自を統制すると消え、出自のほうが 5 倍強く効く。落ちた目玉をそのまま画面に出している。",
+   "summary": "権利を確かめた世界の民謡314本で「地理的に近い音楽は音響的にも近いか」を置換検定で測る。答えは否 —— 地理の相関は録音の出自を統制すると消え、本コーパスを見ていない外部モデルでも交絡だけが再現した。物差しを替えても向きは変わらず、落ちた目玉をそのまま画面に出す。",
    "description": "",
    "keywords": [
     "民謡",
@@ -9282,7 +9284,7 @@
    "featured": false,
    "featuredOrder": null,
    "firstDeployedAt": "2026-09-08",
-   "updatedAt": "2026-09-10",
+   "updatedAt": "2026-09-14",
    "status": "published"
   }
  ]
