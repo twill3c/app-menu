@@ -8957,39 +8957,154 @@
   {
    "id": "archaeostone-atlas-ai",
    "title": "ArchaeoStone Atlas AI",
-   "shortTitle": "ArchaeoStone Atlas AI",
-   "aliases": [],
-   "icon": "🗺️",
+   "shortTitle": "archaeostone-atlas-ai",
+   "aliases": [
+    "archaeostone-atlas-ai",
+    "黒曜石原産地",
+    "黒曜石",
+    "ヒスイ",
+    "石材アトラス",
+    "シームレス地質図"
+   ],
+   "icon": "🪨",
    "series": "atlas-ai",
    "tracks": [
     "data-geo",
-    "computational-humanities"
+    "computational-humanities",
+    "ai-insight"
    ],
    "domains": [
     "history-archaeology-faith"
    ],
-   "methods": [],
-   "experience": [
-    "map"
+   "methods": [
+    "gis",
+    "statistics",
+    "statistical-test",
+    "spatial-statistics",
+    "machine-learning"
    ],
-   "languages": [],
-   "runtimes": [],
-   "architecture": [],
-   "dataSources": [],
-   "libraries": [],
-   "summary": "石造遺物の分布と年代を地図で読む。",
+   "experience": [
+    "map",
+    "comparison"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "地質タイルの復号・原産地の座標解決・置換検定・空間で分けた交差検証・再配布の門・配信データ生成",
+     "loc": 6507
+    },
+    {
+     "name": "TypeScript",
+     "role": "地図(近接する原産地の群)・Stone Passport・地質の偏りと AI ラボの報告",
+     "loc": 2874
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 932
+    },
+    {
+     "name": "JavaScript",
+     "role": "ビルドの刻印・設定",
+     "loc": 93
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing",
+    "reproducible-build"
+   ],
+   "dataSources": [
+    {
+     "category": "gov-dataset",
+     "name": "産総研 20万分の1日本シームレス地質図V2(凡例 API・タイル)"
+    },
+    {
+     "category": "gsi",
+     "name": "国土地理院 地名検索・逆ジオコーダ・地理院タイル"
+    },
+    {
+     "category": "research-dataset",
+     "name": "奈良文化財研究所 全国遺跡報告総覧 OAI-PMH(索引メタデータ)"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "MapLibre GL JS",
+     "role": "ship"
+    },
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "scikit-learn",
+     "role": "build"
+    },
+    {
+     "name": "NumPy",
+     "role": "build"
+    },
+    {
+     "name": "Pillow",
+     "role": "build"
+    },
+    {
+     "name": "lxml",
+     "role": "build"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    },
+    {
+     "name": "Vitest",
+     "role": "oracle"
+    },
+    {
+     "name": "pytest",
+     "role": "oracle"
+    }
+   ],
+   "summary": "黒曜石原産地の足もとを産総研シームレス地質図と重ね、無作為な陸地点と置換検定で比べる。地質から原産地らしさを当てる分類器は、事前登録した幅で「火山岩か」の一規則を超えなかった。蛍光X線の産地推定は根拠つきで No-Go。配れない源は画面に一行も入れない。",
    "description": "",
-   "keywords": [],
-   "badges": [],
-   "appUrl": "",
-   "githubUrl": "",
-   "license": "",
-   "mobile": false,
+   "keywords": [
+    "黒曜石",
+    "原産地",
+    "ヒスイ",
+    "シームレス地質図",
+    "全国遺跡報告総覧",
+    "Evidence Ladder",
+    "置換検定",
+    "事前登録",
+    "空間交差検証",
+    "No-Go",
+    "再配布の門",
+    "測って捨てた"
+   ],
+   "badges": [
+    "verified",
+    "client-only",
+    "open-data",
+    "static-deploy",
+    "no-api-key",
+    "reproducible"
+   ],
+   "appUrl": "https://archaeostone-atlas-ai.vercel.app",
+   "githubUrl": "https://github.com/twill3c/archaeostone-atlas-ai",
+   "license": "MIT",
+   "mobile": true,
    "featured": false,
    "featuredOrder": null,
-   "firstDeployedAt": "",
-   "updatedAt": "",
-   "status": "planned"
+   "firstDeployedAt": "2026-09-14",
+   "updatedAt": "2026-09-14",
+   "status": "published"
   },
   {
    "id": "japan-geo-onsen",
