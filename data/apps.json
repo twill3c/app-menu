@@ -9446,15 +9446,18 @@
    "runtimes": [
     "Browser",
     "WebAssembly",
-    "Python Runtime"
+    "Python Runtime",
+    "GitHub Actions"
    ],
    "architecture": [
     "browser-inference",
     "client-only",
     "static-site",
     "webassembly",
+    "github-actions",
     "no-api",
-    "local-processing"
+    "local-processing",
+    "reproducible-build"
    ],
    "dataSources": [
     {
@@ -9526,10 +9529,11 @@
     "open-data",
     "trained-model",
     "static-deploy",
-    "no-api-key"
+    "no-api-key",
+    "reproducible"
    ],
    "appUrl": "https://gram-stain-ai.vercel.app",
-   "githubUrl": "",
+   "githubUrl": "https://github.com/twill3c/gram-stain-ai",
    "license": "MIT",
    "mobile": true,
    "featured": false,
