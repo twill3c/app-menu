@@ -9286,6 +9286,153 @@
    "firstDeployedAt": "2026-09-08",
    "updatedAt": "2026-09-14",
    "status": "published"
+  },
+  {
+   "id": "gram-stain-ai",
+   "title": "Gram Stain AI",
+   "shortTitle": "gram-stain-ai",
+   "aliases": [
+    "gram-stain-ai",
+    "グラム染色",
+    "グラム染色AI",
+    "細菌",
+    "顕微鏡"
+   ],
+   "icon": "🔬",
+   "series": "lab",
+   "tracks": [
+    "browser-ai",
+    "ai-insight"
+   ],
+   "domains": [
+    "science-medical",
+    "ai-computing"
+   ],
+   "methods": [
+    "deep-learning",
+    "image-recognition",
+    "statistics"
+   ],
+   "experience": [
+    "interactive",
+    "comparison"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "転移学習・三つの物差しの交差検証・Grad-CAM・ONNX 変換と二実装照合",
+     "loc": 4646
+    },
+    {
+     "name": "TypeScript",
+     "role": "ブラウザ内推論の画面・PIL 互換の縮小・前処理の照合検査",
+     "loc": 1622
+    },
+    {
+     "name": "JavaScript",
+     "role": "実ブラウザ検品・ORT の梱包",
+     "loc": 241
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 146
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "WebAssembly",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "browser-inference",
+    "client-only",
+    "static-site",
+    "webassembly",
+    "no-api",
+    "local-processing"
+   ],
+   "dataSources": [
+    {
+     "category": "research-dataset",
+     "name": "Mendeley Data「Bacteria Data for Machine Vision and Digital Biology」(CC BY 4.0・33 種 2,094 枚)"
+    },
+    {
+     "category": "research-dataset",
+     "name": "BacDive(DSMZ・CC BY 4.0)Gram 反応と形態の典拠"
+    },
+    {
+     "category": "gov-dataset",
+     "name": "NCBI Taxonomy(真菌の除外の典拠)"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "ONNX Runtime Web",
+     "role": "ship"
+    },
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "PyTorch / torchvision",
+     "role": "build"
+    },
+    {
+     "name": "Pillow",
+     "role": "build"
+    },
+    {
+     "name": "ONNX Runtime",
+     "role": "oracle"
+    },
+    {
+     "name": "scikit-learn",
+     "role": "oracle"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    },
+    {
+     "name": "Vitest",
+     "role": "oracle"
+    }
+   ],
+   "summary": "グラム染色した細菌の顕微鏡画像を、ブラウザの中だけで分類する。同じ CNN でも、学習で見ていない科を抜くと macro F1 は 0.9731 から 0.6942 へ落ちる。学習なしの色の規則は 0.96 のまま動かない。対照を先に測り、合否は測る前に書いた。医療用途ではない。",
+   "description": "",
+   "keywords": [
+    "グラム染色",
+    "ブラウザ内推論",
+    "ONNX Runtime Web",
+    "三つの物差し",
+    "科ホールドアウト",
+    "陽性対照",
+    "二実装照合",
+    "Grad-CAM",
+    "測る前に決めた合否",
+    "医療用途ではない"
+   ],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "browser-inference",
+    "open-data",
+    "trained-model",
+    "static-deploy",
+    "no-api-key"
+   ],
+   "appUrl": "https://gram-stain-ai.vercel.app",
+   "githubUrl": "",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-10",
+   "updatedAt": "2026-09-14",
+   "status": "published"
   }
  ]
 }

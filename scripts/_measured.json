@@ -5235,5 +5235,68 @@
   "xval_test_hits": 0,
   "xval_test_where": [],
   "shared_skipped": 0
+ },
+ "gram-stain-ai": {
+  "dir": "gram-stain-ai",
+  "exists": true,
+  "langs": {
+   "Python": 4646,
+   "TypeScript": 1622,
+   "JavaScript": 241,
+   "CSS": 146
+  },
+  "flags": [
+   "browser-ai-dep",
+   "ci",
+   "ci-test",
+   "tests",
+   "wasm",
+   "weights"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "onnxruntime-web",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "onnxruntime",
+   "scikit-learn",
+   "sklearn",
+   "torch"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 10,
+  "xval_test_hits": 5,
+  "xval_test_where": [
+   "tests/preprocess.test.ts",
+   "tests/test_onnx.py"
+  ],
+  "shared_skipped": 2,
+  "bydir": {
+   "TypeScript": {
+    "src": 1301,
+    "tests": 291,
+    ".": 30
+   },
+   "Python": {
+    "ml": 3377,
+    "tests": 1269
+   },
+   "JavaScript": {
+    "scripts": 241
+   },
+   "CSS": {
+    "src": 146
+   }
+  },
+  "secret_envs": []
  }
 }
