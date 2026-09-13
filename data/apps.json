@@ -8239,7 +8239,8 @@
    "icon": "⚓",
    "series": "atlas-ai",
    "tracks": [
-    "data-geo"
+    "data-geo",
+    "ai-insight"
    ],
    "domains": [
     "agri-forest-fishery",
@@ -8249,7 +8250,8 @@
     "gis",
     "statistics",
     "regression",
-    "statistical-test"
+    "statistical-test",
+    "machine-learning"
    ],
    "experience": [
     "map",
@@ -8261,13 +8263,13 @@
    "languages": [
     {
      "name": "Python",
-     "role": "PDF の罫線からの表復元・突合・海面水温の回帰・配信データ生成",
-     "loc": 2568
+     "role": "PDF の罫線からの表復元・突合・海面水温の回帰・種別と規模の学習・配信データ生成",
+     "loc": 3424
     },
     {
      "name": "TypeScript",
-     "role": "地図・海域の表・散布図・詳細 Drawer",
-     "loc": 2464
+     "role": "地図・海域の表と散布図・AI の報告・詳細 Drawer",
+     "loc": 2897
     },
     {
      "name": "CSS",
@@ -8277,7 +8279,7 @@
     {
      "name": "JavaScript",
      "role": "実ブラウザ検品・画面撮影",
-     "loc": 552
+     "loc": 727
     }
    ],
    "runtimes": [
@@ -8331,6 +8333,10 @@
      "role": "build"
     },
     {
+     "name": "scikit-learn",
+     "role": "build"
+    },
+    {
      "name": "Playwright",
      "role": "oracle"
     },
@@ -8339,7 +8345,7 @@
      "role": "oracle"
     }
    ],
-   "summary": "全国 2,768 の指定漁港を、水産庁の PDF から罫線の座標を頼りに 1 字ずつ組み直す。正解は明細とは別の集計表 2 枚で、4 系統が一致した。沿岸海域 107 の水温は 100/102 で上昇し、冷たい海ほど速い(ρ=-0.565)。",
+   "summary": "全国 2,768 の指定漁港を水産庁 PDF の罫線から 1 字ずつ組み直す。沿岸海域 107 の水温は冷たい海ほど速く上がる(ρ=-0.565)。種別は施設の規模で読めるかを事前登録して測り、読めなかった。",
    "description": "",
    "keywords": [
     "漁港",
@@ -8351,7 +8357,9 @@
     "二文書突合",
     "二実装照合",
     "測って捨てた",
-    "欠損を0で埋めない"
+    "欠損を0で埋めない",
+    "事前登録",
+    "macro-F1"
    ],
    "badges": [
     "verified",
@@ -8369,7 +8377,7 @@
    "featured": false,
    "featuredOrder": null,
    "firstDeployedAt": "2026-09-09",
-   "updatedAt": "2026-09-10",
+   "updatedAt": "2026-09-14",
    "status": "published"
   },
   {
