@@ -8375,38 +8375,142 @@
   {
    "id": "weather-atmosphere-atlas-ai",
    "title": "Japan Weather & Atmosphere Atlas AI",
-   "shortTitle": "Japan Weather & Atmosphere Atlas AI",
-   "aliases": [],
-   "icon": "🗺️",
+   "shortTitle": "weather-atmosphere-atlas-ai",
+   "aliases": [
+    "weather-atmosphere-atlas-ai",
+    "日本気象・大気環境アトラス AI",
+    "気象アトラス",
+    "大気環境アトラス",
+    "japan-weather-atmosphere-atlas"
+   ],
+   "icon": "🌦️",
    "series": "atlas-ai",
    "tracks": [
-    "data-geo"
+    "data-geo",
+    "ai-insight"
    ],
    "domains": [
     "weather-environment"
    ],
-   "methods": [],
-   "experience": [
-    "map"
+   "methods": [
+    "deep-learning",
+    "embedding",
+    "clustering",
+    "time-series",
+    "statistics",
+    "gis"
    ],
-   "languages": [],
-   "runtimes": [],
-   "architecture": [],
-   "dataSources": [],
-   "libraries": [],
-   "summary": "気象と大気の観測を地図と時系列で読む。",
+   "experience": [
+    "map",
+    "chart",
+    "timeline",
+    "comparison",
+    "layers",
+    "interactive"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "ETL・記号と欠測の解釈・特徴量・Autoencoder 学習・交差適合の異常度",
+     "loc": 5240
+    },
+    {
+     "name": "TypeScript",
+     "role": "地図・日付送り・温室効果ガスの図・パターン・比較",
+     "loc": 2412
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 353
+    },
+    {
+     "name": "JavaScript",
+     "role": "ビルド刻印・設定",
+     "loc": 122
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing"
+   ],
+   "dataSources": [
+    {
+     "category": "jma",
+     "name": "気象庁 過去の気象データ検索(国内の現役官署 155 地点の日別値 2014-2023)"
+    },
+    {
+     "category": "jma",
+     "name": "気象庁 大気・海洋環境観測年報(綾里・南鳥島・与那国島の CO2・CH4)"
+    },
+    {
+     "category": "gov-dataset",
+     "name": "国立環境研究所 環境展望台 大気汚染常時監視データ(時間値・1,773 局)"
+    },
+    {
+     "category": "gsi",
+     "name": "国土地理院 地理院タイル"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "PyTorch",
+     "role": "build"
+    },
+    {
+     "name": "UMAP-learn / scikit-learn",
+     "role": "build"
+    },
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "MapLibre GL JS",
+     "role": "ship"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    }
+   ],
+   "summary": "気象庁 155 官署の日別値と全国 1,773 局の大気汚染、温室効果ガス 3 地点を 2014–2023 の地図と時系列で重ねる。AI の異常度が「学習期間かどうか」を測っていた欠陥を交差適合で直した。予報はしない。",
    "description": "",
-   "keywords": [],
-   "badges": [],
-   "appUrl": "",
-   "githubUrl": "",
-   "license": "",
-   "mobile": false,
+   "keywords": [
+    "気象庁",
+    "過去の気象データ",
+    "大気汚染",
+    "PM2.5",
+    "温室効果ガス",
+    "CO2",
+    "Autoencoder",
+    "異常度",
+    "交差適合",
+    "UMAP",
+    "地理院タイル"
+   ],
+   "badges": [
+    "verified",
+    "client-only",
+    "open-data",
+    "static-deploy",
+    "no-api-key"
+   ],
+   "appUrl": "https://weather-atmosphere-atlas-ai.vercel.app",
+   "githubUrl": "https://github.com/twill3c/weather-atmosphere-atlas-ai",
+   "license": "MIT",
+   "mobile": true,
    "featured": false,
    "featuredOrder": null,
-   "firstDeployedAt": "",
-   "updatedAt": "",
-   "status": "planned"
+   "firstDeployedAt": "2026-09-14",
+   "updatedAt": "2026-09-14",
+   "status": "published"
   },
   {
    "id": "long-trail-atlas-ai",
