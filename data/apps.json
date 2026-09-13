@@ -8743,12 +8743,12 @@
     {
      "name": "TypeScript",
      "role": "地図・意味空間・詳細画面(Next.js 静的書き出し)",
-     "loc": 2079
+     "loc": 2527
     },
     {
      "name": "Python",
      "role": "ETL・名寄せ・地理特徴量・埋め込みパイプライン",
-     "loc": 3091
+     "loc": 5620
     }
    ],
    "runtimes": [
@@ -8766,7 +8766,7 @@
    "dataSources": [
     {
      "category": "other-open-data",
-     "name": "OpenStreetMap(神社 40,776 件・ODbL)"
+     "name": "OpenStreetMap(神社 40,792 件・ODbL)"
     },
     {
      "category": "wikimedia",
@@ -8811,7 +8811,7 @@
      "role": "oracle"
     }
    ],
-   "summary": "神社を公開情報だけから地図に置き、史実・社伝・AI 推定を画面の上で混ぜない。祭神と社格で系統を決め、標高と河川距離を測り、由緒の文章を Transformer で解析する。名寄せは Wikidata と OSM の相互リンク 825 組を較正半分と取り置き半分に割って検証した(取り置きで適合率 0.99)。",
+   "summary": "全国 40,792 社を公開情報だけから地図に置き、史実・社伝・AI 推定を画面の上で混ぜない。祭神と社格で系統を決め、標高と河川距離を測り、由緒の文章を Transformer で解析する。名寄せは Wikidata と OSM の相互リンク 4,975 組を較正と取り置きに割って検証(取り置き適合率 0.99)。",
    "description": "",
    "keywords": [
     "神社",
@@ -8839,7 +8839,7 @@
    "featured": false,
    "featuredOrder": null,
    "firstDeployedAt": "2026-09-09",
-   "updatedAt": "2026-09-10",
+   "updatedAt": "2026-09-14",
    "status": "published"
   },
   {
