@@ -8855,12 +8855,12 @@
     {
      "name": "TypeScript",
      "role": "地図・意味空間・詳細画面(Next.js 静的書き出し)",
-     "loc": 2527
+     "loc": 2543
     },
     {
      "name": "Python",
      "role": "ETL・名寄せ・地理特徴量・埋め込みパイプライン",
-     "loc": 5620
+     "loc": 6044
     }
    ],
    "runtimes": [
@@ -8886,7 +8886,7 @@
     },
     {
      "category": "wikimedia",
-     "name": "日本語版ウィキペディア(由緒本文・CC BY-SA)"
+     "name": "日本語版ウィキペディア(由緒 3,175 記事・CC BY-SA)"
     },
     {
      "category": "gsi",
