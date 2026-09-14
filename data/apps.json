@@ -8789,39 +8789,152 @@
   {
    "id": "kofun-atlas-ai",
    "title": "Kofun Atlas AI",
-   "shortTitle": "Kofun Atlas AI",
-   "aliases": [],
+   "shortTitle": "kofun-atlas-ai",
+   "aliases": [
+    "kofun-atlas-ai",
+    "古墳アトラス",
+    "古墳",
+    "日本歴史地名大系",
+    "立地の埋め込み"
+   ],
    "icon": "🗺️",
    "series": "atlas-ai",
    "tracks": [
     "data-geo",
-    "computational-humanities"
+    "computational-humanities",
+    "ai-insight"
    ],
    "domains": [
     "history-archaeology-faith"
    ],
-   "methods": [],
-   "experience": [
-    "map"
+   "methods": [
+    "gis",
+    "deep-learning",
+    "embedding",
+    "statistics"
    ],
-   "languages": [],
-   "runtimes": [],
-   "architecture": [],
-   "dataSources": [],
-   "libraries": [],
-   "summary": "古墳の分布と規模を地図で読む。",
+   "experience": [
+    "map",
+    "search",
+    "comparison",
+    "chart",
+    "interactive"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "標高タイルの画素単位の合成と地形特徴・逆ジオコーダによる都道府県の確定・立地のノイズ除去オートエンコーダ(PyTorch→ONNX)・t-SNE 配置・二実装照合の参照表",
+     "loc": 5952
+    },
+    {
+     "name": "TypeScript",
+     "role": "全国地図(MapLibre)・立地の似た古墳の検索・t-SNE 散布図と縮小地図の塗りと範囲選択・都道府県の比較",
+     "loc": 2128
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 464
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing",
+    "reproducible-build"
+   ],
+   "dataSources": [
+    {
+     "category": "research-dataset",
+     "name": "CODH『日本歴史地名大系』施設・地点項目データセット(Geoshape・CC BY 4.0)"
+    },
+    {
+     "category": "gsi",
+     "name": "国土地理院 標高タイル(DEM5A/5B/5C/10B)・簡易逆ジオコーディング・市区町村表・淡色地図"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "MapLibre GL JS",
+     "role": "ship"
+    },
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "PyTorch",
+     "role": "build"
+    },
+    {
+     "name": "scikit-learn",
+     "role": "build"
+    },
+    {
+     "name": "NumPy",
+     "role": "build"
+    },
+    {
+     "name": "Pillow",
+     "role": "build"
+    },
+    {
+     "name": "ONNX Runtime",
+     "role": "oracle"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    },
+    {
+     "name": "Vitest",
+     "role": "oracle"
+    },
+    {
+     "name": "pytest",
+     "role": "oracle"
+    }
+   ],
+   "summary": "『日本歴史地名大系』の古墳 2,805 件を全国地図に並べ、国土地理院の標高タイルから立地の地形を計算する。墳形と時期は公開データで 0 件なので AI は立地の埋め込みに格下げし、群への切り分けは測って落とした。似た立地の検索と集計は TypeScript と Python が全件一致。",
    "description": "",
-   "keywords": [],
-   "badges": [],
-   "appUrl": "",
-   "githubUrl": "",
-   "license": "",
+   "keywords": [
+    "古墳",
+    "日本歴史地名大系",
+    "標高タイル",
+    "地形特徴",
+    "立地",
+    "オートエンコーダ",
+    "t-SNE",
+    "二実装照合",
+    "実ブラウザ検品",
+    "アクセシビリティ",
+    "測って捨てた",
+    "網羅しない"
+   ],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "open-data",
+    "trained-model",
+    "static-deploy",
+    "no-api-key",
+    "reproducible"
+   ],
+   "appUrl": "https://kofun-atlas-ai.vercel.app",
+   "githubUrl": "https://github.com/twill3c/kofun-atlas-ai",
+   "license": "MIT",
    "mobile": false,
    "featured": false,
    "featuredOrder": null,
-   "firstDeployedAt": "",
-   "updatedAt": "",
-   "status": "planned"
+   "firstDeployedAt": "2026-09-15",
+   "updatedAt": "2026-09-15",
+   "status": "published"
   },
   {
    "id": "jinja-origin-atlas-ai",
