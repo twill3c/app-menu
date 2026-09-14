@@ -518,6 +518,9 @@ function renderFeatured() {
   const list = APPS.filter(a => a.featured)
     .sort((x, y) => (x.featuredOrder || 99) - (y.featuredOrder || 99));
   for (const a of list) wrap.append(renderCard(a, true));
+  // 本数も apps.json から数える。見出しの下に「6 本」とじか書きしていて、
+  // 3 本に絞ったときに文だけが古いまま残るところだった。
+  document.getElementById('featured-count').textContent = list.length;
   document.getElementById('featured-section').classList.toggle('hidden', list.length === 0);
 }
 

@@ -151,8 +151,8 @@ def check(verbose=False, apps_path="data/apps.json", tax_path="data/taxonomy.jso
             featured_orders[o] = aid
 
     n_featured = len(featured_orders)
-    if n_featured and not (4 <= n_featured <= 8):
-        warnings.append(f"Featured が {n_featured} 件(SPEC §17.2 は 4〜8 件・推奨 6 件)")
+    if n_featured and n_featured != 3:
+        warnings.append(f"Featured が {n_featured} 件(SPEC §17.2 は 3 件 —— 2026-09-15 に 6 件から絞った)")
 
     # --- 誰も使っていない語彙 = 死んだチップ。画面には出さないが、
     #     放っておくと語彙が腐るので必ず見えるところに出す。
