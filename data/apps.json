@@ -8855,12 +8855,12 @@
     {
      "name": "TypeScript",
      "role": "地図・意味空間・詳細画面(Next.js 静的書き出し)",
-     "loc": 2543
+     "loc": 2559
     },
     {
      "name": "Python",
      "role": "ETL・名寄せ・地理特徴量・埋め込みパイプライン",
-     "loc": 6044
+     "loc": 6580
     }
    ],
    "runtimes": [
@@ -8878,7 +8878,7 @@
    "dataSources": [
     {
      "category": "other-open-data",
-     "name": "OpenStreetMap(神社 40,792 件・ODbL)"
+     "name": "OpenStreetMap(神社 40,325 社・同じ社の地物を統合・ODbL)"
     },
     {
      "category": "wikimedia",
@@ -8886,7 +8886,7 @@
     },
     {
      "category": "wikimedia",
-     "name": "日本語版ウィキペディア(由緒 3,175 記事・CC BY-SA)"
+     "name": "日本語版ウィキペディア(由緒 3,184 記事・CC BY-SA)"
     },
     {
      "category": "gsi",
@@ -8923,7 +8923,7 @@
      "role": "oracle"
     }
    ],
-   "summary": "全国 40,792 社を公開情報だけから地図に置き、史実・社伝・AI 推定を画面の上で混ぜない。祭神と社格で系統を決め、標高と河川距離を測り、由緒の文章を Transformer で解析する。名寄せは Wikidata と OSM の相互リンク 4,975 組を較正と取り置きに割って検証(取り置き適合率 0.99)。",
+   "summary": "全国 40,325 社を公開情報だけから地図に置き、史実・社伝・AI 推定を画面の上で混ぜない。祭神と社格で系統を決め、標高と河川距離を測り、由緒の文章を Transformer で解析する。名寄せは Wikidata と OSM の相互リンク 4,975 組を較正と取り置きに割って検証(取り置き適合率 0.99)。",
    "description": "",
    "keywords": [
     "神社",
