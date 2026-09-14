@@ -8985,23 +8985,24 @@
    ],
    "experience": [
     "map",
-    "comparison"
+    "comparison",
+    "layers"
    ],
    "languages": [
     {
      "name": "Python",
-     "role": "地質タイルの復号・原産地の座標解決・置換検定・空間で分けた交差検証・再配布の門・配信データ生成",
-     "loc": 6507
+     "role": "地質タイルの復号・原産地の座標解決・置換検定・空間で分けた交差検証・逆ジオコードと報告書の集計・再配布の門・配信データ生成",
+     "loc": 7381
     },
     {
      "name": "TypeScript",
-     "role": "地図(近接する原産地の群)・Stone Passport・地質の偏りと AI ラボの報告",
-     "loc": 2874
+     "role": "地図(近接する原産地の群・県別ヒスイ集計の層)・Stone Passport・地質の偏りと AI ラボの報告",
+     "loc": 3158
     },
     {
      "name": "CSS",
      "role": "画面",
-     "loc": 932
+     "loc": 1048
     },
     {
      "name": "JavaScript",
@@ -9027,7 +9028,7 @@
     },
     {
      "category": "gsi",
-     "name": "国土地理院 地名検索・逆ジオコーダ・地理院タイル"
+     "name": "国土地理院 地名検索・逆ジオコーダ・市区町村表・地理院タイル"
     },
     {
      "category": "research-dataset",
@@ -9086,7 +9087,8 @@
     "空間交差検証",
     "No-Go",
     "再配布の門",
-    "測って捨てた"
+    "測って捨てた",
+    "市区町村コード"
    ],
    "badges": [
     "verified",
