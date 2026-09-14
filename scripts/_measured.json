@@ -5300,5 +5300,63 @@
    }
   },
   "secret_envs": []
+ },
+ "ibuki-lab": {
+  "dir": "ibuki-lab",
+  "exists": true,
+  "langs": {
+   "Python": 6270,
+   "TypeScript": 2840,
+   "HTML": 1128,
+   "JavaScript": 467,
+   "CSS": 206
+  },
+  "flags": [
+   "tests"
+  ],
+  "deps": [
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "jax"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 17,
+  "xval_test_hits": 10,
+  "xval_test_where": [
+   "src/model/forward.test.ts",
+   "tests/test_curves.py",
+   "tests/test_ingest.py"
+  ],
+  "shared_skipped": 3,
+  "bydir": {
+   "TypeScript": {
+    "src": 2827,
+    ".": 13
+   },
+   "HTML": {
+    "data": 1128
+   },
+   "Python": {
+    "pipeline": 4153,
+    "tests": 2117
+   },
+   "JavaScript": {
+    "scripts": 467
+   },
+   "CSS": {
+    "src": 206
+   }
+  },
+  "secret_envs": []
  }
 }

@@ -9860,6 +9860,148 @@
    "firstDeployedAt": "2026-09-14",
    "updatedAt": "2026-09-14",
    "status": "published"
+  },
+  {
+   "id": "ibuki-lab",
+   "title": "息吹ラボ",
+   "shortTitle": "ibuki-lab",
+   "aliases": [
+    "ibuki-lab",
+    "息吹ラボ",
+    "二酸化炭素",
+    "CO2",
+    "年周曲線",
+    "温室効果ガス"
+   ],
+   "icon": "🌬️",
+   "series": "lab",
+   "tracks": [
+    "browser-ai",
+    "ai-insight"
+   ],
+   "domains": [
+    "weather-environment",
+    "ai-computing"
+   ],
+   "methods": [
+    "deep-learning",
+    "time-series",
+    "statistics",
+    "statistical-test"
+   ],
+   "experience": [
+    "heatmap",
+    "interactive",
+    "chart",
+    "comparison"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "JAX による学習・地点群ばらしの評価・NOAA の取り込み・float64 の参照前向き",
+     "loc": 6270
+    },
+    {
+     "name": "TypeScript",
+     "role": "ブラウザ内の自前前向き・画面・JAX との照合検査",
+     "loc": 2840
+    },
+    {
+     "name": "JavaScript",
+     "role": "実ブラウザ検品",
+     "loc": 467
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 206
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "browser-inference",
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing"
+   ],
+   "dataSources": [
+    {
+     "category": "gov-dataset",
+     "name": "NOAA GML 地上フラスコ網 CO2 / CH4(CC0 1.0)"
+    },
+    {
+     "category": "jma",
+     "name": "気象庁 温室効果ガス月平均値(綾里・南鳥島・与那国島・外部ホールドアウト)"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "JAX",
+     "role": "build"
+    },
+    {
+     "name": "Optax",
+     "role": "build"
+    },
+    {
+     "name": "NumPy",
+     "role": "build"
+    },
+    {
+     "name": "Vitest",
+     "role": "oracle"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    },
+    {
+     "name": "pytest",
+     "role": "oracle"
+    }
+   ],
+   "summary": "CO2 の年周曲線一本から、その空気が採られた緯度を当てる。1D CNN は振幅と位相の 2 特徴 kNN(10.95 度)に勝てず、位相を原理的に見ていないのが負けの機構だった。位相を足すと並んだが、学習率の選び方を正すと並ばなかった。予測は測る前に書いた。",
+   "description": "",
+   "keywords": [
+    "年周曲線",
+    "緯度当て",
+    "JAX",
+    "二実装照合",
+    "位相不変性",
+    "nested 選定",
+    "事前登録",
+    "陰性対照",
+    "CH4",
+    "外部ホールドアウト"
+   ],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "browser-inference",
+    "open-data",
+    "public-domain",
+    "trained-model",
+    "static-deploy",
+    "no-api-key"
+   ],
+   "appUrl": "https://ibuki-lab.vercel.app",
+   "githubUrl": "https://github.com/twill3c/ibuki-lab",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-15",
+   "updatedAt": "2026-09-15",
+   "status": "published"
   }
  ]
 }
