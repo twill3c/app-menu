@@ -9248,7 +9248,8 @@
     "spatial-statistics",
     "statistics",
     "statistical-test",
-    "machine-learning"
+    "machine-learning",
+    "deep-learning"
    ],
    "experience": [
     "map",
@@ -9260,22 +9261,22 @@
     {
      "name": "Python",
      "role": "ETL・空間結合・統計・検証",
-     "loc": 6758
+     "loc": 8797
     },
     {
      "name": "TypeScript",
      "role": "地図UI・標高タイル解読・等高線生成・統計の図",
-     "loc": 3153
+     "loc": 4926
     },
     {
      "name": "JavaScript",
      "role": "実ブラウザ検品",
-     "loc": 810
+     "loc": 1695
     },
     {
      "name": "CSS",
      "role": "画面",
-     "loc": 272
+     "loc": 366
     }
    ],
    "runtimes": [
@@ -9325,9 +9326,13 @@
     {
      "name": "MapLibre GL JS",
      "role": "ship"
+    },
+    {
+     "name": "PyTorch",
+     "role": "build"
     }
    ],
-   "summary": "地形・地質・火山・水・植生・温泉を一枚の地図に重ねる。等高線と断面は標高タイルをその場で読む。周辺の数・温泉比較・地域比較に加え、登録された温泉の地理環境を 3 モデルで当てる AI は合否を学習前に登録。泉温・湧出量は地点別に無いので値を作らない。",
+   "summary": "地形・地質・火山・水・植生・温泉を一枚の地図に重ねる。等高線と断面は標高タイルをその場で読む。AI は合否を学習前に登録し、地形を画像として見る CNN は表形式のモデルを超えなかったので載せず数字だけ出した。泉温・湧出量は地点別に無いので値を作らない。",
    "description": "",
    "keywords": [
     "温泉",
@@ -9354,7 +9359,10 @@
     "Random Forest",
     "XGBoost",
     "事前登録",
-    "SHAP"
+    "SHAP",
+    "CNN",
+    "PyTorch",
+    "陰性対照"
    ],
    "badges": [
     "verified",
@@ -9372,7 +9380,7 @@
    "featured": false,
    "featuredOrder": null,
    "firstDeployedAt": "2026-09-07",
-   "updatedAt": "2026-09-15",
+   "updatedAt": "2026-09-16",
    "status": "published"
   },
   {
