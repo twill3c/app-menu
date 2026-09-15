@@ -5358,5 +5358,70 @@
    }
   },
   "secret_envs": []
+ },
+ "henshin-nuime": {
+  "dir": "henshin-nuime",
+  "exists": true,
+  "langs": {
+   "Python": 6734,
+   "TypeScript": 3211,
+   "HTML": 2455,
+   "JavaScript": 797,
+   "CSS": 704
+  },
+  "flags": [
+   "browser-ai-dep",
+   "tests",
+   "weights"
+  ],
+  "deps": [
+   "@huggingface/transformers",
+   "@types/node",
+   "@types/react",
+   "@types/react-dom",
+   "next",
+   "playwright",
+   "react",
+   "react-dom",
+   "typescript",
+   "vitest"
+  ],
+  "pyimports": [
+   "onnxruntime",
+   "torch",
+   "transformers"
+  ],
+  "envs": [],
+  "license": "MIT",
+  "testfiles": 18,
+  "xval_test_hits": 9,
+  "xval_test_where": [
+   "tests/test_embed.py",
+   "tests/test_ingest.py",
+   "tests/test_stats.py"
+  ],
+  "shared_skipped": 3,
+  "bydir": {
+   "TypeScript": {
+    "src": 2565,
+    "tests": 632,
+    ".": 14
+   },
+   "HTML": {
+    "data": 2455
+   },
+   "Python": {
+    "pipeline": 3627,
+    "tests": 2907,
+    "scripts": 200
+   },
+   "JavaScript": {
+    "scripts": 797
+   },
+   "CSS": {
+    "src": 704
+   }
+  },
+  "secret_envs": []
  }
 }

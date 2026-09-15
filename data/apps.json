@@ -10003,6 +10003,95 @@
    "firstDeployedAt": "2026-09-15",
    "updatedAt": "2026-09-15",
    "status": "published"
+  },
+  {
+   "id": "henshin-nuime",
+   "title": "変身の縫い目",
+   "shortTitle": "henshin-nuime",
+   "aliases": [
+    "henshin-nuime"
+   ],
+   "icon": "🧵",
+   "series": "standalone",
+   "tracks": [
+    "computational-humanities",
+    "ai-insight",
+    "browser-ai"
+   ],
+   "domains": [
+    "literature-folklore-language",
+    "ai-computing"
+   ],
+   "methods": [
+    "deep-learning",
+    "nlp",
+    "embedding",
+    "statistical-test"
+   ],
+   "experience": [
+    "comparison",
+    "chart",
+    "search"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "データ処理・学習・検証",
+     "loc": 6734
+    },
+    {
+     "name": "TypeScript",
+     "role": "フロントエンド",
+     "loc": 3211
+    },
+    {
+     "name": "JavaScript",
+     "role": "検査・生成スクリプト",
+     "loc": 797
+    }
+   ],
+   "runtimes": [
+    "Browser"
+   ],
+   "architecture": [
+    "browser-inference",
+    "client-only",
+    "static-site",
+    "no-api"
+   ],
+   "dataSources": [
+    {
+     "category": "gutenberg",
+     "name": "Project Gutenberg"
+    },
+    {
+     "category": "aozora",
+     "name": "青空文庫"
+    }
+   ],
+   "libraries": [],
+   "summary": "カフカ『変身』の独語原文・英訳・和訳で、どの文がどの文に対応するかを教師なしで引き、独英で完全一致する段落構造を採点表にして測った。一冊で学習した注意は位置だけの対照に勝てず(p=0.105)、多言語埋め込みは日本語とも縫えた。別作品『審判』では採点表そのものが成り立たなかった。",
+   "description": "",
+   "keywords": [],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "browser-inference",
+    "open-data",
+    "public-domain",
+    "static-deploy",
+    "no-api-key"
+   ],
+   "appUrl": "https://henshin-nuime.vercel.app",
+   "githubUrl": "https://github.com/twill3c/henshin-nuime",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-10",
+   "updatedAt": "2026-09-16",
+   "status": "published"
   }
  ]
 }
