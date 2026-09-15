@@ -8929,7 +8929,7 @@
    "appUrl": "https://kofun-atlas-ai.vercel.app",
    "githubUrl": "https://github.com/twill3c/kofun-atlas-ai",
    "license": "MIT",
-   "mobile": false,
+   "mobile": true,
    "featured": false,
    "featuredOrder": null,
    "firstDeployedAt": "2026-09-15",
