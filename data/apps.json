@@ -10100,6 +10100,100 @@
    "firstDeployedAt": "2026-09-10",
    "updatedAt": "2026-09-16",
    "status": "published"
+  },
+  {
+   "id": "zenken-atlas",
+   "title": "善研アトラス",
+   "shortTitle": "zenken-atlas",
+   "aliases": [
+    "zenken-atlas",
+    "善の研究",
+    "西田幾多郎"
+   ],
+   "icon": "🪷",
+   "series": "atlas-ai",
+   "tracks": [
+    "computational-humanities",
+    "browser-ai",
+    "ai-insight"
+   ],
+   "domains": [
+    "literature-folklore-language",
+    "history-archaeology-faith"
+   ],
+   "methods": [
+    "nlp",
+    "embedding",
+    "statistical-test",
+    "clustering",
+    "search"
+   ],
+   "experience": [
+    "search",
+    "heatmap",
+    "chart"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "データ処理・検証",
+     "loc": 2666
+    },
+    {
+     "name": "JavaScript",
+     "role": "フロントエンド",
+     "loc": 2268
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "WebAssembly"
+   ],
+   "architecture": [
+    "browser-inference",
+    "client-only",
+    "static-site",
+    "no-api",
+    "webassembly"
+   ],
+   "dataSources": [
+    {
+     "category": "aozora",
+     "name": "青空文庫"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "Transformers.js",
+     "role": "ship"
+    },
+    {
+     "name": "fugashi",
+     "role": "build"
+    }
+   ],
+   "summary": "西田幾多郎『善の研究』286 段落を住所で貫き、全文検索・概念語の地図・ブラウザ内の意味検索・AI が書いた論証の骨組みと問答で読む。引用は本文と一字一句照合し、本文に無い語には答えない。後から書いた層を文体で見分けられるかは事前登録して測り、不合格(p=0.0738)。",
+   "description": "",
+   "keywords": [],
+   "badges": [
+    "verified",
+    "cross-validated",
+    "client-only",
+    "browser-inference",
+    "open-data",
+    "public-domain",
+    "static-deploy",
+    "no-api-key"
+   ],
+   "appUrl": "https://zenken-atlas.vercel.app",
+   "githubUrl": "https://github.com/twill3c/zenken-atlas",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-16",
+   "updatedAt": "2026-09-16",
+   "status": "published"
   }
  ]
 }
