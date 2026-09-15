@@ -9353,7 +9353,8 @@
     "地域比較",
     "Random Forest",
     "XGBoost",
-    "事前登録"
+    "事前登録",
+    "SHAP"
    ],
    "badges": [
     "verified",
