@@ -10194,6 +10194,123 @@
    "firstDeployedAt": "2026-09-16",
    "updatedAt": "2026-09-16",
    "status": "published"
+  },
+  {
+   "id": "shisaku-atlas",
+   "title": "思索アトラス",
+   "shortTitle": "shisaku-atlas",
+   "aliases": [
+    "shisaku-atlas",
+    "思索アトラス",
+    "日本の思想家",
+    "系譜図",
+    "西田幾多郎",
+    "柳田国男"
+   ],
+   "icon": "🖋️",
+   "series": "atlas-ai",
+   "tracks": [
+    "computational-humanities"
+   ],
+   "domains": [
+    "history-archaeology-faith",
+    "literature-folklore-language"
+   ],
+   "methods": [
+    "nlp",
+    "rule-based",
+    "graph-analysis"
+   ],
+   "experience": [
+    "network",
+    "interactive"
+   ],
+   "languages": [
+    {
+     "name": "Python",
+     "role": "青空文庫の取得と正規化・没年による権利ゲート・名前の辞書による言及の抽出・見本の抽選と注釈の多数決と合格判定・配布データの生成・台帳から数え直すテスト",
+     "loc": 3063
+    },
+    {
+     "name": "TypeScript",
+     "role": "系譜図(生年と学統の帯の配置・名前と点の枠が重ならない段の選択・点に触れた強調)・人物一覧と人物ページ",
+     "loc": 850
+    },
+    {
+     "name": "CSS",
+     "role": "画面",
+     "loc": 348
+    }
+   ],
+   "runtimes": [
+    "Browser",
+    "Python Runtime"
+   ],
+   "architecture": [
+    "client-only",
+    "static-site",
+    "no-api",
+    "local-processing"
+   ],
+   "dataSources": [
+    {
+     "category": "aozora",
+     "name": "青空文庫(没年 1967 年以前の 38 人・1,007 作。配るのは短い引用だけ)"
+    },
+    {
+     "category": "other-open-data",
+     "name": "Wikidata(CC0・人物の同定・生没年・師事/弟子/影響)"
+    }
+   ],
+   "libraries": [
+    {
+     "name": "Next.js",
+     "role": "ship"
+    },
+    {
+     "name": "Vitest",
+     "role": "oracle"
+    },
+    {
+     "name": "Playwright",
+     "role": "oracle"
+    },
+    {
+     "name": "pytest",
+     "role": "oracle"
+    }
+   ],
+   "summary": "幕末から昭和前期の思想家 38 人を、青空文庫の本文で互いの名前を挙げた回数でつなぐ系譜図と人物ページ。姓+敬称は同姓の別人を拾うので、見本を注釈して事前登録の合格ラインで採否を決め、測り直して西田・田辺の言及を戻した。引用 418 件は本文と照合。",
+   "description": "",
+   "keywords": [
+    "思想家",
+    "系譜図",
+    "青空文庫",
+    "Wikidata",
+    "名前の言及",
+    "同姓の別人",
+    "事前登録",
+    "較正",
+    "引用の本文照合",
+    "実ブラウザ検品"
+   ],
+   "badges": [
+    "verified",
+    "client-only",
+    "open-data",
+    "public-domain",
+    "static-deploy",
+    "no-api-key"
+   ],
+   "appUrl": "https://shisaku-atlas.vercel.app",
+   "githubUrl": "https://github.com/twill3c/shisaku-atlas",
+   "license": "MIT",
+   "mobile": true,
+   "featured": false,
+   "featuredOrder": null,
+   "firstDeployedAt": "2026-09-17",
+   "updatedAt": "2026-09-17",
+   "status": "published"
   }
  ]
 }
